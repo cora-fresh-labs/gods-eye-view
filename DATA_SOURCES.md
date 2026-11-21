@@ -64,6 +64,7 @@ Static datasets shipped in the repo for an out-of-the-box experience. **None are
 | **Dams** (704) | `dams/` | **ODbL 1.0** (OpenInfraMap / OSM extract) | ✅ (attribution + share-alike on data) | "© OpenStreetMap contributors" (+ Open Infrastructure Map) |
 | **TeleGeography Submarine Cable Map** (712 cables + 1,917 landing points) | `telegeography_submarine_cables/` | **CC BY-NC-SA 3.0** | ❌ **NonCommercial — remove for commercial use** | "© TeleGeography — submarinecablemap.com" |
 | **Natural Earth physical regions** (1,046 land + 292 marine named polygons) | `natural_earth/` | **Public domain** | ✅ (no restrictions) | "Made with Natural Earth" (courtesy credit — not legally required) |
+| **Carbon flows** (buyer → project-country retirements, plus public CSI and Puro removals) | `carbon/` | **CC BY 4.0** (Berkeley VROD) + public CSI and Puro registry records + **CC BY 4.0** (GeoNames cities) + Wikidata (CC0) + Natural Earth country points (public domain) | ✅ with attribution | Berkeley Carbon Trading Project citation, CSI public registry, Puro public registry, GeoNames, Wikidata, Natural Earth — see below |
 | **DataSF Analysis Neighborhoods** (41 SF neighborhood polygons) | `neighborhoods/` | **PDDL 1.0** (public domain) | ✅ (no restrictions) | "City & County of San Francisco — DataSF" (courtesy — not legally required) |
 
 ### ⚠️ TeleGeography is bundled but NonCommercial
@@ -88,6 +89,23 @@ Suomi-NPP) clamped to the trailing 24 h, cached 30 min to respect the shared MAP
 transaction quota. Requires a free `FIRMS_MAP_KEY`
 (https://firms.modaps.eosdis.nasa.gov/api/map_key/); the layer is empty without it.
 The former bundled 2026-05-25 snapshot was removed 2026-07-16.
+
+### Carbon flows (`carbon/`)
+
+`carbon/carbon-flows.json` is a derived extract, not a copy of the workbooks. It is built by `scripts/carbon/build_carbon_flows.py` from the Berkeley Carbon Trading Project **Voluntary Registry Offsets Database v2026-08** (projects workbook plus the v2026-08 registry retirement files). The database is **CC BY 4.0**. Required citation, also shown in the layer panel and the data-attribution popover:
+
+> Pamela Quartson, Barbara K Haya, Tyler Bernard, Aline Abayo, Xinyun Rong, Ivy S So, Micah Elias. (2026). Voluntary Registry Offsets Database v2026-08, Berkeley Carbon Trading Project, University of California, Berkeley. Retrieved from https://gspp.berkeley.edu/berkeley-carbon-trading-project/offsets-database
+
+Retirement rows name a buyer when the registry does (`Beneficial Owner` on Verra, `Using Entity` on Gold Standard, `Account Holder` on CAR, `Beneficiary Name` on Isometric, `Retired On Behalf Of` or else `Credit Holder` on ACR and ART). Blank beneficiary rows stay on the project as undisclosed tonnes. They are not assigned to a company. VROD has no project coordinates, so those arcs end at the Natural Earth 50m country label point (public domain).
+
+Two further public feeds are merged by `scripts/carbon/extra_sources.py` and `npm run carbon:build` (CSI alone: `npm run carbon:build:csi`):
+
+- **Carbon Standards International** Global C-Sink Registry, `https://global-c-registry.org/`. The build calls the unauthenticated GET endpoints the logged-out site already uses (`projects/public-projects/` and `products/batch-list/` on `global-c-sink.easy-cert.cloud`). The password-protected C-Sink Tool and its bearer-token API are not called. Quantities are C-sinks, not tCO₂e. A dated snapshot is written under `.gev-cache/carbon/snapshots/`.
+- **Puro.earth Registry**, `https://registry.puro.earth/projects` and `/retirements`. The build reads the project and retirement tables embedded in those public pages. The role-based Registry API is not called. Quantities are CORCs. Supplier is the seller.
+
+Isometric retirements already inside VROD stay. The Isometric registry API requires a client secret and was not used. Plan Vivo, Cercarbono, Riverse, and Social Carbon had no public project-and-retirement feed and are listed as skipped in the carbon README. BeZero, Sylvera, Calyx Global, and MSCI Carbon Markets had no free public ratings list that could be copied; no ratings were ingested.
+
+Buyer cities use GeoNames cities5000 (**CC BY 4.0**) when the registry published a city for the account holder. Other headquarters come from Wikidata (CC0) statement P159, else P625, cached in `scripts/carbon/hq-cache.json`. Low-confidence and unplaced buyers are flagged. Setup, the refresh command, and the gaps are in [`src/data/local_data/carbon/README.md`](src/data/local_data/carbon/README.md).
 
 ### Natural Earth physical regions (`natural_earth/`)
 

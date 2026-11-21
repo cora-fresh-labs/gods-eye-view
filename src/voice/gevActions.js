@@ -176,6 +176,10 @@ const LAYER_ALIASES = new Map([
   ['firms', 'local-firms'],
   ['fires', 'local-firms'],
   ['active fires', 'local-firms'],
+  ['carbon', 'carbon-flows'],
+  ['carbon flows', 'carbon-flows'],
+  ['carbon credits', 'carbon-flows'],
+  ['follow the carbon money', 'carbon-flows'],
 ]);
 
 const CITY_ALIASES = new Map([
@@ -811,6 +815,25 @@ export function createGevActionRunner({ viewer, styleManager, dataManager, scene
 
     if (name === 'next_iss_pass') {
       return nextIssPass(viewer, args);
+    }
+
+    if (name === 'lookup_carbon') {
+      const query = String(args.query || args.text || '').trim();
+      if (!query) {
+        return { ok: false, action: 'lookup_carbon', error: 'Say a buyer or a project.' };
+      }
+      if (!dataManager.layers.has('carbon-flows')) {
+        return { ok: false, action: 'lookup_carbon', error: 'Carbon flows layer is not registered.' };
+      }
+      const changeOptions = { origin: 'voice' };
+      if (runOptions.signal) changeOptions.signal = runOptions.signal;
+      await dataManager.setEnabled('carbon-flows', true, changeOptions);
+      const layer = dataManager.layers.get('carbon-flows')?.module;
+      if (typeof layer?.lookup !== 'function') {
+        return { ok: false, action: 'lookup_carbon', error: 'Carbon lookup is unavailable.' };
+      }
+      const result = layer.lookup(query);
+      return { action: 'lookup_carbon', query, ...result };
     }
 
     if (name === 'analyst_query') {
@@ -3273,6 +3296,7 @@ function layerTitle(layerId) {
   if (layerId === 'local-dams') return 'Dam';
   if (layerId === 'telegeography-submarine-cables') return 'Submarine Cable';
   if (layerId === 'local-firms') return 'Active Fire';
+  if (layerId === 'carbon-flows') return 'Carbon Flow';
   return layerId || 'Entity';
 }
 

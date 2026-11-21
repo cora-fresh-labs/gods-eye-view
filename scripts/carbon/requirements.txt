@@ -1,0 +1,2 @@
+# Build-time only. The globe app itself does not import these.
+python-calamine==0.6.2

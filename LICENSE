@@ -38,6 +38,11 @@ remain subject to their own licenses and terms. Notably:
     Open Database License (ODbL) 1.0 — attribution + share-alike on the data.
   - NASA FIRMS active-fire snapshot: CC0 / U.S. public domain (citation
     requested).
+  - Carbon-credit flows (src/data/local_data/carbon/): derived from the
+    Berkeley Carbon Trading Project Voluntary Registry Offsets Database
+    v2026-08, CC BY 4.0. Buyer-city matches use GeoNames (CC BY 4.0).
+    Headquarters matches use Wikidata. Country label points are Natural
+    Earth (public domain). Not MIT. See src/data/local_data/carbon/README.md.
 
 Live sources (Google Maps, OpenSky, adsb.lol, AISStream, CelesTrak, USGS,
 OSM Overpass, City of Austin, GBFS) are fetched at runtime under each
