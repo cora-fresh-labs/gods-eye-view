@@ -279,7 +279,7 @@ Fourteen layers and map sources. **Twelve have a keyless path.** Some offer addi
 | 🔥 **Active Fires** | Live NASA FIRMS detections, trailing 24h | NASA FIRMS | 🟡 |
 | 🚀 **Space Missions** | Rolling 30-day launches with payload, stage, and recovery detail | Launch Library 2 | 🟢 (🟡 optional token raises the allowance) |
 | 🎖️ **Mapped Installations** | Viewport-bounded military-site context from community mapping — incomplete by nature, and labeled that way | OpenStreetMap | 🟢 |
-| 🍃 **Carbon Flows** | Animated arcs from corporate buyers to the countries of the projects whose credits they retired. Filters, click-through, and a Pacific-island preset. Project ends are country label points, not site surveys | Berkeley VROD v2026-08 | 🟢 |
+| 🍃 **Carbon Flows** | Animated arcs from corporate buyers to the countries of the projects whose credits they retired. Filters include buyer, project, registry, removal or avoidance, a Biochar chip, and a Pacific-island preset. VROD arcs end at the country; a CSI or Puro project with a published site ends at that site | Berkeley VROD v2026-08, public CSI C-Sink registry, public Puro registry | 🟢 |
 
 **The basemap ladder — what each tier buys you:**
 

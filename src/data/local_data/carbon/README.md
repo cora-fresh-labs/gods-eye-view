@@ -4,13 +4,13 @@ Animated arcs from the organizations that retire carbon credits to the countries
 
 ## What you are looking at
 
-Each arc starts at a buyer's headquarters (or, when that is all the registries published, the buyer's country) and ends at the **country** of a project whose credits that buyer retired. One arc is one buyer–country pair. Tonnes are retired credits, and one credit is one metric tonne of CO₂-equivalent, as Berkeley records it.
+Each arc starts at a buyer's headquarters (or, when that is all the registries published, the buyer's country) and ends at the **country** of a project whose credits that buyer retired. Opening one CSI or Puro project that published a site ends that arc at the site. One arc is one buyer–country pair, except that single-project view. Berkeley VROD tonnes are metric tonnes of CO₂-equivalent. CSI quantities are time-dependent C-sinks and Puro quantities are CORCs. The caption keeps those units separate.
 
 Search **Buyer** (`Shell`, or `show me all Shell credits`) to list every project that buyer retired and draw arcs from its headquarters. Search **Project** (`April Salumei`, `VCS1122`, or `who bought from April Salumei`) for the seller, registry totals, vintages, every named buyer, and the undisclosed tonnes. The buyer panel lists the raw registry strings merged into that name.
 
 The app already has a voice agent (`GEV_REALTIME_TOOLS` in `vite.config.js`, handled in `src/voice/gevActions.js`). Those same phrases call `lookup_carbon`, which uses `resolveCarbonQuery`. No second voice stack was added.
 
-The caption follows Bernat Fortet's "Follow the carbon money" map: `Switzerland: 10 buyers → 18 countries`. With no country selected, the globe cycles the largest buyer countries. **Pacific projects** limits the map to credits from Pacific island host countries.
+The caption follows Bernat Fortet's "Follow the carbon money" map: `Switzerland: 10 buyers → 18 countries`. With no country selected, the globe cycles the largest buyer countries. **Pacific projects** limits the map to credits from Pacific island host countries. **Biochar** is a one-click type filter across VROD, CSI, and Puro. **Removal or avoidance** uses VROD's Reduction / Removal column, and marks every CSI and Puro credit as a removal.
 
 ![Globe with carbon-credit arcs](../../../../docs/media/carbon/globe-arcs.png)
 
@@ -25,6 +25,14 @@ The caption follows Bernat Fortet's "Follow the carbon money" map: `Switzerland:
 ![April Salumei buyers and seller](../../../../docs/media/carbon/april-salumei.png)
 
 ![Merged Qantas entry](../../../../docs/media/carbon/qantas.png)
+
+![Biochar filter, all registries](../../../../docs/media/carbon/biochar.png)
+
+![Puro project Exomad Green with buyers](../../../../docs/media/carbon/puro-project.png)
+
+![Isometric project Great Plains Organic Waste Sequestration with buyers](../../../../docs/media/carbon/isometric-project.png)
+
+![Microsoft across ACR, Verra, Puro, and Gold Standard](../../../../docs/media/carbon/microsoft.png)
 
 ## Setup
 
@@ -60,7 +68,43 @@ Cite the database if you redistribute the JSON:
 
 Also attribute GeoNames (CC BY 4.0) for buyer cities, Wikidata for headquarters, and Natural Earth (public domain) for country label points. The in-app attribution popover carries the same credit.
 
-This build (retrieved 2026-11-21, retirements through 2026-08-31): 499,789 retirement rows, 208,415 joined to a named buyer, 246,349 rows with a blank beneficiary kept as undisclosed tonnes (about 586 million). 50,254 merged buyers, 546 placed on the globe, 11,856 projects, 76,968 buyer–project flows, 3,031 buyers that absorbed at least one alternate published name. Verra blank beneficial-owner rows: 137,420 (about 463 million tonnes), included in the undisclosed line rather than assigned to a company. Pacific host countries in the project table include Papua New Guinea (21), Fiji (2), Solomon Islands (1), New Caledonia (1), and Guam (1). The same figures are in `carbon-flows.json` → `meta.counts`.
+`npm run carbon:build` also refreshes two public removal registries and writes a dated snapshot under `.gev-cache/carbon/snapshots/` (gitignored). `npm run carbon:build:csi` fetches only the CSI snapshot.
+
+### Carbon Standards International
+
+Public site: <https://global-c-registry.org/>. The registry page is the public record. The C-Sink Tool is password-protected and was not used, and neither was the bearer-token import API in its OpenAPI document.
+
+The build calls the unauthenticated GET endpoints the logged-out registry already calls:
+
+- `https://global-c-sink.easy-cert.cloud/v1/projects/public-projects/`
+- `https://global-c-sink.easy-cert.cloud/v1/products/batch-list/`
+
+`robots.txt` on both hosts returns the site shell rather than crawl rules. Requests use a descriptive user agent and a short pause between pages. Projects keep the published latitude and longitude, the company name as the seller, and the standard as the methodology. A batch with a beneficiary and no remaining quantity is a retirement. A batch that moved quantity with no beneficiary is an undisclosed retirement. The unit is `c-sink`, drawn separately from tCO₂e, because these are time-dependent C-sinks.
+
+### Puro.earth
+
+Public pages: <https://registry.puro.earth/projects> and <https://registry.puro.earth/retirements>. Those pages embed the project and retirement tables a logged-out visitor receives. The role-based Registry API (`docs.api.puro.earth`) was not called. `robots.txt` on the registry host is a 404. The supplier is the seller. Methodology codes map to biochar, wooden building elements, geologically stored carbon, enhanced rock weathering, terrestrial biomass storage, carbonated materials, and soil amendment. The unit is `corc`. A retirement with a hidden beneficiary is undisclosed. Puro says beneficiary publication can be delayed.
+
+### Other ICROA programmes and ratings
+
+Programmes already inside VROD (Verra, Gold Standard, ACR, CAR, ART TREES, Isometric retirements) are not fetched again. The rest of the programmes named for this pass, and the ratings agencies, are in `meta.skippedSources` with the reason. Short version:
+
+| Source | Why it is not a new feed |
+|---|---|
+| Isometric Registry | `api.isometric.com` returns 401 without `X-Client-Secret`. The public projects page does not embed the ledger. VROD registry `ISO` stays. |
+| ART TREES | Already in VROD as registry `ART`. |
+| Plan Vivo | No public project-and-retirement bulk feed. The Markit viewer is login-gated. |
+| Cercarbono | Public EcoRegistry search is an interactive viewer without an unauthenticated retirement export. |
+| Riverse | Public catalogue, no retirement ledger with beneficiaries. |
+| Social Carbon | No public bulk retirement feed. SOCIALCARBON issued through Verra is already in VROD. |
+| BeZero | The public listings table is marked as illustrative fictitious samples. The ratings API requires OAuth. Nothing was copied. |
+| Sylvera | Paid catalogue. No free public ratings list. |
+| Calyx Global | Ratings sit behind the Calyx platform. |
+| MSCI Carbon Markets | No free public project-ratings feed. |
+
+No ratings badge is shown, because none of those agencies published a free list this build could copy without a paywall or a login. A badge appears only when a project record carries `rating: {source, rating, date}`.
+
+This build (retrieved 2026-11-21, VROD retirements through 2026-08-31): 499,789 VROD retirement rows. `meta.counts` records 211,739 named retirement rows (VROD plus CSI and Puro) and 246,349 VROD rows with a blank beneficiary kept as undisclosed tonnes (about 586 million). The file holds 12,135 projects (149 CSI, 130 Puro, 71 Isometric already in VROD), 50,818 merged buyers, and 78,509 buyer–project flows. CSI snapshot: 149 projects and 6,332 of 6,345 public batches (13 batch offsets returned HTTP 500 from the public list and were skipped, not guessed). Puro snapshot: 130 projects and 1,646 retirement transactions. All 149 CSI projects have a published coordinate; 44 Puro projects do. Verra blank beneficial-owner rows: 137,420 (about 463 million tonnes). Pacific host countries in the project table: Papua New Guinea (22), Fiji (2), Solomon Islands (1), New Caledonia (1), Guam (1). Pacific **removal** projects in that set: CSI `GCSP1056` Pacific Island Food Forest Project – PNG (biochar), Gold Standard Markham Valley and Morobe Markham (ARR, Papua New Guinea), the Isometric Morobe Markham Reforestation project, and the University of Guam sustainable reforestation project. The same figures are in `carbon-flows.json` → `meta.counts`. Microsoft is one buyer across ACR, Gold Standard, Verra, and Puro.
 
 ## Buyer names
 
@@ -97,11 +141,12 @@ These are omissions, not fills.
 - **Blank beneficiaries stay undisclosed.** They are summed on the project as “Undisclosed buyer” and are not given a company. Verra’s blank Beneficial Owner rows are `meta.counts.verraBlankBeneficiaryRows`. A project’s named tonnes plus undisclosed tonnes are the retirement rows this build read. The registry’s own issued and retired totals are shown beside that and can be higher, because cancellations and California / Quebec / Washington compliance retirements are not in these retirement sheets.
 - **Gold Standard notes are not parsed.** Only the `Using Entity` column is the buyer. A note that names a different company stays unused.
 - **Cancellations, buffer-pool moves, and California / Quebec / Washington compliance totals are excluded.** Those tables do not name a voluntary beneficiary this build can attribute.
-- **No project coordinates.** VROD has a country and a site description. Arcs end at the Natural Earth country label point. A site string is shown on the project card and is not geocoded. Same-country flows draw a short loop at that label point so the retirement stays visible.
+- **VROD has no project coordinates.** It has a country and a site description. Those arcs end at the Natural Earth country label point. CSI and Puro arcs use a published latitude and longitude when you open that one project. Aggregated arcs still end at the country. A site string from VROD is shown on the project card and is not geocoded. Same-country flows draw a short loop at the label point so the retirement stays visible.
 - **Buyer names are grouped** by a normalized form with legal suffixes (`Inc`, `Ltd`, `GmbH`, …) removed. Two different organizations that share that form can be merged. Account numbers and names with fewer than three letters are dropped.
 - **Wikidata is not exhaustive.** Buyers under 5,000 tonnes are not looked up unless they retired Pacific credits or the registry already gave a city. A headquarters coordinate can be a campus or a loosely labeled place; it is still the published Wikidata statement, flagged by the method above.
 - **Pacific preset** is Pacific Islands Forum island members plus American Samoa, Guam, the Northern Mariana Islands, Tokelau, and Wallis and Futuna. Australia and New Zealand are excluded on purpose: the preset is "who buys credits from Pacific island projects". Countries in that list with no project in v2026-08 simply do not appear. The host countries that do appear are `meta.counts.pacificProjectCountries`.
-- **Nature-based types** follow VROD's harmonized `Type` column: REDD+ (including jurisdictional REDD+ and avoided forest conversion), ARR, IFM, wetland restoration (VROD does not split mangroves out of this type), soil (sustainable agriculture, grassland, rice, nitrogen, irrigation, compost), and biochar (including biomass carbon removal and storage). Everything else is `other`, including cookstoves and renewable energy.
+- **Nature-based types** follow VROD's harmonized `Type` column: REDD+ (including jurisdictional REDD+ and avoided forest conversion), ARR, IFM, wetland restoration (VROD does not split mangroves out of this type), soil (sustainable agriculture, grassland, rice, nitrogen, irrigation, compost), biochar (including biomass carbon removal and storage), and tree C-sinks. CSI artisan and biochar standards share the Biochar filter. Puro wooden building elements, geologic storage, enhanced weathering, biomass storage, and carbonated materials are removal types and are not folded into the nature-based chip. Everything else is `other`, including cookstoves and renewable energy.
+- **Removal versus avoidance** is VROD's `Reduction / Removal` column (`Reduction` → avoidance, `Removal` or long-duration removal → removal, `Mixed` → mixed). CSI and Puro rows are removals. The filter does not turn a C-sink into a tCO₂e.
 - **Not the 296-company map.** Fortet's LinkedIn post is the visual model. This layer does not reproduce that headcount. The buyer count is whatever the retirement tables name.
 
 ## Files
@@ -109,7 +154,8 @@ These are omissions, not fills.
 | Path | Role |
 |---|---|
 | `carbon-flows.json` | Derived dataset the globe loads |
-| `scripts/carbon/build_carbon_flows.py` | Download and rebuild |
+| `scripts/carbon/build_carbon_flows.py` | Download VROD and rebuild, including CSI and Puro |
+| `scripts/carbon/extra_sources.py` | Public CSI and Puro fetch. `npm run carbon:build:csi` snapshots CSI only |
 | `scripts/carbon/hq-cache.json` | Wikidata lookup cache |
 | `scripts/carbon/requirements.txt` | Python build dependency (`python-calamine`) |
 | `src/data/carbonFlows.js` | Cesium layer |

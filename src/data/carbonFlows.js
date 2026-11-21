@@ -8,6 +8,7 @@ import {
   countryProjects,
   defaultFilters,
   filterChoices,
+  formatCredit,
   formatTonnes,
   groupLabel,
   projectDetail,
@@ -257,7 +258,7 @@ export function createCarbonFlowsLayer() {
     head.append(
       el('p', 'carbon-kicker', 'Follow the carbon money'),
       el('h2', 'carbon-caption', summary.caption),
-      el('p', 'carbon-tonnes', `${formatTonnes(summary.tonnes)} retired`),
+      el('p', 'carbon-tonnes', `${creditLine(summary)} retired`),
     );
     panel.append(head);
 
@@ -272,6 +273,12 @@ export function createCarbonFlowsLayer() {
         ['nature', 'Nature-based'],
         ...choices.groups.map((group) => [group.id, group.label]),
       ], filters.group),
+      selectControl('removal', 'Removal or avoidance', [
+        ['', 'Removals and avoidance'],
+        ['removal', 'Removals'],
+        ['avoidance', 'Avoidance'],
+        ['mixed', 'Mixed'],
+      ], filters.removal || ''),
       selectControl('registry', 'Registry', [
         ['', 'All registries'],
         ...choices.registries.map((code) => [code, registryLabel(code)]),
@@ -307,6 +314,7 @@ export function createCarbonFlowsLayer() {
 
     const toggles = el('div', 'carbon-toggles');
     toggles.append(
+      toggleButton('biochar', filters.group === 'biochar' ? 'Biochar on' : 'Biochar', filters.group === 'biochar'),
       toggleButton('pacific', filters.pacific ? 'Pacific on' : 'Pacific projects', filters.pacific),
       toggleButton('cycle', _cycle ? 'Cycling countries' : 'Cycle countries', _cycle),
       toggleButton('low', filters.hideLowConfidence ? 'Hiding low confidence' : 'Hide low confidence', filters.hideLowConfidence),
@@ -327,6 +335,10 @@ export function createCarbonFlowsLayer() {
     link.target = '_blank';
     link.rel = 'noopener';
     foot.append(link);
+    const extraBits = [];
+    if (meta.extraSources?.csi) extraBits.push(`CSI public snapshot ${meta.extraSources.csi}`);
+    if (meta.extraSources?.puro) extraBits.push(`Puro public snapshot ${meta.extraSources.puro}`);
+    if (extraBits.length) foot.append(document.createTextNode(` ${extraBits.join(' · ')}.`));
     const counts = meta.counts || {};
     const gap = el('span', 'carbon-gap', ` ${counts.buyersUnplaced?.toLocaleString?.('en-US') || counts.buyersUnplaced || 0} named buyers have no placed headquarters.`);
     foot.append(gap);
@@ -354,6 +366,12 @@ export function createCarbonFlowsLayer() {
     return wrap;
   }
 
+  function creditLine(summary) {
+    const units = summary?.units || [];
+    if (!units.length) return formatCredit(summary?.tonnes || 0);
+    return units.map(([unit, value]) => formatCredit(value, unit)).join(' · ');
+  }
+
   function toggleButton(name, label, pressed) {
     const button = el('button', `carbon-chip${pressed ? ' is-on' : ''}`, label);
     button.type = 'button';
@@ -365,7 +383,7 @@ export function createCarbonFlowsLayer() {
   function paintDetail(container, filters) {
     container.replaceChildren();
     if (!_selection) {
-      container.append(el('p', 'carbon-hint', 'Click a buyer or a project country. Arcs run from a headquarters Wikidata could place to the project country. VROD has no project coordinates, so a country point is the whole host country. Names without a dot were published but not located.'));
+      container.append(el('p', 'carbon-hint', 'Click a buyer or a project country. Arcs run from a headquarters Wikidata could place to the project country. Opening one CSI or Puro project ends the arc at the published site. Names without a dot were published but not located.'));
       const leaders = topBuyers(_dataset, filters, 12);
       if (leaders.length) {
         container.append(el('p', 'carbon-detail-meta', 'Largest named buyers in this view'));
@@ -397,6 +415,10 @@ export function createCarbonFlowsLayer() {
       if (detail.variants?.length) {
         container.append(el('p', 'carbon-detail-meta', `Also recorded as ${detail.variants.join('; ')}`));
       }
+      const registries = [...new Set(detail.projects.map((project) => registryLabel(project.registry)).filter(Boolean))];
+      if (registries.length) {
+        container.append(el('p', 'carbon-detail-meta', `Registries: ${registries.join(', ')}`));
+      }
       container.append(projectTable(detail.projects));
       return;
     }
@@ -412,18 +434,30 @@ export function createCarbonFlowsLayer() {
       if (!detail) return;
       container.append(el('h3', 'carbon-detail-title', detail.name));
       container.append(el('p', 'carbon-detail-meta', `${detail.id} · ${registryLabel(detail.registry)} · ${detail.type} · ${detail.country || 'country unknown'}`));
+      if (detail.registry === 'CSI') container.append(el('p', 'carbon-badge', 'CSI C-Sink · time-dependent, not a tCO₂e avoidance credit'));
+      if (detail.registry === 'PURO') container.append(el('p', 'carbon-badge', 'Puro CORC · carbon removal'));
+      if (detail.removal === 'removal') container.append(el('p', 'carbon-badge', 'Removal'));
+      else if (detail.removal === 'avoidance') container.append(el('p', 'carbon-badge', 'Avoidance'));
+      else if (detail.removal === 'mixed') container.append(el('p', 'carbon-badge', 'Mixed removal and avoidance'));
+      if (detail.rating?.rating) {
+        container.append(el('p', 'carbon-badge', `${detail.rating.source || 'Rating'} ${detail.rating.rating}${detail.rating.date ? ` · ${detail.rating.date}` : ''}`));
+      }
       if (detail.site) container.append(el('p', 'carbon-detail-meta', detail.site));
       const seller = detail.developer || detail.operator || detail.owner;
       if (seller) {
         const role = detail.developer ? 'Developer / seller' : (detail.operator ? 'Operator / seller' : 'Owner / seller');
         container.append(el('p', 'carbon-detail-meta', `${role}: ${seller}`));
       } else {
-        container.append(el('p', 'carbon-detail-meta', 'No project developer or proponent in VROD for this project.'));
+        container.append(el('p', 'carbon-detail-meta', 'No seller recorded for this project.'));
       }
-      if (detail.issued || detail.retiredRegistry) {
-        container.append(el('p', 'carbon-detail-meta', `Registry totals: ${formatTonnes(detail.issued)} issued · ${formatTonnes(detail.retiredRegistry)} retired`));
+      if (detail.issued && detail.retiredRegistry) {
+        container.append(el('p', 'carbon-detail-meta', `Registry totals: ${formatCredit(detail.issued, detail.unit)} issued · ${formatCredit(detail.retiredRegistry, detail.unit)} retired`));
+      } else if (detail.issued) {
+        container.append(el('p', 'carbon-detail-meta', `Registry total: ${formatCredit(detail.issued, detail.unit)} issued`));
+      } else if (detail.retiredRegistry) {
+        container.append(el('p', 'carbon-detail-meta', `Retired in the public table: ${formatCredit(detail.retiredRegistry, detail.unit)}`));
       }
-      container.append(el('p', 'carbon-detail-meta', `Retirement records: ${formatTonnes(detail.tonnes)} named + ${formatTonnes(detail.undisclosed)} undisclosed = ${formatTonnes(detail.accountedTonnes)}`));
+      container.append(el('p', 'carbon-detail-meta', `Retirement records: ${formatCredit(detail.tonnes, detail.unit)} named + ${formatCredit(detail.undisclosed, detail.unit)} undisclosed = ${formatCredit(detail.accountedTonnes, detail.unit)}`));
       if (detail.vintages?.length) {
         const shown = detail.vintages.slice(0, 6).map(([year, issued, retired]) => `${year} ${formatTonnes(issued)} issued / ${formatTonnes(retired)} retired`);
         const extra = detail.vintages.length > 6 ? ` · +${detail.vintages.length - 6} years` : '';
@@ -436,7 +470,7 @@ export function createCarbonFlowsLayer() {
         button.dataset.carbonBuyer = String(buyer.buyerIndex);
         button.append(
           el('span', 'carbon-row-name', buyer.name),
-          el('span', 'carbon-row-meta', `${buyer.country || confidenceLabel(buyer.conf)} · ${buyer.years[0] || '—'}${buyer.years.length > 1 ? `–${buyer.years[buyer.years.length - 1]}` : ''} · ${formatTonnes(buyer.tonnes)}`),
+          el('span', 'carbon-row-meta', `${buyer.country || confidenceLabel(buyer.conf)} · ${buyer.years[0] || '—'}${buyer.years.length > 1 ? `–${buyer.years[buyer.years.length - 1]}` : ''} · ${formatCredit(buyer.tonnes, detail.unit)}`),
         );
         list.append(button);
       }
@@ -447,7 +481,7 @@ export function createCarbonFlowsLayer() {
         const row = el('div', 'carbon-row');
         row.append(
           el('span', 'carbon-row-name', 'Undisclosed buyer'),
-          el('span', 'carbon-row-meta', `Beneficiary left blank on the registry · ${formatTonnes(detail.undisclosed)}`),
+          el('span', 'carbon-row-meta', `Beneficiary left blank on the registry · ${formatCredit(detail.undisclosed, detail.unit)}`),
         );
         list.append(row);
       }
@@ -468,7 +502,7 @@ export function createCarbonFlowsLayer() {
       const place = project.country || countryName(_dataset, _dataset.projects[project.projectIndex]?.cc);
       button.append(
         el('span', 'carbon-row-name', project.name),
-        el('span', 'carbon-row-meta', `${project.id} · ${registryLabel(project.registry)} · ${groupLabel(_dataset, project.group) || project.type}${place ? ` · ${place}` : ''} · ${formatTonnes(project.tonnes)}`),
+        el('span', 'carbon-row-meta', `${project.id} · ${registryLabel(project.registry)} · ${groupLabel(_dataset, project.group) || project.type}${place ? ` · ${place}` : ''} · ${formatCredit(project.tonnes, project.unit)}`),
       );
       list.append(button);
     }
@@ -502,6 +536,12 @@ export function createCarbonFlowsLayer() {
     const toggle = event.target.closest?.('[data-carbon-toggle]');
     if (!toggle) return;
     const name = toggle.dataset.carbonToggle;
+    if (name === 'biochar') {
+      _filters = { ..._filters, group: _filters.group === 'biochar' ? '' : 'biochar' };
+      _selection = null;
+      renderScene();
+      return;
+    }
     if (name === 'pacific') {
       _filters = { ..._filters, pacific: !_filters.pacific };
       if (_filters.pacific) stopCycle();
@@ -539,7 +579,8 @@ export function createCarbonFlowsLayer() {
       next.buyerIndex = null;
       next.projectIndex = null;
       next.pacific = false;
-    } else if (name === 'group') next.group = select.value;
+    }     else if (name === 'group') next.group = select.value;
+    else if (name === 'removal') next.removal = select.value;
     else if (name === 'registry') next.registry = select.value;
     else if (name === 'year') next.year = select.value ? Number(select.value) : null;
     _filters = next;
@@ -554,6 +595,10 @@ export function createCarbonFlowsLayer() {
     _selection = { kind: 'project', projectIndex };
     renderScene();
     const project = _dataset?.projects?.[projectIndex];
+    if (Number.isFinite(project?.lat) && Number.isFinite(project?.lon)) {
+      flyTo(project.lon, project.lat, 1800000);
+      return;
+    }
     const country = project?.cc ? _dataset.countries?.[project.cc] : null;
     if (country) flyTo(country.lon, country.lat, 5500000);
   }

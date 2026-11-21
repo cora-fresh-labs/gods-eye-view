@@ -41,7 +41,8 @@
     "test": "node scripts/run-unit-tests.mjs",
     "test:track": "node scripts/track-regression.mjs",
     "qa:map-source-tray": "node scripts/qa-map-source-tray.mjs",
-    "carbon:build": "python3 scripts/carbon/build_carbon_flows.py"
+    "carbon:build": "python3 scripts/carbon/build_carbon_flows.py",
+    "carbon:build:csi": "python3 scripts/carbon/extra_sources.py --only csi"
   },
   "dependencies": {
     "@mapbox/vector-tile": "^3.0.0",

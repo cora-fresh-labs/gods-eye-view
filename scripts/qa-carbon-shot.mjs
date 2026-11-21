@@ -3,13 +3,26 @@
  * Capture the carbon-flows layer: globe arcs, one buyer country, Pacific.
  * Usage: node scripts/qa-carbon-shot.mjs [--url http://localhost:4173]
  */
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, readFileSync } from 'node:fs';
 import puppeteer from 'puppeteer';
 
 const argv = process.argv;
 const url = argv.includes('--url') ? argv[argv.indexOf('--url') + 1] : 'http://localhost:4173';
 const outDir = new URL('../docs/media/carbon/', import.meta.url);
 mkdirSync(outDir, { recursive: true });
+
+function projectPhrase(registry) {
+  const dataset = JSON.parse(readFileSync(new URL('../src/data/local_data/carbon/carbon-flows.json', import.meta.url), 'utf8'));
+  const buyers = new Map();
+  for (const flow of dataset.flows) {
+    const project = dataset.projects[flow[1]];
+    if (project?.registry !== registry) continue;
+    buyers.set(flow[1], (buyers.get(flow[1]) || 0) + 1);
+  }
+  const best = [...buyers.entries()].sort((a, b) => b[1] - a[1])[0];
+  if (!best) return null;
+  return `who bought from ${dataset.projects[best[0]].id}`;
+}
 
 const browser = await puppeteer.launch({
   headless: 'new',
@@ -118,9 +131,41 @@ try {
       setup: () => ({ buyerCountry: '', buyerIndex: null, projectIndex: null, pacific: true, group: '', registry: '', year: null }),
       camera: null,
     },
+    {
+      name: 'biochar',
+      file: 'biochar.png',
+      setup: () => ({
+        buyerCountry: '', buyerIndex: null, projectIndex: null, pacific: false,
+        group: 'biochar', removal: '', registry: '', year: null,
+      }),
+      camera: { lon: 12, lat: 18, height: 20_000_000 },
+    },
+    {
+      name: 'puro-project',
+      file: 'puro-project.png',
+      phrase: projectPhrase('PURO'),
+    },
+    {
+      name: 'isometric-project',
+      file: 'isometric-project.png',
+      phrase: projectPhrase('ISO'),
+    },
+    {
+      name: 'microsoft',
+      file: 'microsoft.png',
+      phrase: 'Microsoft',
+    },
   ];
 
+  const only = argv.includes('--only')
+    ? new Set(argv[argv.indexOf('--only') + 1].split(','))
+    : null;
   for (const shot of shots) {
+    if (only && !only.has(shot.name)) continue;
+    if (!shot.phrase && !shot.setup) {
+      console.log(shot.name, 'skipped, no matching project');
+      continue;
+    }
     const summary = await page.evaluate((shot) => {
       const layer = window.__godsEyeView.dataManager.layers.get('carbon-flows').module;
       let lookup = null;

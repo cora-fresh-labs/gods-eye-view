@@ -2510,6 +2510,11 @@
   "hits": [],
   "label": "annullamento certificati per il Q1-2026 da parte di Acea Energia SPA per i clienti MM comprensivi dei prodotti WINDTRE."
  },
+ "anonymous buyer": {
+  "cap": "high",
+  "hits": [],
+  "label": "Anonymous Buyer"
+ },
  "anonymous organization for the benefit of the fond du lac band of lake superior chippewa": {
   "cap": "high",
   "hits": [],
@@ -3787,6 +3792,20 @@
   "hits": [],
   "label": "Aveena"
  },
+ "avery dennison": {
+  "cap": "high",
+  "hits": [
+   {
+    "cc": "US",
+    "has_hq": true,
+    "hq": "Glendale",
+    "lat": 34.1708,
+    "lon": -118.25,
+    "qid": "Q790650"
+   }
+  ],
+  "label": "Avery Dennison"
+ },
  "avfuel": {
   "cap": "high",
   "hits": [],
@@ -4559,6 +4578,11 @@
   "cap": "high",
   "hits": [],
   "label": "Banque Nationale du Canada"
+ },
+ "banque pictet and cie": {
+  "cap": "high",
+  "hits": [],
+  "label": "Banque Pictet & Cie SA"
  },
  "baoji geely automobile parts": {
   "cap": "high",
@@ -5447,6 +5471,11 @@
   "hits": [],
   "label": "BL Whiteley Limited"
  },
+ "black rock": {
+  "cap": "high",
+  "hits": [],
+  "label": "BLACK ROCK INC"
+ },
  "blackbaud": {
   "cap": "high",
   "hits": [],
@@ -5657,6 +5686,11 @@
   "cap": "high",
   "hits": [],
   "label": "BMT Global"
+ },
+ "bmw group": {
+  "cap": "high",
+  "hits": [],
+  "label": "BMW Group"
  },
  "bnp paribas": {
   "cap": "high",
@@ -7516,6 +7550,11 @@
   "cap": "medium",
   "hits": [],
   "label": "CEEZER TradeCo"
+ },
+ "celonis": {
+  "cap": "high",
+  "hits": [],
+  "label": "Celonis SE"
  },
  "celonis deutschland": {
   "cap": "high",
@@ -11032,6 +11071,20 @@
   "hits": [],
   "label": "Deutsche Telekom AG"
  },
+ "deutsche telekom|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "DE",
+    "has_hq": true,
+    "hq": "Bonn",
+    "lat": 50.7353,
+    "lon": 7.1022,
+    "qid": "Q9396"
+   }
+  ],
+  "label": "Deutsche Telekom"
+ },
  "dexus": {
   "cap": "high",
   "hits": [
@@ -13936,6 +13989,20 @@
   "hits": [],
   "label": "Euro-Pro"
  },
+ "euroclear": {
+  "cap": "high",
+  "hits": [
+   {
+    "cc": "",
+    "has_hq": true,
+    "hq": "Brussels metropolitan area",
+    "lat": 50.8467,
+    "lon": 4.3525,
+    "qid": "Q281619"
+   }
+  ],
+  "label": "Euroclear"
+ },
  "eurofarma laborat rios s a": {
   "cap": "high",
   "hits": [],
@@ -14410,6 +14477,11 @@
   "cap": "high",
   "hits": [],
   "label": "FARGOLINE S.A."
+ },
+ "farmers that participated in the project by using soil amendment fibres in 2021": {
+  "cap": "high",
+  "hits": [],
+  "label": "Farmers that participated in the project by using soil amendment fibres in 2021"
  },
  "farmlink project": {
   "cap": "high",
@@ -23416,6 +23488,20 @@
   "hits": [],
   "label": "Mercedes-AMG PETRONAS Formula 1 Team"
  },
+ "mercedes benz": {
+  "cap": "high",
+  "hits": [
+   {
+    "cc": "DE",
+    "has_hq": true,
+    "hq": "Stuttgart",
+    "lat": 48.7775,
+    "lon": 9.18,
+    "qid": "Q76754241"
+   }
+  ],
+  "label": "Mercedes-Benz AG"
+ },
  "mercedes benz u s international": {
   "cap": "high",
   "hits": [],
@@ -23825,6 +23911,11 @@
   "cap": "high",
   "hits": [],
   "label": "Mitsubishi Corporation Energy Co., Ltd."
+ },
+ "mitsui o s k lines": {
+  "cap": "high",
+  "hits": [],
+  "label": "Mitsui O.S.K. Lines, Ltd."
  },
  "mk management trustee 1": {
   "cap": "high",
@@ -24251,6 +24342,20 @@
   "cap": "high",
   "hits": [],
   "label": "NASDAQ, Inc."
+ },
+ "nasdaq|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "US",
+    "has_hq": true,
+    "hq": "One Liberty Plaza",
+    "lat": 40.7097,
+    "lon": -74.0108,
+    "qid": "Q82059"
+   }
+  ],
+  "label": "Nasdaq"
  },
  "natal s inc dba ritual": {
   "cap": "high",
@@ -24768,6 +24873,16 @@
   "cap": "medium",
   "hits": [],
   "label": "Nestrade"
+ },
+ "net zero richardton": {
+  "cap": "high",
+  "hits": [],
+  "label": "Net-Zero Richardton LLC"
+ },
+ "net zero richardton|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Net-Zero Richardton"
  },
  "netflix": {
   "cap": "high",
@@ -27034,6 +27149,11 @@
   "hits": [],
   "label": "Ovo Energy OVOENERG"
  },
+ "oxford north phase 1a": {
+  "cap": "high",
+  "hits": [],
+  "label": "OXFORD NORTH PHASE 1A LP"
+ },
  "oxy": {
   "cap": "high",
   "hits": [],
@@ -27311,6 +27431,11 @@
   "cap": "high",
   "hits": [],
   "label": "Patch buyers"
+ },
+ "patch customer": {
+  "cap": "high",
+  "hits": [],
+  "label": "Patch customer"
  },
  "patch retiring on behalf of client": {
   "cap": "high",
@@ -29200,6 +29325,16 @@
   "cap": "high",
   "hits": [],
   "label": "Red Fire Engineers"
+ },
+ "red trail energy": {
+  "cap": "high",
+  "hits": [],
+  "label": "Red Trail Energy LLC"
+ },
+ "red trail energy|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Red Trail Energy"
  },
  "redefine properties": {
   "cap": "high",
@@ -32139,6 +32274,32 @@
   "hits": [],
   "label": "Derwent London Plc"
  },
+ "search:deutsche telekom ag": {
+  "cap": "medium",
+  "hit": {
+   "cc": "DE",
+   "conf": "medium",
+   "has_hq": true,
+   "hq": "Bonn",
+   "lat": 50.7353,
+   "lon": 7.1022,
+   "method": "wikidata-search",
+   "qid": "Q9396"
+  },
+  "hits": [
+   {
+    "cc": "DE",
+    "conf": "medium",
+    "has_hq": true,
+    "hq": "Bonn",
+    "lat": 50.7353,
+    "lon": 7.1022,
+    "method": "wikidata-search",
+    "qid": "Q9396"
+   }
+  ],
+  "label": "Deutsche Telekom AG"
+ },
  "search:diamondback energy inc": {
   "cap": "medium",
   "hit": null,
@@ -32934,6 +33095,32 @@
   "hit": null,
   "hits": [],
   "label": "NARITA INTERNATIONAL AIRPORT CORPORATION"
+ },
+ "search:nasdaq inc": {
+  "cap": "medium",
+  "hit": {
+   "cc": "US",
+   "conf": "medium",
+   "has_hq": true,
+   "hq": "New York City",
+   "lat": 40.7128,
+   "lon": -74.0061,
+   "method": "wikidata-search",
+   "qid": "Q1472929"
+  },
+  "hits": [
+   {
+    "cc": "US",
+    "conf": "medium",
+    "has_hq": true,
+    "hq": "New York City",
+    "lat": 40.7128,
+    "lon": -74.0061,
+    "method": "wikidata-search",
+    "qid": "Q1472929"
+   }
+  ],
+  "label": "Nasdaq, Inc."
  },
  "search:national australia bank limited": {
   "cap": "medium",
@@ -33866,6 +34053,11 @@
   ],
   "label": "SEAT"
  },
+ "seb": {
+  "cap": "high",
+  "hits": [],
+  "label": "SEB AB"
+ },
  "sedgwick new zealand": {
   "cap": "high",
   "hits": [],
@@ -34726,6 +34918,11 @@
   "hits": [],
   "label": "SK Pharmteco"
  },
+ "skandinaviska enskilda banken ab publ": {
+  "cap": "high",
+  "hits": [],
+  "label": "Skandinaviska Enskilda Banken AB (publ)"
+ },
  "skidmore owings and merrill som": {
   "cap": "high",
   "hits": [],
@@ -34867,6 +35064,20 @@
    }
   ],
   "label": "The Smith Family"
+ },
+ "snap": {
+  "cap": "high",
+  "hits": [
+   {
+    "cc": "US",
+    "has_hq": true,
+    "hq": "Santa Monica",
+    "lat": 34.0219,
+    "lon": -118.4814,
+    "qid": "Q27022329"
+   }
+  ],
+  "label": "Snap Inc."
  },
  "snyk": {
   "cap": "high",
@@ -35793,6 +36004,11 @@
   "cap": "high",
   "hits": [],
   "label": "State Grid Shanghai Municipal Electric Power Company"
+ },
+ "state of the netherlands": {
+  "cap": "high",
+  "hits": [],
+  "label": "The State of the Netherlands"
  },
  "state street": {
   "cap": "high",
@@ -37383,6 +37599,11 @@
   "cap": "high",
   "hits": [],
   "label": "Tide Navigation S.A."
+ },
+ "tide platform": {
+  "cap": "high",
+  "hits": [],
+  "label": "Tide Platform Limited"
  },
  "tiffany and": {
   "cap": "high",
@@ -41035,6 +41256,11 @@
   "cap": "high",
   "hits": [],
   "label": "XTM Performance"
+ },
+ "xtx markets technologies": {
+  "cap": "high",
+  "hits": [],
+  "label": "XTX Markets Technologies Ltd"
  },
  "y o energy retail": {
   "cap": "high",

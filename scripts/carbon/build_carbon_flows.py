@@ -107,6 +107,14 @@ GROUP_LABEL = {
     'blue': 'Wetland / blue carbon',
     'soil': 'Soil',
     'biochar': 'Biochar',
+    'tree': 'Tree',
+    'construction': 'Construction',
+    'artisan': 'Artisan',
+    'dac': 'DAC / geologic storage',
+    'beccs': 'BECCS',
+    'erw': 'Enhanced weathering',
+    'biomass': 'Biomass storage',
+    'mineral': 'Carbonated materials',
     'other': 'Other',
 }
 
@@ -358,6 +366,19 @@ def blank(value) -> bool:
         return True
     text = str(value).strip()
     return text == '' or text.lower() in {'none', 'null', 'n/a', 'na', '-'}
+
+
+def removal_class(value) -> str:
+    text = clean_name(value).casefold()
+    if not text:
+        return ''
+    if 'mixed' in text:
+        return 'mixed'
+    if 'removal' in text:
+        return 'removal'
+    if 'reduction' in text:
+        return 'avoidance'
+    return ''
 
 
 def repair_mojibake(text: str) -> str:
@@ -864,6 +885,12 @@ def main() -> int:
             'vintages': [],
             'undisclosed': 0,
             'undisclosed_years': set(),
+            'lat': None,
+            'lon': None,
+            'unit': 'tCO2e',
+            'removal': removal_class(cell(row, headers, 'Reduction / Removal')),
+            'standard': '',
+            'status': '',
         }
         vintages = []
         for year in range(YEAR0, YEAR1 + 1):
@@ -1122,6 +1149,63 @@ def main() -> int:
     consume('Isometric Retirement Batches', iso_loader)
     consume('Verra VCS Retirements', verra_loader)
 
+    snapshot_dir = CACHE / 'snapshots'
+    snapshot_dir.mkdir(parents=True, exist_ok=True)
+    extra_sources_dir = Path(__file__).resolve().parent
+    if str(extra_sources_dir) not in sys.path:
+        sys.path.insert(0, str(extra_sources_dir))
+    from extra_sources import fetch_csi, fetch_puro, normalise
+    csi_payload = puro_payload = None
+    try:
+        csi_payload = fetch_csi(snapshot_dir)
+    except Exception as error:  # noqa: BLE001
+        log(f'CSI public fetch failed: {error}')
+    try:
+        puro_payload = fetch_puro(snapshot_dir)
+    except Exception as error:  # noqa: BLE001
+        log(f'Puro public fetch failed: {error}')
+    extra = normalise(csi_payload, puro_payload)
+    extra_skipped = extra.get('skipped') or []
+    for record in extra.get('projects') or []:
+        projects[record['id']] = {
+            'id': record['id'],
+            'name': record.get('name') or record['id'],
+            'registry': record.get('registry') or '',
+            'country': '',
+            'cc': record.get('cc') or '',
+            'type': record.get('type') or '',
+            'group': record.get('group') or 'other',
+            'state': '',
+            'site': '',
+            'developer': record.get('developer') or '',
+            'owner': '',
+            'operator': '',
+            'issued': record.get('issued') or 0,
+            'retiredRegistry': record.get('retired') or 0,
+            'vintages': [],
+            'undisclosed': 0,
+            'undisclosed_years': set(),
+            'lat': record.get('lat'),
+            'lon': record.get('lon'),
+            'unit': record.get('unit') or 'tCO2e',
+            'removal': record.get('removal') or 'removal',
+            'standard': record.get('standard') or '',
+            'status': record.get('status') or '',
+        }
+    for row in extra.get('retirements') or []:
+        if row.get('tonnes', 0) <= 0 or row.get('project_id') not in projects:
+            continue
+        if not row.get('buyer'):
+            projects[row['project_id']]['undisclosed'] += row['tonnes']
+            if row.get('year'):
+                projects[row['project_id']]['undisclosed_years'].add(row['year'])
+            continue
+        entry = ensure_buyer(row['buyer'])
+        if entry is None:
+            continue
+        add_flow(entry, row['project_id'], row['tonnes'], row.get('year'), '', '', '', '', False)
+    log(f'extra projects {len(extra.get("projects") or [])} retirements {len(extra.get("retirements") or [])}')
+
     log(f'buyers {len(buyers)} stats {dict(stats)}')
 
     # Wikidata: buyers at or above the tonne floor, and every Pacific buyer
@@ -1289,6 +1373,11 @@ def main() -> int:
             'vintages': project.get('vintages') or [],
             'undisclosed': project.get('undisclosed') or 0,
             'undisclosedMask': year_mask(project.get('undisclosed_years') or set()),
+            'lat': project.get('lat'),
+            'lon': project.get('lon'),
+            'unit': project.get('unit') or 'tCO2e',
+            'removal': project.get('removal') or '',
+            'standard': project.get('standard') or '',
         })
 
     buyer_records_src = placed + unplaced
@@ -1349,7 +1438,7 @@ def main() -> int:
         'projectLocation': {
             'method': 'natural-earth-50m-label-point',
             'source': 'Natural Earth 50m admin-0 countries (public domain)',
-            'note': 'VROD publishes a project country and site description, not coordinates. Arc ends are the country label point, not the project site.',
+            'note': 'VROD publishes a project country and site description, not coordinates, so those arcs end at the country label point. CSI and Puro coordinates are stored when the public record includes them, and a single-project view ends the arc at that site.',
         },
         'buyerLocation': {
             'cityGazetteer': 'GeoNames cities5000 (CC BY 4.0)',
@@ -1363,6 +1452,11 @@ def main() -> int:
         'pacificExcluded': ['AU', 'NZ'],
         'year0': YEAR0,
         'year1': YEAR1,
+        'skippedSources': extra_skipped,
+        'extraSources': {
+            'csi': (csi_payload or {}).get('retrieved'),
+            'puro': (puro_payload or {}).get('retrieved'),
+        },
         'counts': {
             'buyersPlaced': len(placed),
             'buyersInFile': len(buyer_out),
@@ -1426,6 +1520,15 @@ def main() -> int:
             project.pop('issued')
         if not project['retiredRegistry']:
             project.pop('retiredRegistry')
+        if project.get('lat') is None or project.get('lon') is None:
+            project.pop('lat', None)
+            project.pop('lon', None)
+        if not project.get('removal'):
+            project.pop('removal', None)
+        if not project.get('standard'):
+            project.pop('standard', None)
+        if project.get('unit') in (None, '', 'tCO2e'):
+            project.pop('unit', None)
 
     payload = {
         'meta': meta,

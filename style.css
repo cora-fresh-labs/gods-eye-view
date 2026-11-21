@@ -9556,6 +9556,18 @@ body.scene-playback-mode #key-setup {
   line-height: 1.25;
   font-weight: 650;
 }
+.carbon-badge {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: #d5f5e3;
+  background: rgba(39, 174, 96, 0.18);
+  border: 1px solid rgba(125, 206, 160, 0.45);
+  border-radius: 999px;
+  padding: 3px 8px;
+  width: fit-content;
+}
 .carbon-tonnes {
   margin-top: 4px;
   color: var(--text-secondary);

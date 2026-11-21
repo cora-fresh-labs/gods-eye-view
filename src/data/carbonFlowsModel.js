@@ -7,7 +7,7 @@
 export const YEAR0 = 1996;
 export const YEAR1 = 2026;
 
-export const NATURE_GROUPS = Object.freeze(['redd', 'arr', 'ifm', 'blue', 'soil', 'biochar']);
+export const NATURE_GROUPS = Object.freeze(['redd', 'arr', 'ifm', 'blue', 'soil', 'biochar', 'tree']);
 
 const REGISTRY_LABELS = Object.freeze({
   VCS: 'Verra',
@@ -16,6 +16,8 @@ const REGISTRY_LABELS = Object.freeze({
   CAR: 'CAR',
   ART: 'ART',
   ISO: 'Isometric',
+  CSI: 'CSI C-Sink',
+  PURO: 'Puro',
 });
 
 /** @returns {object} Filter state. Empty strings and nulls mean "all". */
@@ -29,6 +31,7 @@ export function defaultFilters() {
     pacific: false,
     hideLowConfidence: false,
     projectIndex: null,
+    removal: '',
   };
 }
 
@@ -75,6 +78,20 @@ export function formatTonnes(value) {
   return `${Math.round(tonnes).toLocaleString('en-US')} t`;
 }
 
+const UNIT_SUFFIX = {
+  tCO2e: 'CO₂e',
+  'c-sink': 'C-sink',
+  corc: 'CORC',
+};
+
+/** Quantity plus the credit unit. C-sinks are not labelled as avoidance tonnes. */
+export function formatCredit(value, unit = 'tCO2e') {
+  const base = formatTonnes(value);
+  const suffix = UNIT_SUFFIX[unit] || UNIT_SUFFIX.tCO2e;
+  if (base.endsWith(' t')) return `${base.slice(0, -2)} ${suffix}`;
+  return `${base} ${suffix}`;
+}
+
 function buyerOf(dataset, index) {
   return dataset?.buyers?.[index] || null;
 }
@@ -101,6 +118,7 @@ export function flowMatches(dataset, flow, filters) {
   if (filters?.registry && project.registry !== filters.registry) return false;
   if (filters?.group === 'nature' && !NATURE_GROUPS.includes(project.group)) return false;
   if (filters?.group && filters.group !== 'nature' && project.group !== filters.group) return false;
+  if (filters?.removal && project.removal !== filters.removal) return false;
   if (filters?.year != null && !maskHasYear(flow[3], filters.year)) return false;
   return true;
 }
@@ -146,18 +164,22 @@ export function summarize(dataset, filters) {
   const projectIds = new Set();
   const projectCountries = new Set();
   let tonnes = 0;
+  const units = new Map();
   for (const flow of matchingFlows(dataset, active)) {
     buyerIds.add(flow[0]);
     projectIds.add(flow[1]);
     const project = projectOf(dataset, flow[1]);
     if (project?.cc) projectCountries.add(project.cc);
     tonnes += flow[2];
+    const unit = project?.unit || 'tCO2e';
+    units.set(unit, (units.get(unit) || 0) + flow[2]);
   }
   const summary = {
     buyers: buyerIds.size,
     projects: projectIds.size,
     projectCountries: projectCountries.size,
     tonnes,
+    units: [...units.entries()].sort((a, b) => b[1] - a[1]),
     buyerCountryName: active.buyerCountry ? countryName(dataset, active.buyerCountry) : '',
     pacific: active.pacific === true,
   };
@@ -198,10 +220,12 @@ export function arcsFor(dataset, filters, limit = 500) {
   for (const flow of matchingFlows(dataset, active)) {
     const buyer = buyerOf(dataset, flow[0]);
     const project = projectOf(dataset, flow[1]);
-    if (buyer?.lon == null || buyer?.lat == null || !project?.cc) continue;
+    if (buyer?.lon == null || buyer?.lat == null) continue;
+    const site = active.projectIndex != null
+      && Number.isFinite(project.lat) && Number.isFinite(project.lon);
     const country = dataset.countries?.[project.cc];
-    if (!country) continue;
-    const key = `${flow[0]}|${project.cc}`;
+    if (!site && !country) continue;
+    const key = site ? `${flow[0]}|site|${flow[1]}` : `${flow[0]}|${project.cc}`;
     let arc = grouped.get(key);
     if (!arc) {
       arc = {
@@ -212,8 +236,8 @@ export function arcsFor(dataset, filters, limit = 500) {
         projects: 0,
         lon1: buyer.lon,
         lat1: buyer.lat,
-        lon2: country.lon,
-        lat2: country.lat,
+        lon2: site ? project.lon : country.lon,
+        lat2: site ? project.lat : country.lat,
         conf: buyer.conf || '',
       };
       grouped.set(key, arc);
@@ -256,6 +280,7 @@ export function buyerDetail(dataset, buyerIndex, filters) {
         type: project.type,
         group: project.group,
         registry: project.registry,
+        unit: project.unit || 'tCO2e',
         tonnes: row.tonnes,
         years: yearsForFlows(row.flows),
       };
@@ -317,6 +342,10 @@ export function projectDetail(dataset, projectIndex, filters) {
     type: project.type,
     group: project.group,
     registry: project.registry,
+    unit: project.unit || 'tCO2e',
+    removal: project.removal || '',
+    standard: project.standard || '',
+    rating: project.rating || null,
     site: project.site || '',
     developer: project.developer || '',
     owner: project.owner || '',

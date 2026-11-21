@@ -6,6 +6,7 @@ import {
   buyerDetail,
   defaultFilters,
   flowMatches,
+  formatCredit,
   formatTonnes,
   maskHasYear,
   projectDetail,
@@ -112,6 +113,39 @@ test('spoken phrasings route to a buyer or a project', () => {
   const spoken = resolveCarbonQuery(dataset, 'who bought from Highlands');
   assert.equal(spoken.kind, 'project');
   assert.equal(spoken.hits[0].name, 'Highlands');
+});
+
+test('a removal filter and a biochar project keep their own credit unit', () => {
+  const local = {
+    ...dataset,
+    projects: [
+      { ...dataset.projects[0], removal: 'avoidance' },
+      dataset.projects[1],
+      {
+        id: 'PURO:1',
+        name: 'Kiln',
+        cc: 'PG',
+        type: 'Biochar',
+        group: 'biochar',
+        registry: 'PURO',
+        removal: 'removal',
+        unit: 'corc',
+        lat: -6.1,
+        lon: 145.4,
+      },
+    ],
+    flows: [...dataset.flows, [0, 2, 40, 1 << (2024 - 1996)]],
+  };
+  const removal = summarize(local, { ...defaultFilters(), removal: 'removal' });
+  assert.equal(removal.projects, 1);
+  assert.equal(removal.tonnes, 40);
+  const biochar = summarize(local, { ...defaultFilters(), group: 'biochar' });
+  assert.equal(biochar.projects, 1);
+  const arcs = arcsFor(local, { ...defaultFilters(), projectIndex: 2 });
+  assert.equal(arcs[0].lon2, 145.4);
+  assert.equal(arcs[0].lat2, -6.1);
+  assert.equal(formatCredit(40, 'corc'), '40 CORC');
+  assert.equal(formatCredit(1250000, 'c-sink'), '1.25 Mt C-sink');
 });
 
 test('company search needs two characters and prefers a prefix', () => {

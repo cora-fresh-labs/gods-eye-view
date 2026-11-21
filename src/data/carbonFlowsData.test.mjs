@@ -73,6 +73,23 @@ test('Qantas, Shell, and April Salumei resolve after the name merge', () => {
   assert.ok(nespresso.variants.some((name) => /on behalf of nespresso/i.test(name)));
 });
 
+test('CSI and Puro public removals sit beside VROD, and Microsoft is one buyer', () => {
+  const csi = dataset.projects.filter((project) => project.registry === 'CSI');
+  const puro = dataset.projects.filter((project) => project.registry === 'PURO');
+  assert.ok(csi.length > 0, 'CSI public projects');
+  assert.ok(puro.length > 0, 'Puro public projects');
+  assert.ok(csi.some((project) => project.group === 'biochar' && project.unit === 'c-sink' && project.removal === 'removal'));
+  assert.ok(puro.some((project) => project.unit === 'corc' && project.removal === 'removal'));
+  assert.ok(csi.some((project) => Number.isFinite(project.lat) && Number.isFinite(project.lon)));
+  const microsoft = dataset.buyers.filter((buyer) => buyer.name === 'Microsoft');
+  assert.equal(microsoft.length, 1);
+  const index = dataset.buyers.indexOf(microsoft[0]);
+  const registries = new Set(dataset.flows.filter((flow) => flow[0] === index).map((flow) => dataset.projects[flow[1]].registry));
+  assert.ok(registries.size > 1, `Microsoft registries: ${[...registries].join(',')}`);
+  assert.ok((dataset.meta.skippedSources || []).some((row) => row.name === 'Isometric Registry'));
+  assert.ok((dataset.meta.skippedSources || []).some((row) => row.name === 'BeZero'));
+});
+
 test('Papua New Guinea REDD+ projects are in the file and the Pacific caption counts buyers', () => {
   const png = dataset.projects.filter((project) => project.cc === 'PG' && project.group === 'redd');
   assert.ok(png.some((project) => project.id === 'VCS1122'));

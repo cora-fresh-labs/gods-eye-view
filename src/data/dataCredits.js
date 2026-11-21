@@ -182,7 +182,11 @@ export const DATA_CREDITS = [
       'Xinyun Rong, Ivy S So, Micah Elias. (2026). Voluntary Registry Offsets Database v2026-08, ' +
       'Berkeley Carbon Trading Project, University of California, Berkeley. ' +
       '<a href="https://gspp.berkeley.edu/berkeley-carbon-trading-project/offsets-database" target="_blank" rel="noopener">gspp.berkeley.edu</a> ' +
-      '(CC BY 4.0). Headquarters: Wikidata. The v2026-08 registry city and ' +
+      '(CC BY 4.0). CSI C-Sinks from the public Global C-Sink Registry ' +
+      '<a href="https://global-c-registry.org/" target="_blank" rel="noopener">global-c-registry.org</a>. ' +
+      'Puro CORCs from the public registry pages at ' +
+      '<a href="https://registry.puro.earth/" target="_blank" rel="noopener">registry.puro.earth</a>. ' +
+      'Headquarters: Wikidata. The v2026-08 registry city and ' +
       'country columns were empty, so GeoNames was not used for this file. ' +
       'Country label points: Natural Earth (public domain).',
   },
