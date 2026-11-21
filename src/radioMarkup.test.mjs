@@ -163,6 +163,10 @@ test('no unchanged Realtime tool definition drifts silently', () => {
   // to a shipped tool changes
   // model behavior in production with nothing in review to catch it.
   //
+  // Re-derived 2026-11-21 after set_layer_visibility and show_data_layers_menu
+  // gained the carbon-flows layer id (and the visibility tool's common-name
+  // note). The session cache busts on any schema change.
+  //
   // If this fails and the change was deliberate, re-derive the digest and say
   // in the mic-test brief which tools moved — the session cache busts on any
   // schema change.
@@ -183,7 +187,7 @@ test('no unchanged Realtime tool definition drifts silently', () => {
     .update(JSON.stringify(unchanged))
     .digest('hex')
     .slice(0, 16);
-  assert.equal(digest, '802ed694b8887b88', 'an unchanged Realtime tool definition drifted');
+  assert.equal(digest, 'f23358cdf152773c', 'an unchanged Realtime tool definition drifted');
 });
 
 test('Radio volume and mission speed share the Sharpen slider visual language', () => {

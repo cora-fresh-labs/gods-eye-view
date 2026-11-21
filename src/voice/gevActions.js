@@ -176,6 +176,10 @@ const LAYER_ALIASES = new Map([
   ['firms', 'local-firms'],
   ['fires', 'local-firms'],
   ['active fires', 'local-firms'],
+  ['carbon', 'carbon-flows'],
+  ['carbon flows', 'carbon-flows'],
+  ['carbon credits', 'carbon-flows'],
+  ['follow the carbon money', 'carbon-flows'],
 ]);
 
 const CITY_ALIASES = new Map([
@@ -3273,6 +3277,7 @@ function layerTitle(layerId) {
   if (layerId === 'local-dams') return 'Dam';
   if (layerId === 'telegeography-submarine-cables') return 'Submarine Cable';
   if (layerId === 'local-firms') return 'Active Fire';
+  if (layerId === 'carbon-flows') return 'Carbon Flow';
   return layerId || 'Entity';
 }
 

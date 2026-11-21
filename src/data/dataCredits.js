@@ -175,6 +175,17 @@ export const DATA_CREDITS = [
       '<a href="https://www.submarinecablemap.com" target="_blank" rel="noopener">submarinecablemap.com</a> ' +
       '(CC BY-NC-SA 3.0 — NonCommercial)',
   },
+  {
+    key: 'carbon-flows',
+    html:
+      'Carbon-credit flows: Pamela Quartson, Barbara K Haya, Tyler Bernard, Aline Abayo, ' +
+      'Xinyun Rong, Ivy S So, Micah Elias. (2026). Voluntary Registry Offsets Database v2026-08, ' +
+      'Berkeley Carbon Trading Project, University of California, Berkeley. ' +
+      '<a href="https://gspp.berkeley.edu/berkeley-carbon-trading-project/offsets-database" target="_blank" rel="noopener">gspp.berkeley.edu</a> ' +
+      '(CC BY 4.0). Headquarters: Wikidata. The v2026-08 registry city and ' +
+      'country columns were empty, so GeoNames was not used for this file. ' +
+      'Country label points: Natural Earth (public domain).',
+  },
 ];
 
 /**
