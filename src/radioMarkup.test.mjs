@@ -21,11 +21,12 @@ function realtimeTools() {
   return new Function(`return ${literal};`)();
 }
 
-test('Realtime schema exposes the authoritative 28-tool inventory', () => {
+test('Realtime schema exposes the authoritative 29-tool inventory', () => {
   const tools = realtimeTools();
-  assert.equal(tools.length, 28);
+  assert.equal(tools.length, 29);
   const names = tools.map((tool) => tool.name);
-  assert.equal(new Set(names).size, 28, 'tool names are unique');
+  assert.equal(new Set(names).size, 29, 'tool names are unique');
+  assert.ok(names.includes('lookup_carbon'));
   assert.ok(names.includes('set_context_mode'));
   assert.ok(names.includes('control_cockpit'));
   assert.ok(names.includes('select_nearest_aircraft'));
@@ -163,9 +164,9 @@ test('no unchanged Realtime tool definition drifts silently', () => {
   // to a shipped tool changes
   // model behavior in production with nothing in review to catch it.
   //
-  // Re-derived 2026-11-21 after set_layer_visibility and show_data_layers_menu
-  // gained the carbon-flows layer id (and the visibility tool's common-name
-  // note). The session cache busts on any schema change.
+  // Re-derived 2026-11-21 after lookup_carbon was added and the layer
+  // visibility enums gained carbon-flows. The session cache busts on any
+  // schema change.
   //
   // If this fails and the change was deliberate, re-derive the digest and say
   // in the mic-test brief which tools moved — the session cache busts on any
@@ -182,12 +183,12 @@ test('no unchanged Realtime tool definition drifts silently', () => {
   const unchanged = realtimeTools()
     .filter((tool) => !TOUCHED.has(tool.name))
     .sort((a, b) => a.name.localeCompare(b.name));
-  assert.equal(unchanged.length, 21);
+  assert.equal(unchanged.length, 22);
   const digest = createHash('sha256')
     .update(JSON.stringify(unchanged))
     .digest('hex')
     .slice(0, 16);
-  assert.equal(digest, 'f23358cdf152773c', 'an unchanged Realtime tool definition drifted');
+  assert.equal(digest, 'a5fa6bd7e1d515e6', 'an unchanged Realtime tool definition drifted');
 });
 
 test('Radio volume and mission speed share the Sharpen slider visual language', () => {

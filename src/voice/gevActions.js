@@ -817,6 +817,25 @@ export function createGevActionRunner({ viewer, styleManager, dataManager, scene
       return nextIssPass(viewer, args);
     }
 
+    if (name === 'lookup_carbon') {
+      const query = String(args.query || args.text || '').trim();
+      if (!query) {
+        return { ok: false, action: 'lookup_carbon', error: 'Say a buyer or a project.' };
+      }
+      if (!dataManager.layers.has('carbon-flows')) {
+        return { ok: false, action: 'lookup_carbon', error: 'Carbon flows layer is not registered.' };
+      }
+      const changeOptions = { origin: 'voice' };
+      if (runOptions.signal) changeOptions.signal = runOptions.signal;
+      await dataManager.setEnabled('carbon-flows', true, changeOptions);
+      const layer = dataManager.layers.get('carbon-flows')?.module;
+      if (typeof layer?.lookup !== 'function') {
+        return { ok: false, action: 'lookup_carbon', error: 'Carbon lookup is unavailable.' };
+      }
+      const result = layer.lookup(query);
+      return { action: 'lookup_carbon', query, ...result };
+    }
+
     if (name === 'analyst_query') {
       return runAnalystQuery(viewer, dataManager, args);
     }

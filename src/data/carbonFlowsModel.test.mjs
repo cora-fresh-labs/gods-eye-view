@@ -9,7 +9,10 @@ import {
   formatTonnes,
   maskHasYear,
   projectDetail,
+  interpretCarbonQuery,
+  resolveCarbonQuery,
   searchBuyers,
+  searchProjects,
   summarize,
   topBuyers,
   yearsFromMask,
@@ -99,6 +102,16 @@ test('the largest-buyer list keeps an unplaced name in the same view', () => {
   const leaders = topBuyers(dataset, { ...defaultFilters(), pacific: true }, 5);
   assert.equal(leaders[0].name, 'Alpine Carbon AG');
   assert.equal(leaders.some((buyer) => buyer.name === 'Unplaced Buyer' && buyer.placed === false), true);
+});
+
+test('spoken phrasings route to a buyer or a project', () => {
+  assert.deepEqual(interpretCarbonQuery('show me all Shell credits'), { kind: 'buyer', query: 'Shell' });
+  assert.deepEqual(interpretCarbonQuery('who bought from April Salumei?'), { kind: 'project', query: 'April Salumei' });
+  const project = searchProjects(dataset, 'VCS1', 3);
+  assert.equal(project[0].id, 'VCS1');
+  const spoken = resolveCarbonQuery(dataset, 'who bought from Highlands');
+  assert.equal(spoken.kind, 'project');
+  assert.equal(spoken.hits[0].name, 'Highlands');
 });
 
 test('company search needs two characters and prefers a prefix', () => {

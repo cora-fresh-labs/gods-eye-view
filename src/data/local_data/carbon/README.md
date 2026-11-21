@@ -6,7 +6,9 @@ Animated arcs from the organizations that retire carbon credits to the countries
 
 Each arc starts at a buyer's headquarters (or, when that is all the registries published, the buyer's country) and ends at the **country** of a project whose credits that buyer retired. One arc is one buyer–country pair. Tonnes are retired credits, and one credit is one metric tonne of CO₂-equivalent, as Berkeley records it.
 
-Click a buyer dot for the projects, tonnes, and retirement years. Click a green country dot for the projects hosted there, then a project for the buyers.
+Search **Buyer** (`Shell`, or `show me all Shell credits`) to list every project that buyer retired and draw arcs from its headquarters. Search **Project** (`April Salumei`, `VCS1122`, or `who bought from April Salumei`) for the seller, registry totals, vintages, every named buyer, and the undisclosed tonnes. The buyer panel lists the raw registry strings merged into that name.
+
+The app already has a voice agent (`GEV_REALTIME_TOOLS` in `vite.config.js`, handled in `src/voice/gevActions.js`). Those same phrases call `lookup_carbon`, which uses `resolveCarbonQuery`. No second voice stack was added.
 
 The caption follows Bernat Fortet's "Follow the carbon money" map: `Switzerland: 10 buyers → 18 countries`. With no country selected, the globe cycles the largest buyer countries. **Pacific projects** limits the map to credits from Pacific island host countries.
 
@@ -17,6 +19,12 @@ The caption follows Bernat Fortet's "Follow the carbon money" map: `Switzerland:
 ![Pacific projects: who buys island credits](../../../../docs/media/carbon/pacific.png)
 
 ![Nespresso's projects after clicking the buyer](../../../../docs/media/carbon/switzerland-nespresso.png)
+
+![Shell buyer view](../../../../docs/media/carbon/shell.png)
+
+![April Salumei buyers and seller](../../../../docs/media/carbon/april-salumei.png)
+
+![Merged Qantas entry](../../../../docs/media/carbon/qantas.png)
 
 ## Setup
 
@@ -52,7 +60,19 @@ Cite the database if you redistribute the JSON:
 
 Also attribute GeoNames (CC BY 4.0) for buyer cities, Wikidata for headquarters, and Natural Earth (public domain) for country label points. The in-app attribution popover carries the same credit.
 
-This build (retrieved 2026-11-21, retirements through 2026-08-31): 499,789 retirement rows, 208,573 joined to a named buyer and a located project, 535 buyers placed on the globe, 50,269 named buyers left unplaced, 1,611 projects, 4,302 buyer–project flows. Verra rows with a blank beneficial owner: 137,420 rows and about 463 million tonnes, omitted rather than assigned. Pacific host countries present: Papua New Guinea (4 projects), Fiji (1), New Caledonia (1). The same figures are in `carbon-flows.json` → `meta.counts`.
+This build (retrieved 2026-11-21, retirements through 2026-08-31): 499,789 retirement rows, 208,415 joined to a named buyer, 246,349 rows with a blank beneficiary kept as undisclosed tonnes (about 586 million). 50,254 merged buyers, 546 placed on the globe, 11,856 projects, 76,968 buyer–project flows, 3,031 buyers that absorbed at least one alternate published name. Verra blank beneficial-owner rows: 137,420 (about 463 million tonnes), included in the undisclosed line rather than assigned to a company. Pacific host countries in the project table include Papua New Guinea (21), Fiji (2), Solomon Islands (1), New Caledonia (1), and Guam (1). The same figures are in `carbon-flows.json` → `meta.counts`.
+
+## Buyer names
+
+`scripts/carbon/build_carbon_flows.py` merges beneficiaries before geocoding:
+
+1. Take the text after the last “on behalf of”, when that phrase is present.
+2. Strip leading `retired on behalf of`, `on behalf of`, `retired by`, `retired for`, and `for`.
+3. Drop legal suffixes (`Ltd`, `Limited`, `Pty`, `Inc`, `SA`, `AG`, `plc`, `SL`, `GmbH`, `LLC`, `Corp`, and the same list the script already used).
+4. Fold case and punctuation.
+5. Apply `buyer-aliases.json`. That file is the only hand-written name list. Keys are published names; values are the canonical buyer. The build normalises both sides, so adding `Qantas Airways Limited` → `Qantas` also catches `Qantas Airways Ltd`.
+
+The panel keeps the published strings under “Also recorded as”. Programmes that are not the company (`Qantas Duty Travel`, `Qantas Fly Carbon Neutral Programme`) are not in the alias map and stay separate.
 
 ## How a buyer is located
 
@@ -74,7 +94,7 @@ A registry city is kept even when Wikidata has a different item with the same na
 
 These are omissions, not fills.
 
-- **Verra beneficial owner is often blank.** Those retirements are counted in `meta.counts.verraBlankBeneficiaryRows` / `verraBlankBeneficiaryTonnes` and are not assigned to anyone. Verra's retirement-reason text is not parsed.
+- **Blank beneficiaries stay undisclosed.** They are summed on the project as “Undisclosed buyer” and are not given a company. Verra’s blank Beneficial Owner rows are `meta.counts.verraBlankBeneficiaryRows`. A project’s named tonnes plus undisclosed tonnes are the retirement rows this build read. The registry’s own issued and retired totals are shown beside that and can be higher, because cancellations and California / Quebec / Washington compliance retirements are not in these retirement sheets.
 - **Gold Standard notes are not parsed.** Only the `Using Entity` column is the buyer. A note that names a different company stays unused.
 - **Cancellations, buffer-pool moves, and California / Quebec / Washington compliance totals are excluded.** Those tables do not name a voluntary beneficiary this build can attribute.
 - **No project coordinates.** VROD has a country and a site description. Arcs end at the Natural Earth country label point. A site string is shown on the project card and is not geocoded. Same-country flows draw a short loop at that label point so the retirement stays visible.

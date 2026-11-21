@@ -655,15 +655,14 @@ test('the voice TOOL SCHEMA is byte-identical to main — the mission mapping is
   const end = src.indexOf('\n];\n', start);
   const block = src.slice(start, end + 4);
 
-  // Re-pinned 2026-11-21: Carbon Flows is a new data layer, so
-  // set_layer_visibility and show_data_layers_menu gained 'carbon-flows'
-  // and the visibility tool's common-name note mentions it. First-run
-  // missions still ride the tools they already used. Any NEW drift from
-  // this recorded schema still fails here.
-  assert.equal(block.length, 31302, 'tool schema byte length drifted from the pinned release schema');
+  // Re-pinned 2026-11-21: Carbon Flows added lookup_carbon, and the
+  // layer-visibility enums include carbon-flows. First-run missions still
+  // ride the tools they already used. Any NEW drift from this recorded
+  // schema still fails here.
+  assert.equal(block.length, 32092, 'tool schema byte length drifted from the pinned release schema');
   assert.equal(
     crypto.createHash('sha256').update(block).digest('hex'),
-    'c3d8099b327df9a5ab4ac203053333870c069ea14412dcf2ebb4ee6e143b3f0b',
+    '54434818e046d45fb0f8bfbc510a9ed8a96bc13f9dbda30051ea6691e9da60f4',
     'the first-run missions must ride EXISTING tools: no schema edit, no cache bust',
   );
 

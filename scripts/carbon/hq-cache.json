@@ -503,6 +503,11 @@
   "hits": [],
   "label": "2022 Retirements - Certificate 22/142"
  },
+ "2023 climate neutral certifying companies": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired via Patch on behalf of 2023 Climate Neutral certifying companies"
+ },
  "2026 liangshan yi torch festival xichang cultural and tourism series events 2026": {
   "cap": "high",
   "hits": [],
@@ -535,6 +540,11 @@
    }
   ],
   "label": "2i Rete Gas"
+ },
+ "2w ecobank": {
+  "cap": "high",
+  "hits": [],
+  "label": "2W Ecobank"
  },
  "2w ecobank s a": {
   "cap": "high",
@@ -801,6 +811,11 @@
   "hits": [],
   "label": "A.P. Moller Capital for EMIF II"
  },
+ "a patch customer": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of a Patch customer"
+ },
  "a sterreichische post": {
   "cap": "high",
   "hits": [],
@@ -911,6 +926,11 @@
   "hits": [],
   "label": "ABI (UK) Limited"
  },
+ "abn amro": {
+  "cap": "high",
+  "hits": [],
+  "label": "ABN AMRO N.V."
+ },
  "abn amro n v": {
   "cap": "high",
   "hits": [],
@@ -966,6 +986,11 @@
   "hits": [],
   "label": "Acciaieria Arvedi"
  },
+ "acciona": {
+  "cap": "high",
+  "hits": [],
+  "label": "ACCIONA"
+ },
  "acciona concesiones": {
   "cap": "high",
   "hits": [],
@@ -1006,6 +1031,20 @@
   "hits": [],
   "label": "Acciona Trasmediterránea"
  },
+ "acciona|alt1": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "ES",
+    "has_hq": true,
+    "hq": "Alcobendas",
+    "lat": 40.5333,
+    "lon": -3.6333,
+    "qid": "Q339142"
+   }
+  ],
+  "label": "Acciona"
+ },
  "accolade wines": {
   "cap": "high",
   "hits": [],
@@ -1034,6 +1073,11 @@
   "cap": "high",
   "hits": [],
   "label": "Ach√© Laborat√≥rios Farmac√™uticos S.A."
+ },
+ "ache laboratorios farmaceuticos": {
+  "cap": "high",
+  "hits": [],
+  "label": "Aché Laboratórios Farmacêuticos S.A."
  },
  "ache laboratorios farmaceuticos s a": {
   "cap": "high",
@@ -1069,6 +1113,11 @@
   "cap": "medium",
   "hits": [],
   "label": "ACOR Consultants"
+ },
+ "acqua minerale san benedetto": {
+  "cap": "high",
+  "hits": [],
+  "label": "Acqua Minerale San Benedetto s.p.a"
  },
  "acqua minerale san benedetto s p a": {
   "cap": "high",
@@ -1207,6 +1256,11 @@
   "hits": [],
   "label": "Acumuladores Moura S.A"
  },
+ "acumuladores moura|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Acumuladores Moura"
+ },
  "adani total private limited atpl": {
   "cap": "high",
   "hits": [],
@@ -1271,10 +1325,20 @@
   "hits": [],
   "label": "Adnoc Lng"
  },
+ "adr": {
+  "cap": "high",
+  "hits": [],
+  "label": "ADR S.p.a."
+ },
  "adr s p a": {
   "cap": "high",
   "hits": [],
   "label": "ADR S.p.a."
+ },
+ "adr|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "ADR"
  },
  "advanced disposal services morehead landfill": {
   "cap": "high",
@@ -1405,10 +1469,20 @@
   "hits": [],
   "label": "AEROENLACES NACIONALES S.A. de CV"
  },
+ "aeroporti di roma": {
+  "cap": "high",
+  "hits": [],
+  "label": "Aeroporti di Roma S.p.A."
+ },
  "aeroporti di roma s p a": {
   "cap": "high",
   "hits": [],
   "label": "Aeroporti di Roma S.p.A."
+ },
+ "aeroporti di roma|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Aeroporti di Roma"
  },
  "aesc group": {
   "cap": "high",
@@ -1487,6 +1561,11 @@
   "cap": "high",
   "hits": [],
   "label": "Ageas Federal Life Insurance"
+ },
+ "ageas portugal holdings sgps": {
+  "cap": "high",
+  "hits": [],
+  "label": "Ageas Portugal Holdings, SGPS, S.A."
  },
  "ageas portugal holdings sgps s a": {
   "cap": "high",
@@ -1572,6 +1651,16 @@
   "cap": "high",
   "hits": [],
   "label": "AIFS Abroad"
+ },
+ "aig 2018 carbon footprint": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of AIG 2018 Carbon Footprint"
+ },
+ "aik immobilien investmentgesellschaft mbh aik and all of its real estate funds": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of aik Immobilien-Investmentgesellschaft mbH (aik) and all of its real estate funds."
  },
  "aik immobilien investmentgesellschaft mbh and all subsidiaries": {
   "cap": "high",
@@ -1711,6 +1800,11 @@
   "cap": "high",
   "hits": [],
   "label": "Airbus Transport International (ATI)"
+ },
+ "airflo": {
+  "cap": "high",
+  "hits": [],
+  "label": "Airflo B.V."
  },
  "airflo b v": {
   "cap": "high",
@@ -2224,6 +2318,11 @@
   "hits": [],
   "label": "American University"
  },
+ "americanas": {
+  "cap": "high",
+  "hits": [],
+  "label": "Americanas S.A."
+ },
  "americanas s a": {
   "cap": "high",
   "hits": [],
@@ -2311,6 +2410,11 @@
   "hits": [],
   "label": "Anaconda Carbon S.A"
  },
+ "and for the benefit of jpmorgan chase": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retiring on behalf of and for the benefit of JPMorgan Chase"
+ },
  "andreas stihl ag and": {
   "cap": "high",
   "hits": [],
@@ -2320,6 +2424,11 @@
   "cap": "medium",
   "hits": [],
   "label": "ANDREAS STIHL AG &"
+ },
+ "andriani": {
+  "cap": "high",
+  "hits": [],
+  "label": "Andriani S.p.A."
  },
  "andriani s p a": {
   "cap": "high",
@@ -2426,6 +2535,11 @@
   "hits": [],
   "label": "Antea USA"
  },
+ "anthesis": {
+  "cap": "high",
+  "hits": [],
+  "label": "Anthesis B.V."
+ },
  "anthesis arvid nordquist": {
   "cap": "high",
   "hits": [],
@@ -2511,6 +2625,11 @@
   "hits": [],
   "label": "Anthesis Lavola retired on behalf of EV023020220010"
  },
+ "anthesis|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Anthesis"
+ },
  "antipodes water": {
   "cap": "high",
   "hits": [],
@@ -2525,6 +2644,11 @@
   "cap": "high",
   "hits": [],
   "label": "ANWB Energie B.V."
+ },
+ "anwb energie|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "ANWB Energie"
  },
  "anyvan": {
   "cap": "high",
@@ -2718,6 +2842,11 @@
   "hits": [],
   "label": "ARAS KARGO YURT ƒ∞√áƒ∞ YURT DI≈ûI TA≈ûIMACILIK A.≈û."
  },
+ "aras kargo yurt ici yurt disi tasimacilik": {
+  "cap": "high",
+  "hits": [],
+  "label": "ARAS KARGO YURT İÇİ YURT DIŞI TAŞIMACILIK A.Ş."
+ },
  "aras kargo yurt ici yurt disi tasimacilik a s": {
   "cap": "high",
   "hits": [],
@@ -2727,6 +2856,16 @@
   "cap": "medium",
   "hits": [],
   "label": "Aras Kargo Yurt İçi̇ Yurt Dişi Taşimacilik A.Ş."
+ },
+ "aras kargo yurt ici yurt disi tasimacilik|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Aras Kargo Yurt İçi̇ Yurt Dişi Taşimacilik A.Ş."
+ },
+ "aras kargo yurt ici yurt disi tasimacilik|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "ARAS KARGO YURT İÇİ YURT DIŞI TAŞIMACILIK"
  },
  "araymond north america": {
   "cap": "high",
@@ -2763,10 +2902,34 @@
   "hits": [],
   "label": "Arcadian Organic Meat"
  },
+ "arcadis": {
+  "cap": "high",
+  "hits": [],
+  "label": "Arcadis N.V."
+ },
  "arcadis n v": {
   "cap": "high",
   "hits": [],
   "label": "Arcadis N.V."
+ },
+ "arcadis|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "",
+    "has_hq": true,
+    "hq": "Arnhem",
+    "lat": 51.9833,
+    "lon": 5.9167,
+    "qid": "Q631507"
+   }
+  ],
+  "label": "Arcadis"
+ },
+ "arcelik": {
+  "cap": "high",
+  "hits": [],
+  "label": "ARCELIK A.S."
  },
  "arcelik a s": {
   "cap": "high",
@@ -2777,6 +2940,16 @@
   "cap": "medium",
   "hits": [],
   "label": "Arcelik A.S."
+ },
+ "arcelik|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Arcelik A.S."
+ },
+ "arcelik|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "ARCELIK"
  },
  "architectus services holdco": {
   "cap": "high",
@@ -2807,6 +2980,11 @@
   "cap": "medium",
   "hits": [],
   "label": "Ardent Natural Gas"
+ },
+ "argos panama": {
+  "cap": "high",
+  "hits": [],
+  "label": "Argos Panama S.A"
  },
  "argos panama s a": {
   "cap": "high",
@@ -2855,6 +3033,11 @@
   "cap": "high",
   "hits": [],
   "label": "Arm Holdings plc"
+ },
+ "armani beauty pci l oreal": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Armani Beauty PCI L’Oréal"
  },
  "array marketing": {
   "cap": "high",
@@ -3028,6 +3211,11 @@
   "cap": "high",
   "hits": [],
   "label": "Aspect Studios"
+ },
+ "aspecta": {
+  "cap": "high",
+  "hits": [],
+  "label": "Aspecta B.V."
  },
  "aspecta b v": {
   "cap": "high",
@@ -3550,6 +3738,11 @@
   ],
   "label": "Autodesk"
  },
+ "automobili lamborghini": {
+  "cap": "high",
+  "hits": [],
+  "label": "Automobili Lamborghini S.p.A."
+ },
  "automobili lamborghini s p a": {
   "cap": "high",
   "hits": [],
@@ -3643,6 +3836,116 @@
   "cap": "high",
   "hits": [],
   "label": "Aviva Zero"
+ },
+ "aviva zero policyholders": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders"
+ },
+ "aviva zero policyholders 3 2024 4 2024": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (3/2024 - 4/2024)"
+ },
+ "aviva zero policyholders apr 24 may 24": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Apr 24 – May 24)"
+ },
+ "aviva zero policyholders apr 26 may 26": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Apr 26 – May 26)"
+ },
+ "aviva zero policyholders dec 23 jan 24": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Dec 23 – Jan 24)"
+ },
+ "aviva zero policyholders dec 25 jan 26": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Dec 25 – Jan 26)"
+ },
+ "aviva zero policyholders feb 24 apr 24": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Feb 24 – Apr 24)"
+ },
+ "aviva zero policyholders feb 25 mar 25": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Feb 25 – Mar 25)"
+ },
+ "aviva zero policyholders feb 26 apr 26": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Feb 26 – Apr 26)"
+ },
+ "aviva zero policyholders for mar 25 jun 25": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders for (MAR 25 – JUN 25)"
+ },
+ "aviva zero policyholders for mar 25 may 25": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders for (MAR 25 – MAY 25)"
+ },
+ "aviva zero policyholders jan 24 april 24": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Jan 24 – April 24)"
+ },
+ "aviva zero policyholders jan 26 feb 26": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Jan 26 – Feb 26)"
+ },
+ "aviva zero policyholders mar 25": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Mar 25)"
+ },
+ "aviva zero policyholders mar 25 apr 25": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Mar 25 - Apr 25)"
+ },
+ "aviva zero policyholders may 26 jun 26": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (May 26 – Jun 26)"
+ },
+ "aviva zero policyholders nov 23 feb 24": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Nov 23 – Feb 24)"
+ },
+ "aviva zero policyholders nov 25 dec 25": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Nov 25 – Dec 25)"
+ },
+ "aviva zero policyholders nov 25 feb 26": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Nov 25 – Feb 26)"
+ },
+ "aviva zero policyholders nov 25 jan 26": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Nov 25 – Jan 26)"
+ },
+ "aviva zero policyholders oct 23 dec 23": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Oct 23 – Dec 23)"
+ },
+ "aviva zero policyholders oct 23 feb 24": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Aviva Zero policyholders (Oct 23 – Feb 24)"
  },
  "aviva|alt2": {
   "cap": "medium",
@@ -3883,10 +4186,20 @@
   "hits": [],
   "label": "Ballarat Line Upgrade"
  },
+ "banca comerciala romana": {
+  "cap": "high",
+  "hits": [],
+  "label": "Banca Comerciala Romana S.A."
+ },
  "banca comerciala romana s a": {
   "cap": "high",
   "hits": [],
   "label": "Banca Comerciala Romana S.A."
+ },
+ "banca mps": {
+  "cap": "high",
+  "hits": [],
+  "label": "Banca MPS S.p.A."
  },
  "banca mps s p a": {
   "cap": "high",
@@ -3917,6 +4230,11 @@
   "hits": [],
   "label": "Banco BPM S.p.A"
  },
+ "banco bradesco": {
+  "cap": "high",
+  "hits": [],
+  "label": "BANCO BRADESCO S.A."
+ },
  "banco bradesco s a": {
   "cap": "high",
   "hits": [],
@@ -3927,10 +4245,35 @@
   "hits": [],
   "label": "Banco Bradesco S.A."
  },
+ "banco bradesco|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Banco Bradesco S.A."
+ },
+ "banco bradesco|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "BANCO BRADESCO"
+ },
+ "banco btg pactual": {
+  "cap": "high",
+  "hits": [],
+  "label": "Banco BTG Pactual S.A."
+ },
  "banco btg pactual s a": {
   "cap": "high",
   "hits": [],
   "label": "Banco BTG Pactual S.A."
+ },
+ "banco btg pactual|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Banco BTG Pactual"
+ },
+ "banco de credito social cooperativo": {
+  "cap": "high",
+  "hits": [],
+  "label": "BANCO DE CRÉDITO SOCIAL COOPERATIVO, S.A."
  },
  "banco de credito social cooperativo s a": {
   "cap": "high",
@@ -3957,6 +4300,11 @@
   "hits": [],
   "label": "Banco do Brasil S. A."
  },
+ "banco do estado do rio grande do sul": {
+  "cap": "high",
+  "hits": [],
+  "label": "Banco do Estado do Rio Grande do Sul S.A."
+ },
  "banco do estado do rio grande do sul s a": {
   "cap": "high",
   "hits": [],
@@ -3981,6 +4329,16 @@
   ],
   "label": "Banco Pan"
  },
+ "banco santander": {
+  "cap": "high",
+  "hits": [],
+  "label": "BANCO SANTANDER S.A."
+ },
+ "banco santander argentina": {
+  "cap": "high",
+  "hits": [],
+  "label": "BANCO SANTANDER ARGENTINA SA"
+ },
  "banco santander argentina s a": {
   "cap": "high",
   "hits": [],
@@ -3996,10 +4354,34 @@
   "hits": [],
   "label": "Banco Santander Argentina Sociedad Anónima"
  },
+ "banco santander brasil": {
+  "cap": "high",
+  "hits": [],
+  "label": "Banco Santander (Brasil) S.A."
+ },
  "banco santander brasil s a": {
   "cap": "high",
   "hits": [],
   "label": "Banco Santander (Brasil) S.A."
+ },
+ "banco santander brasil|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "BR",
+    "has_hq": true,
+    "hq": "São Paulo",
+    "lat": -23.5504,
+    "lon": -46.6339,
+    "qid": "Q2882087"
+   }
+  ],
+  "label": "Banco Santander (Brasil)"
+ },
+ "banco santander madri": {
+  "cap": "high",
+  "hits": [],
+  "label": "Banco Santander (Madri) S.A."
  },
  "banco santander madri s a": {
   "cap": "high",
@@ -4011,6 +4393,11 @@
   "hits": [],
   "label": "BANCO SANTANDER S.A."
  },
+ "banco santander totta": {
+  "cap": "high",
+  "hits": [],
+  "label": "BANCO SANTANDER TOTTA, S.A"
+ },
  "banco santander totta s a": {
   "cap": "high",
   "hits": [],
@@ -4020,6 +4407,11 @@
   "cap": "high",
   "hits": [],
   "label": "BANCO SUPERVIELLE SA"
+ },
+ "banco votorantim": {
+  "cap": "high",
+  "hits": [],
+  "label": "Banco Votorantim S.A."
  },
  "banco votorantim s a": {
   "cap": "high",
@@ -4054,6 +4446,11 @@
   "cap": "high",
   "hits": [],
   "label": "Bank of America Corporation"
+ },
+ "bank of america for 2019 2021 ghg emissions": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Bank of America for 2019-2021 GHG emissions"
  },
  "bank of america|alt1": {
   "cap": "medium",
@@ -4148,6 +4545,11 @@
   ],
   "label": "Bank of Queensland"
  },
+ "bankinvest bi asset management fondsm glerselskab": {
+  "cap": "high",
+  "hits": [],
+  "label": "Bankinvest (BI Asset Management Fondsmæglerselskab A/S)"
+ },
  "bankinvest bi asset management fondsm glerselskab a s": {
   "cap": "high",
   "hits": [],
@@ -4192,10 +4594,20 @@
   "hits": [],
   "label": "Barefoot Citizens"
  },
+ "barilla g e r f lli": {
+  "cap": "high",
+  "hits": [],
+  "label": "Barilla G. e R. F.lli S.p.A."
+ },
  "barilla g e r f lli s p a": {
   "cap": "high",
   "hits": [],
   "label": "Barilla G. e R. F.lli S.p.A."
+ },
+ "barilla g e r f lli|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Barilla G. e R. F.lli"
  },
  "barilla harry s": {
   "cap": "high",
@@ -4251,6 +4663,11 @@
   "cap": "high",
   "hits": [],
   "label": "Bascom Pacific, LLC"
+ },
+ "baterias moura": {
+  "cap": "high",
+  "hits": [],
+  "label": "Baterias Moura S.A"
  },
  "baterias moura s a": {
   "cap": "high",
@@ -4427,10 +4844,20 @@
   "hits": [],
   "label": "BearingPoint GmbH - Germany"
  },
+ "beatbox beverages for 2024 emissions": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of BeatBox Beverages for 2024 emissions"
+ },
  "beazer homes holdings": {
   "cap": "high",
   "hits": [],
   "label": "Beazer Homes Holdings, LLC"
+ },
+ "bechtle": {
+  "cap": "high",
+  "hits": [],
+  "label": "Bechtle B.V."
  },
  "bechtle b v": {
   "cap": "high",
@@ -4502,6 +4929,11 @@
   "hits": [],
   "label": "Beijing Poly Ying Real Estate Development Co., Ltd."
  },
+ "bel": {
+  "cap": "high",
+  "hits": [],
+  "label": "BEL SA"
+ },
  "bel s a": {
   "cap": "high",
   "hits": [],
@@ -4547,6 +4979,16 @@
   "hits": [],
   "label": "BELLSYSTEM24 HOLDINGS,INC."
  },
+ "bel|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Bel Sa"
+ },
+ "bel|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "BEL"
+ },
  "ben and jerry s homemade holdings": {
   "cap": "high",
   "hits": [],
@@ -4557,10 +4999,20 @@
   "hits": [],
   "label": "Ben & Jerry's Homemade Holdings"
  },
+ "bending spoons": {
+  "cap": "high",
+  "hits": [],
+  "label": "Bending Spoons S.p.A."
+ },
  "bending spoons s p a": {
   "cap": "high",
   "hits": [],
   "label": "Bending Spoons S.p.A."
+ },
+ "bending spoons|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Bending Spoons"
  },
  "benecke changshun auto trim zhangjiagang": {
   "cap": "high",
@@ -4576,6 +5028,11 @@
   "cap": "high",
   "hits": [],
   "label": "Benegas B.V."
+ },
+ "benegas|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Benegas"
  },
  "beneva": {
   "cap": "high",
@@ -4706,10 +5163,20 @@
   "hits": [],
   "label": "BGAI8 Pty Limited as Trustee for BGAI1 Oakdale South Trust"
  },
+ "bgc environmental brokerage services": {
+  "cap": "high",
+  "hits": [],
+  "label": "BGC Environmental Brokerage Services, L.P."
+ },
  "bgc environmental brokerage services l p": {
   "cap": "high",
   "hits": [],
   "label": "BGC Environmental Brokerage Services, L.P."
+ },
+ "bgc environmental brokerage services|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "BGC Environmental Brokerage Services"
  },
  "bgf4 nottingham llp grafton house pury hill business park towcester nn12 7ls": {
   "cap": "high",
@@ -4730,6 +5197,16 @@
   "cap": "high",
   "hits": [],
   "label": "BGMG 11 Pty Ltd as Trustee of BGMG 1 Oakdale West Trust"
+ },
+ "bgn int and afriquia gaz": {
+  "cap": "high",
+  "hits": [],
+  "label": "Mundo Verde Climate S.A. on behalf of BGN INT and Afriquia Gaz"
+ },
+ "bgn int dmcc": {
+  "cap": "high",
+  "hits": [],
+  "label": "Mundo Verde Climate S.A. on behalf of BGN INT DMCC"
  },
  "bh airport concession ria do aeroporto internacional de belo horizonte": {
   "cap": "high",
@@ -4805,6 +5282,11 @@
   "hits": [],
   "label": "BIOMAX SA"
  },
+ "biomax biocombustibles": {
+  "cap": "high",
+  "hits": [],
+  "label": "BIOMAX BIOCOMBUSTIBLES S.A"
+ },
  "biomax biocombustibles s a": {
   "cap": "high",
   "hits": [],
@@ -4839,6 +5321,16 @@
   "cap": "high",
   "hits": [],
   "label": "BIOMAX BIOCOMBUSTIBLES SA identificada con 830.136.799-"
+ },
+ "biomax biocombustibles|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Biomax Biocombustibles S.A"
+ },
+ "biomax biocombustibles|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "BIOMAX BIOCOMBUSTIBLES"
  },
  "biomax s a nit 830 136 799 1": {
   "cap": "high",
@@ -5126,6 +5618,11 @@
   "hits": [],
   "label": "Blue Owl Capital Holdings"
  },
+ "blueland": {
+  "cap": "high",
+  "hits": [],
+  "label": "Blueland"
+ },
  "bluetree design and print": {
   "cap": "high",
   "hits": [],
@@ -5219,6 +5716,11 @@
   "cap": "high",
   "hits": [],
   "label": "Boehringer Ingelheim Animal Health USA Inc., Athens, GA 30601, United States"
+ },
+ "boehringer ingelheim bidachem": {
+  "cap": "high",
+  "hits": [],
+  "label": "Boehringer Ingelheim BIDACHEM S.p.A."
  },
  "boehringer ingelheim bidachem s p a": {
   "cap": "high",
@@ -5425,6 +5927,11 @@
   "cap": "high",
   "hits": [],
   "label": "BP T&S Carbon Offset Retirement Program"
+ },
+ "bpcc portfolio": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired for the bpCC portfolio"
  },
  "bpifrance": {
   "cap": "high",
@@ -5763,6 +6270,11 @@
   ],
   "label": "Brown University"
  },
+ "brugal and": {
+  "cap": "high",
+  "hits": [],
+  "label": "BRUGAL & CO, S.A."
+ },
  "brugal and co s a": {
   "cap": "high",
   "hits": [],
@@ -5816,6 +6328,11 @@
   "cap": "high",
   "hits": [],
   "label": "Budbee AB"
+ },
+ "budget thuis": {
+  "cap": "high",
+  "hits": [],
+  "label": "Budget Thuis B.V."
  },
  "budget thuis b v": {
   "cap": "high",
@@ -5964,15 +6481,30 @@
   ],
   "label": "Butagaz"
  },
+ "buyer": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired by Patch on behalf of the buyer"
+ },
  "buyer s edge platform": {
   "cap": "high",
   "hits": [],
   "label": "Buyer's Edge Platform"
  },
+ "bv banco votorantim": {
+  "cap": "high",
+  "hits": [],
+  "label": "BV - Banco Votorantim S.A."
+ },
  "bv banco votorantim s a": {
   "cap": "high",
   "hits": [],
   "label": "BV - Banco Votorantim S.A."
+ },
+ "bv banco votorantim|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "BV - Banco Votorantim"
  },
  "bxp": {
   "cap": "high",
@@ -5983,6 +6515,11 @@
   "cap": "medium",
   "hits": [],
   "label": "BXP"
+ },
+ "c i prodeco": {
+  "cap": "high",
+  "hits": [],
+  "label": "C.I. Prodeco S.A."
  },
  "c i prodeco s a": {
   "cap": "high",
@@ -6004,6 +6541,11 @@
   "hits": [],
   "label": "CABIFY"
  },
+ "cabify matriz": {
+  "cap": "high",
+  "hits": [],
+  "label": "Cabify Matriz S.L."
+ },
  "cabify matriz s l": {
   "cap": "high",
   "hits": [],
@@ -6013,6 +6555,11 @@
   "cap": "high",
   "hits": [],
   "label": "CABIFY MATRIZ, S.L.U."
+ },
+ "cabify mobility international": {
+  "cap": "high",
+  "hits": [],
+  "label": "CABIFY MOBILITY INTERNATIONAL, S.L."
  },
  "cabify mobility international s l": {
   "cap": "high",
@@ -6097,10 +6644,35 @@
   "hits": [],
   "label": "Caixabank"
  },
+ "caixabank ev000120180018": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of CaixaBank \"EV000120180018\""
+ },
+ "caixabank ev000120190044": {
+  "cap": "high",
+  "hits": [],
+  "label": "Lavola retired on behalf of CaixaBank \"EV000120190044\""
+ },
+ "caixabank group offsetting ghg emissions of scope 1 and 2 and corporate travels for 2023": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Caixabank Group. Offsetting GHG emissions of Scope 1 & 2 and corporate travels for 2023"
+ },
+ "caja municipal de ahorro y credito de arequipa": {
+  "cap": "high",
+  "hits": [],
+  "label": "CAJA MUNICIPAL DE AHORRO Y CRÉDITO DE AREQUIPA S.A."
+ },
  "caja municipal de ahorro y credito de arequipa s a": {
   "cap": "high",
   "hits": [],
   "label": "CAJA MUNICIPAL DE AHORRO Y CRÉDITO DE AREQUIPA S.A."
+ },
+ "calfrac well services argentina": {
+  "cap": "high",
+  "hits": [],
+  "label": "Calfrac Well Services Argentina S.A."
  },
  "calfrac well services argentina s a": {
   "cap": "high",
@@ -6117,6 +6689,11 @@
   "hits": [],
   "label": "Calpine-Hermiston Power Project"
  },
+ "calzedonia": {
+  "cap": "high",
+  "hits": [],
+  "label": "Calzedonia S.p.A."
+ },
  "calzedonia p iva 02253210237 anno 2022": {
   "cap": "high",
   "hits": [],
@@ -6126,6 +6703,11 @@
   "cap": "high",
   "hits": [],
   "label": "Calzedonia S.p.A."
+ },
+ "calzedonia|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Calzedonia"
  },
  "cambridge associates": {
   "cap": "high",
@@ -6147,10 +6729,20 @@
   "hits": [],
   "label": "Camco Offsets I"
  },
+ "campodulce curados": {
+  "cap": "high",
+  "hits": [],
+  "label": "CAMPODULCE CURADOS, S.A."
+ },
  "campodulce curados s a": {
   "cap": "high",
   "hits": [],
   "label": "CAMPODULCE CURADOS, S.A."
+ },
+ "campus contern offices": {
+  "cap": "high",
+  "hits": [],
+  "label": "CAMPUS CONTERN OFFICES S.A."
  },
  "campus contern offices s a": {
   "cap": "high",
@@ -6306,6 +6898,11 @@
   "hits": [],
   "label": "Canopy Blue"
  },
+ "cantarella brothers": {
+  "cap": "high",
+  "hits": [],
+  "label": "Carbon Neutral on behalf of Cantarella Brothers"
+ },
  "canteen vending solutions": {
   "cap": "high",
   "hits": [],
@@ -6435,6 +7032,11 @@
   "cap": "high",
   "hits": [],
   "label": "Carbon Neutral Britain Ltd"
+ },
+ "carbon neutral club": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Carbon Neutral Club"
  },
  "carbon neutral indiana": {
   "cap": "high",
@@ -6730,6 +7332,11 @@
   "cap": "high",
   "hits": [],
   "label": "Cartiera di Guarcino SpA, Neodecortech SpA (installations of Filago and Casoli) and Bioenergia Guarcino Srl"
+ },
+ "casamotor": {
+  "cap": "high",
+  "hits": [],
+  "label": "CASAMOTOR S.A.S."
  },
  "casamotor s a s": {
   "cap": "high",
@@ -7049,6 +7656,11 @@
   "cap": "high",
   "hits": [],
   "label": "CF Industries Nitrogen, LLC"
+ },
+ "cfm": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of CFM"
  },
  "cgi it uk": {
   "cap": "high",
@@ -7449,6 +8061,20 @@
   "hits": [],
   "label": "Cia. Hering - 78.876.950/0001-71"
  },
+ "cielo": {
+  "cap": "high",
+  "hits": [
+   {
+    "cc": "BR",
+    "has_hq": true,
+    "hq": "Barueri",
+    "lat": -23.5111,
+    "lon": -46.8764,
+    "qid": "Q2972334"
+   }
+  ],
+  "label": "Cielo S.A."
+ },
  "cielo s a": {
   "cap": "high",
   "hits": [
@@ -7764,6 +8390,26 @@
   "hits": [],
   "label": "ClearView Wealth"
  },
+ "client": {
+  "cap": "high",
+  "hits": [],
+  "label": "Client"
+ },
+ "client 201": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on Behalf of Client #201"
+ },
+ "client kbc group nv for 2024 emissions": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of the client KBC Group NV for 2024 emissions"
+ },
+ "client les bleuets sauvages du quebec inc for residual emissions": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of the client Les Bleuets Sauvages du Québec Inc. for residual emissions"
+ },
  "clients and partners of carbonfund dba climeco": {
   "cap": "high",
   "hits": [],
@@ -7803,6 +8449,11 @@
   "cap": "high",
   "hits": [],
   "label": "Clients of Eni Gas & Power France who are subscribed to “CO2-compensated gas offers & options” till 30-09-2023"
+ },
+ "clients of oversy": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Clients of Oversy"
  },
  "climate and conservation consortium pvt": {
   "cap": "high",
@@ -8022,6 +8673,11 @@
   "cap": "high",
   "hits": [],
   "label": "Club Carlson"
+ },
+ "club leaf": {
+  "cap": "high",
+  "hits": [],
+  "label": "Club Leaf B.V."
  },
  "club leaf b v": {
   "cap": "high",
@@ -8472,6 +9128,11 @@
   "hits": [],
   "label": "Colussi Group"
  },
+ "combustibles y transportes hernandez": {
+  "cap": "high",
+  "hits": [],
+  "label": "Combustibles y Transportes Hernandez S.A."
+ },
  "combustibles y transportes hernandez s a": {
   "cap": "high",
   "hits": [],
@@ -8587,10 +9248,20 @@
   "hits": [],
   "label": "Companhia de Navegação Norsul"
  },
+ "companhia ultragaz": {
+  "cap": "high",
+  "hits": [],
+  "label": "COMPANHIA ULTRAGAZ S.A."
+ },
  "companhia ultragaz s a": {
   "cap": "high",
   "hits": [],
   "label": "COMPANHIA ULTRAGAZ S.A."
+ },
+ "compania licorera de nicaragua": {
+  "cap": "high",
+  "hits": [],
+  "label": "Compañía Licorera de Nicaragua, S.A."
  },
  "compania licorera de nicaragua s a": {
   "cap": "high",
@@ -8844,6 +9515,11 @@
   ],
   "label": "Consumers Energy"
  },
+ "contecon manzanillo": {
+  "cap": "high",
+  "hits": [],
+  "label": "CONTECON MANZANILLO, S.A."
+ },
  "contecon manzanillo s a": {
   "cap": "high",
   "hits": [],
@@ -8902,6 +9578,11 @@
    }
   ],
   "label": "Continental AG"
+ },
+ "continental ag to contribute to our global program net zero now": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Continental AG to contribute to our global program Net|Zero|Now"
  },
  "convera": {
   "cap": "high",
@@ -9066,10 +9747,20 @@
   ],
   "label": "Copec"
  },
+ "copenhagen airports": {
+  "cap": "high",
+  "hits": [],
+  "label": "Copenhagen Airports A/S"
+ },
  "copenhagen airports a s": {
   "cap": "high",
   "hits": [],
   "label": "Copenhagen Airports A/S"
+ },
+ "copenhagen airports|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Copenhagen Airports"
  },
  "corbion": {
   "cap": "high",
@@ -9115,6 +9806,11 @@
   "cap": "high",
   "hits": [],
   "label": "CORPORACIÓN ANDINA DE FOMENTO con NIT 860.054.041-4 ha compensado 13,212 toneladas de CO2."
+ },
+ "corporacion quiport": {
+  "cap": "high",
+  "hits": [],
+  "label": "Corporacion Quiport"
  },
  "corporacion quiport s a": {
   "cap": "high",
@@ -9190,6 +9886,11 @@
   "hits": [],
   "label": "COSENTINO"
  },
+ "cosentino industrial": {
+  "cap": "high",
+  "hits": [],
+  "label": "Cosentino Industrial S.A."
+ },
  "cosentino industrial s a": {
   "cap": "high",
   "hits": [],
@@ -9200,10 +9901,20 @@
   "hits": [],
   "label": "COSENTINO INDUSTRIAL, S.A.U."
  },
+ "cosentino industrial|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Cosentino Industrial"
+ },
  "cosentino|alt1": {
   "cap": "medium",
   "hits": [],
   "label": "Cosentino"
+ },
+ "cosentino|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "COSENTINO"
  },
  "costco wholesale": {
   "cap": "high",
@@ -9254,6 +9965,11 @@
   "cap": "high",
   "hits": [],
   "label": "CP Energy Marketing (US) Inc"
+ },
+ "cp logistics swindon propco 3": {
+  "cap": "high",
+  "hits": [],
+  "label": "McLaren Construction Limited on behalf of CP Logistics Swindon PropCo 3 Limited"
  },
  "cp logistics uk crawley propco limited unit a and unit b panattoni crawley fleming way crawley rh10 9uh": {
   "cap": "high",
@@ -9331,6 +10047,11 @@
   "cap": "high",
   "hits": [],
   "label": "CPC Corporation, Taiwan and Marubeni Corporation, Japan"
+ },
+ "cpfl energia": {
+  "cap": "high",
+  "hits": [],
+  "label": "CPFL Energia S.A"
  },
  "cpfl energia s a": {
   "cap": "high",
@@ -9669,6 +10390,51 @@
   "hits": [],
   "label": "Custom Fleet NZ"
  },
+ "customer": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired by WKC on behalf of customer"
+ },
+ "customer 10196": {
+  "cap": "high",
+  "hits": [],
+  "label": "on behalf of customer 10196"
+ },
+ "customer 10369": {
+  "cap": "high",
+  "hits": [],
+  "label": "on behalf of customer 10369"
+ },
+ "customer 10390": {
+  "cap": "high",
+  "hits": [],
+  "label": "on behalf of customer 10390"
+ },
+ "customer 10806": {
+  "cap": "high",
+  "hits": [],
+  "label": "on behalf of customer 10806"
+ },
+ "customer 10863": {
+  "cap": "high",
+  "hits": [],
+  "label": "on behalf of customer 10863"
+ },
+ "customer 10904": {
+  "cap": "high",
+  "hits": [],
+  "label": "on behalf of customer 10904"
+ },
+ "customers 10 000 tons cat hiep solar vietnam": {
+  "cap": "high",
+  "hits": [],
+  "label": "Grow Energy - offsetting on behalf of customers, 10 000 tons Cat Hiep Solar, Vietnam"
+ },
+ "customers of compensate foundation": {
+  "cap": "high",
+  "hits": [],
+  "label": "Carbon credits purchased by Compensate Foundation, retired on behalf of customers of Compensate Foundation"
+ },
  "customers of compensate operations": {
   "cap": "high",
   "hits": [],
@@ -9678,6 +10444,11 @@
   "cap": "high",
   "hits": [],
   "label": "Customers of Crown Oil"
+ },
+ "customers of klimahelden": {
+  "cap": "high",
+  "hits": [],
+  "label": "Voluntary offset on behalf of customers of Klimahelden GmbH."
  },
  "customers of piedmont natural gas greenedge program": {
   "cap": "high",
@@ -9708,6 +10479,11 @@
   "cap": "high",
   "hits": [],
   "label": "D.E Shaw"
+ },
+ "d e shaw and": {
+  "cap": "high",
+  "hits": [],
+  "label": "D.E. Shaw & Co., L.P."
  },
  "d e shaw and co l p": {
   "cap": "high",
@@ -10002,6 +10778,11 @@
   "hits": [],
   "label": "Deloitte Management Services"
  },
+ "deloitte north and south europe nse for compensation of fy24 emissions": {
+  "cap": "high",
+  "hits": [],
+  "label": "these credits are retired on behalf of Deloitte North and South Europe (NSE) for compensation of FY24 emissions"
+ },
  "deloitte s latam s c": {
   "cap": "high",
   "hits": [],
@@ -10101,10 +10882,20 @@
   "hits": [],
   "label": "Delta Electronics (JiangSu) Ltd."
  },
+ "delta energie": {
+  "cap": "high",
+  "hits": [],
+  "label": "DELTA Energie B.V."
+ },
  "delta energie b v": {
   "cap": "high",
   "hits": [],
   "label": "DELTA Energie B.V."
+ },
+ "delta energie|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "DELTA Energie"
  },
  "denios": {
   "cap": "high",
@@ -10121,10 +10912,20 @@
   "hits": [],
   "label": "DENSO International America"
  },
+ "denso international europe": {
+  "cap": "high",
+  "hits": [],
+  "label": "DENSO International Europe B.V."
+ },
  "denso international europe b v": {
   "cap": "high",
   "hits": [],
   "label": "DENSO International Europe B.V."
+ },
+ "denso international europe|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "DENSO International Europe"
  },
  "denton power": {
   "cap": "high",
@@ -10260,6 +11061,11 @@
   "hits": [],
   "label": "Dexus Property Services Pty Ltd"
  },
+ "dfds": {
+  "cap": "high",
+  "hits": [],
+  "label": "DFDS A/S"
+ },
  "dfm sp z o o": {
   "cap": "high",
   "hits": [],
@@ -10335,6 +11141,11 @@
   "hits": [],
   "label": "Dholakia Technologies LLP"
  },
+ "dhv holding": {
+  "cap": "high",
+  "hits": [],
+  "label": "DHV Holding B.V."
+ },
  "dhv holding b v": {
   "cap": "high",
   "hits": [],
@@ -10403,10 +11214,20 @@
   "hits": [],
   "label": "DIG Deutsche Industriegas GmbH"
  },
+ "digital visa systems": {
+  "cap": "high",
+  "hits": [],
+  "label": "Digital Visa Systems B.V."
+ },
  "digital visa systems b v": {
   "cap": "high",
   "hits": [],
   "label": "Digital Visa Systems B.V."
+ },
+ "digital visa systems|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Digital Visa Systems"
  },
  "digitec galaxus": {
   "cap": "high",
@@ -10512,6 +11333,11 @@
    }
   ],
   "label": "Disney Worldwide Services"
+ },
+ "distribuidora andina de combustible": {
+  "cap": "high",
+  "hits": [],
+  "label": "Distribuidora Andina de Combustible S.A."
  },
  "distribuidora andina de combustible antes exxonmobil de colombia s a identificada con nit 860 002 554 8": {
   "cap": "high",
@@ -10657,6 +11483,11 @@
   "hits": [],
   "label": "DocuSign, Inc."
  },
+ "docusign inc for fiscal year 2027 emissions": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Docusign, Inc. for fiscal year 2027 emissions."
+ },
  "dodd group midlands": {
   "cap": "high",
   "hits": [],
@@ -10667,10 +11498,29 @@
   "hits": [],
   "label": "Dog and Bone"
  },
+ "dolomiti energia": {
+  "cap": "high",
+  "hits": [],
+  "label": "Dolomiti Energia S.p.A."
+ },
  "dolomiti energia s p a": {
   "cap": "high",
   "hits": [],
   "label": "Dolomiti Energia S.p.A."
+ },
+ "dolomiti energia|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "IT",
+    "has_hq": true,
+    "hq": "Rovereto",
+    "lat": 45.8904,
+    "lon": 11.0405,
+    "qid": "Q3712703"
+   }
+  ],
+  "label": "Dolomiti Energia"
  },
  "domestici": {
   "cap": "high",
@@ -10867,6 +11717,11 @@
   "hits": [],
   "label": "Duni AB"
  },
+ "duragas": {
+  "cap": "high",
+  "hits": [],
+  "label": "Duragas S.A."
+ },
  "duragas s a": {
   "cap": "high",
   "hits": [],
@@ -10916,6 +11771,11 @@
   "cap": "high",
   "hits": [],
   "label": "Ë¥µÊ∏ØÂ∏ÇÊÄùÊâ¨Êú®‰∏öÊúâÈôêÂÖ¨Âè∏"
+ },
+ "e on energia": {
+  "cap": "high",
+  "hits": [],
+  "label": "E.ON Energia S.P.A"
  },
  "e on energia s p a": {
   "cap": "high",
@@ -10971,6 +11831,11 @@
   "cap": "high",
   "hits": [],
   "label": "Ëá∫ÁÅ£ÈõÜ‰∏≠‰øùÁÆ°ÁµêÁÆóÊâÄËÇ°‰ªΩÊúâÈôêÂÖ¨Âè∏"
+ },
+ "eaglestone services": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Eaglestone Services"
  },
  "earth friendly products": {
   "cap": "high",
@@ -11079,6 +11944,11 @@
   "cap": "high",
   "hits": [],
   "label": "Eco Planet Bamboo"
+ },
+ "eco products fund": {
+  "cap": "high",
+  "hits": [],
+  "label": "The Eco Products Fund, L.P."
  },
  "eco products fund l p": {
   "cap": "high",
@@ -11261,6 +12131,11 @@
   "hits": [],
   "label": "EcoVadis SAS"
  },
+ "ecoveritas": {
+  "cap": "high",
+  "hits": [],
+  "label": "Ecoveritas S.A."
+ },
  "ecoveritas s a": {
   "cap": "high",
   "hits": [],
@@ -11399,10 +12274,20 @@
   ],
   "label": "EDP Brasil"
  },
+ "edp comercial comercializacao de energia": {
+  "cap": "high",
+  "hits": [],
+  "label": "EDP COMERCIAL – Comercialização de Energia, S.A."
+ },
  "edp comercial comercializacao de energia s a": {
   "cap": "high",
   "hits": [],
   "label": "EDP COMERCIAL – Comercialização de Energia, S.A."
+ },
+ "edp energias do brasil": {
+  "cap": "high",
+  "hits": [],
+  "label": "EDP ENERGIAS DO BRASIL S.A."
  },
  "edp energias do brasil s a": {
   "cap": "high",
@@ -11447,6 +12332,11 @@
   "cap": "high",
   "hits": [],
   "label": "ÈïøËôπÂçéÊÑèÂéãÁº©Êú∫ËÇ°‰ªΩÊúâÈôêÂÖ¨Âè∏/ CHANGHONG HUAYI COMPRESSOR CO., LTD."
+ },
+ "eida": {
+  "cap": "high",
+  "hits": [],
+  "label": "EIDA S.A."
  },
  "eida s a": {
   "cap": "high",
@@ -11783,6 +12673,11 @@
   "hits": [],
   "label": "Enag√°s Transporte SAU y MUSEL ENERGY HUB, S.L"
  },
+ "enagas": {
+  "cap": "high",
+  "hits": [],
+  "label": "Enagás S.A."
+ },
  "enagas s a": {
   "cap": "high",
   "hits": [],
@@ -11793,10 +12688,20 @@
   "hits": [],
   "label": "Enagás Transporte SAU"
  },
+ "enagas transporte sau y musel energy hub": {
+  "cap": "high",
+  "hits": [],
+  "label": "Enagás Transporte SAU y MUSEL ENERGY HUB, S.L"
+ },
  "enagas transporte sau y musel energy hub s l": {
   "cap": "high",
   "hits": [],
   "label": "Enagás Transporte SAU y MUSEL ENERGY HUB, S.L"
+ },
+ "enav": {
+  "cap": "high",
+  "hits": [],
+  "label": "ENAV S.p.A"
  },
  "enav s p a": {
   "cap": "high",
@@ -11868,6 +12773,11 @@
   "hits": [],
   "label": "Eneco Business Jan 2013"
  },
+ "enegan": {
+  "cap": "high",
+  "hits": [],
+  "label": "ENEGAN S.P.A."
+ },
  "enegan s p a": {
   "cap": "high",
   "hits": [],
@@ -11878,10 +12788,25 @@
   "hits": [],
   "label": "Enegan S.P.A."
  },
+ "enegan|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Enegan S.P.A."
+ },
+ "enegan|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "ENEGAN"
+ },
  "enel energia": {
   "cap": "high",
   "hits": [],
   "label": "Enel Energia SpA"
+ },
+ "enel generacion chile": {
+  "cap": "high",
+  "hits": [],
+  "label": "ENEL GENERACION CHILE S.A."
  },
  "enel generacion chile s a": {
   "cap": "high",
@@ -12021,6 +12946,11 @@
   "hits": [],
   "label": "Energy Trading Company"
  },
+ "energy trading company b v gas portfolio etc 2017 deel 1": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Energy Trading Company B.V. Gas Portfolio ETC 2017 (deel 1)"
+ },
  "energy trading|alt2": {
   "cap": "medium",
   "hits": [],
@@ -12157,10 +13087,20 @@
   "hits": [],
   "label": "ENGIE Energ√≠a Chile S.A"
  },
+ "engie energia chile": {
+  "cap": "high",
+  "hits": [],
+  "label": "ENGIE Energía Chile S.A"
+ },
  "engie energia chile s a": {
   "cap": "high",
   "hits": [],
   "label": "ENGIE Energía Chile S.A"
+ },
+ "engie energia chile|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "ENGIE Energía Chile"
  },
  "engine lease finance": {
   "cap": "high",
@@ -12240,10 +13180,29 @@
   "hits": [],
   "label": "Enova International"
  },
+ "enovos luxembourg": {
+  "cap": "high",
+  "hits": [],
+  "label": "Enovos Luxembourg S.A."
+ },
  "enovos luxembourg s a": {
   "cap": "high",
   "hits": [],
   "label": "Enovos Luxembourg S.A."
+ },
+ "enovos luxembourg|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "LU",
+    "has_hq": true,
+    "hq": "Esch-sur-Alzette",
+    "lat": 49.4969,
+    "lon": 5.9806,
+    "qid": "Q16763485"
+   }
+  ],
+  "label": "Enovos Luxembourg"
  },
  "enplus eg": {
   "cap": "high",
@@ -12565,6 +13524,11 @@
   "hits": [],
   "label": "ÊòÜÂ±±ËøêÂüéÂ°ë‰∏öÊúâÈôêÂÖ¨Âè∏ÔºàÁî®‰∫éËøëÈõ∂Á¢≥Â∑•ÂéÇÊäµÊ∂à2025Âπ¥1Êúà1Êó•-12Êúà31Êó•ÁöÑËåÉÂõ¥‰∏ÄÊéíÊîæÔºâ"
  },
+ "ep commodities": {
+  "cap": "high",
+  "hits": [],
+  "label": "EP Commodities B.V"
+ },
  "ep commodities b v": {
   "cap": "high",
   "hits": [],
@@ -12724,6 +13688,11 @@
   "hits": [],
   "label": "Erenja AG &"
  },
+ "ergo versicherungsgruppe": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of ERGO Versicherungsgruppe AG"
+ },
  "ericsson tower": {
   "cap": "high",
   "hits": [],
@@ -12868,6 +13837,11 @@
   "hits": [],
   "label": "ETC-Group"
  },
+ "eteck energi bedrijven": {
+  "cap": "high",
+  "hits": [],
+  "label": "Eteck Energi Bedrijven B.V."
+ },
  "eteck energi bedrijven b v": {
   "cap": "high",
   "hits": [],
@@ -12927,6 +13901,21 @@
   "hits": [],
   "label": "Etsy, Inc., and its affiliates"
  },
+ "etsy inc and its affiliates for 2025 emissions": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Etsy, Inc., and its affiliates for 2025 emissions"
+ },
+ "etsy inc and its affiliates for 2026 emissions": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Etsy, Inc., and its affiliates for 2026 emissions"
+ },
+ "etsy inc for etsy inc s affiliate reverb com": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Etsy, Inc. for Etsy, Inc.’s affiliate Reverb.com, LLC"
+ },
  "etsy|alt2": {
   "cap": "medium",
   "hits": [],
@@ -12951,6 +13940,11 @@
   "cap": "high",
   "hits": [],
   "label": "Eurofarma Laborat√≥rios S.A."
+ },
+ "eurofarma laboratorios": {
+  "cap": "high",
+  "hits": [],
+  "label": "Eurofarma Laboratórios S.A."
  },
  "eurofarma laboratorios s a": {
   "cap": "high",
@@ -13028,6 +14022,16 @@
   "hits": [],
   "label": "European Investment Bank Group"
  },
+ "ev000120190024a": {
+  "cap": "high",
+  "hits": [],
+  "label": "Lavola Retired on behalf of \" EV000120190024â€"
+ },
+ "ev000120190028a": {
+  "cap": "high",
+  "hits": [],
+  "label": "Lavola retired on behalf of \"EV000120190028â€"
+ },
  "evaneos": {
   "cap": "high",
   "hits": [
@@ -13060,6 +14064,11 @@
    }
   ],
   "label": "Eventbrite"
+ },
+ "evergreen 10th and chestnut": {
+  "cap": "high",
+  "hits": [],
+  "label": "Evergreen-10th & Chestnut, L.L.C."
  },
  "evergreen 10th and chestnut l l c": {
   "cap": "high",
@@ -13129,6 +14138,11 @@
   "cap": "high",
   "hits": [],
   "label": "Evonik Operations GmbH"
+ },
+ "evos rotterdam": {
+  "cap": "high",
+  "hits": [],
+  "label": "Evos Rotterdam B.V."
  },
  "evos rotterdam b v": {
   "cap": "high",
@@ -13262,6 +14276,21 @@
   "hits": [],
   "label": "EY Global Services Limited"
  },
+ "ey global services limited for fy22": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of EY Global Services Limited for FY22"
+ },
+ "ey global services limited for fy23": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of EY Global Services Limited for FY23."
+ },
+ "ey global services limited for fy24": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of EY Global Services Limited for FY24"
+ },
  "ey global services|alt2": {
   "cap": "medium",
   "hits": [],
@@ -13337,6 +14366,11 @@
   "hits": [],
   "label": "Fairmont Royal York"
  },
+ "fairphone": {
+  "cap": "high",
+  "hits": [],
+  "label": "Fairphone B.V."
+ },
  "fairphone b v": {
   "cap": "high",
   "hits": [],
@@ -13367,6 +14401,11 @@
   "hits": [],
   "label": "Farfetch UK"
  },
+ "fargoline": {
+  "cap": "high",
+  "hits": [],
+  "label": "FARGOLINE S.A."
+ },
  "fargoline s a": {
   "cap": "high",
   "hits": [],
@@ -13387,15 +14426,39 @@
   "hits": [],
   "label": "Fast Air Ltd."
  },
+ "fastweb": {
+  "cap": "high",
+  "hits": [],
+  "label": "Fastweb S.p.A."
+ },
  "fastweb s p a": {
   "cap": "high",
   "hits": [],
   "label": "Fastweb S.p.A."
  },
+ "fastweb|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "IT",
+    "has_hq": true,
+    "hq": "Milan",
+    "lat": 45.4669,
+    "lon": 9.19,
+    "qid": "Q499342"
+   }
+  ],
+  "label": "Fastweb"
+ },
  "fatface": {
   "cap": "high",
   "hits": [],
   "label": "FatFace"
+ },
+ "favini": {
+  "cap": "high",
+  "hits": [],
+  "label": "Favini S.r.l."
  },
  "favini s r l": {
   "cap": "high",
@@ -13442,6 +14505,11 @@
   "hits": [],
   "label": "Fenix Outdoor International"
  },
+ "ferreyros": {
+  "cap": "high",
+  "hits": [],
+  "label": "FERREYROS S.A."
+ },
  "ferreyros s a": {
   "cap": "high",
   "hits": [],
@@ -13462,6 +14530,16 @@
   "hits": [],
   "label": "FERROVIAL CORPORACION, S.A."
  },
+ "ferrovial corporacion|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Ferrovial Corporacion, S.A."
+ },
+ "ferrovial corporacion|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "FERROVIAL CORPORACION"
+ },
  "fes group": {
   "cap": "high",
   "hits": [],
@@ -13471,6 +14549,11 @@
   "cap": "high",
   "hits": [],
   "label": "Festi hf."
+ },
+ "festival de cannes 2022 edition": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Festival de Cannes, 2022 edition"
  },
  "festival de cannes 2024 edition": {
   "cap": "high",
@@ -13979,6 +15062,11 @@
   "hits": [],
   "label": "For Interface, Inc. 2008 Cool Carpet Program"
  },
+ "forbis logistics": {
+  "cap": "high",
+  "hits": [],
+  "label": "FORBIS LOGISTICS S.A."
+ },
  "forbis logistics s a": {
   "cap": "high",
   "hits": [],
@@ -14073,6 +15161,11 @@
   "cap": "high",
   "hits": [],
   "label": "Foster + Partners Ltd"
+ },
+ "foxes property 3": {
+  "cap": "high",
+  "hits": [],
+  "label": "McLaren Construction Limited on behalf of Foxes Property 3 S.A.R.L"
  },
  "fra cheur de paris": {
   "cap": "high",
@@ -14257,6 +15350,11 @@
   "hits": [],
   "label": "FUNESPA√ëA DOS, S.L."
  },
+ "funespana dos": {
+  "cap": "high",
+  "hits": [],
+  "label": "FUNESPAÑA DOS, S.L."
+ },
  "funespana dos s l": {
   "cap": "high",
   "hits": [],
@@ -14292,6 +15390,11 @@
   "hits": [],
   "label": "G2 revolution"
  },
+ "g4s security services": {
+  "cap": "high",
+  "hits": [],
+  "label": "G4S Security Services B.V."
+ },
  "g4s security services b v": {
   "cap": "high",
   "hits": [],
@@ -14326,6 +15429,11 @@
   "cap": "high",
   "hits": [],
   "label": "GAIA S.p.A."
+ },
+ "galp energia": {
+  "cap": "high",
+  "hits": [],
+  "label": "Galp Energia S.A."
  },
  "galp energia s a": {
   "cap": "high",
@@ -14386,6 +15494,11 @@
   "hits": [],
   "label": "Gas"
  },
+ "gas natural de lima y callao": {
+  "cap": "high",
+  "hits": [],
+  "label": "Gas Natural de Lima y Callao S.A."
+ },
  "gas natural de lima y callao s a": {
   "cap": "high",
   "hits": [],
@@ -14411,10 +15524,20 @@
   "hits": [],
   "label": "Gas portfolio ETC (Deel 3)"
  },
+ "gas sales": {
+  "cap": "high",
+  "hits": [],
+  "label": "Gas Sales S.r.l."
+ },
  "gas sales s r l": {
   "cap": "high",
   "hits": [],
   "label": "Gas Sales S.r.l."
+ },
+ "gas sales|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Gas Sales"
  },
  "gasag": {
   "cap": "high",
@@ -14528,6 +15651,11 @@
    }
   ],
   "label": "GEA Group"
+ },
+ "gedi gruppo editoriale": {
+  "cap": "high",
+  "hits": [],
+  "label": "GEDI Gruppo Editoriale S.p.A."
  },
  "gedi gruppo editoriale s p a": {
   "cap": "high",
@@ -14646,6 +15774,11 @@
   "cap": "medium",
   "hits": [],
   "label": "Genie Solutions"
+ },
+ "genneia": {
+  "cap": "high",
+  "hits": [],
+  "label": "Genneia S.A"
  },
  "genneia s a": {
   "cap": "high",
@@ -14847,10 +15980,34 @@
   "hits": [],
   "label": "Glen Dimplex Australia"
  },
+ "global fashion group": {
+  "cap": "high",
+  "hits": [],
+  "label": "Global Fashion Group S.A."
+ },
  "global fashion group s a": {
   "cap": "high",
   "hits": [],
   "label": "Global Fashion Group S.A."
+ },
+ "global fashion group|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "",
+    "has_hq": true,
+    "hq": "London",
+    "lat": 51.5072,
+    "lon": -0.1275,
+    "qid": "Q97486414"
+   }
+  ],
+  "label": "Global Fashion Group"
+ },
+ "global fragrances labs": {
+  "cap": "high",
+  "hits": [],
+  "label": "GLOBAL FRAGRANCES LABS, S.L."
  },
  "global fragrances labs s l": {
   "cap": "high",
@@ -14861,6 +16018,16 @@
   "cap": "medium",
   "hits": [],
   "label": "Global Fragrances Labs, S.L."
+ },
+ "global fragrances labs|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Global Fragrances Labs, S.L."
+ },
+ "global fragrances labs|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "GLOBAL FRAGRANCES LABS"
  },
  "global health security network": {
   "cap": "high",
@@ -14938,6 +16105,11 @@
   "hits": [],
   "label": "Globo Comunica̤̣o e Participa̵̤es S.A."
  },
+ "globo comunicacao e participacoes": {
+  "cap": "high",
+  "hits": [],
+  "label": "GLOBO COMUNICACAO E PARTICIPACOES S/A"
+ },
  "globo comunicacao e participacoes s a": {
   "cap": "high",
   "hits": [],
@@ -14947,6 +16119,16 @@
   "cap": "high",
   "hits": [],
   "label": "Globo Comunicação e Participações S.A. – 27.865.757/0001-02"
+ },
+ "globo comunicao e participaes": {
+  "cap": "high",
+  "hits": [],
+  "label": "Globo Comunica̤̣o e Participa̵̤es S.A."
+ },
+ "gmp property socimi": {
+  "cap": "high",
+  "hits": [],
+  "label": "GMP PROPERTY SOCIMI SA"
  },
  "gmr hyderabad international airport ltd ghial": {
   "cap": "high",
@@ -15275,6 +16457,11 @@
   "hits": [],
   "label": "GP-031-Move for Good Brasil"
  },
+ "gp 031 move for good brasil copa energia": {
+  "cap": "high",
+  "hits": [],
+  "label": "GP-031 Move for Good Brasil - Copa Energia S.A."
+ },
  "gp 031 move for good brasil copa energia s a": {
   "cap": "high",
   "hits": [],
@@ -15522,6 +16709,11 @@
   "hits": [],
   "label": "Green Star Energy"
  },
+ "greenalia": {
+  "cap": "high",
+  "hits": [],
+  "label": "Greenalia, S.A."
+ },
  "greenalia s a": {
   "cap": "high",
   "hits": [],
@@ -15536,6 +16728,46 @@
   "cap": "high",
   "hits": [],
   "label": "Greenchoice"
+ },
+ "greener life participating customers cy 2024 green e ry 2024": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Greener Life participating Customers CY 2024 - Green-E RY 2024"
+ },
+ "greener life participating customers q1 2024 green e ry 2024": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Greener Life participating customers Q1 2024 - Green-E RY 2024"
+ },
+ "greener life participating customers q1 2025 green e ry 2025": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Greener Life participating customers Q1 2025 - Green-E RY 2025"
+ },
+ "greener life participating customers q1 2026 green e ry 2026": {
+  "cap": "high",
+  "hits": [],
+  "label": "On Behalf of Greener Life participating customers Q1 2026 - Green-e RY 2026"
+ },
+ "greener life participating customers q2 2024 green e ry 2024": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Greener Life participating customers Q2 2024 - Green-E RY 2024"
+ },
+ "greener life participating customers q2 2025 green e ry 2025": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Greener Life participating customers Q2 2025 - Green-E RY 2025"
+ },
+ "greener life participating customers q3 2025 green e ry 2025": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Greener Life participating customers Q3 2025 - Green-e RY 2025"
+ },
+ "greener life participating customers q4 2025 green e ry 2025": {
+  "cap": "high",
+  "hits": [],
+  "label": "On Behalf of Greener Life participating customers Q4 2025 - Green-e RY 2025"
  },
  "greenfleet": {
   "cap": "high",
@@ -15652,6 +16884,11 @@
   "hits": [],
   "label": "GROHE"
  },
+ "grosvenor capital management": {
+  "cap": "high",
+  "hits": [],
+  "label": "Grosvenor Capital Management, L.P."
+ },
  "grosvenor capital management l p": {
   "cap": "high",
   "hits": [],
@@ -15747,6 +16984,11 @@
   "hits": [],
   "label": "Grupo de Profesionales Ambientales Mundo Verde, S.A. de C.V."
  },
+ "grupo ferrer internacional": {
+  "cap": "high",
+  "hits": [],
+  "label": "GRUPO FERRER INTERNACIONAL S.A."
+ },
  "grupo ferrer internacional s a": {
   "cap": "high",
   "hits": [],
@@ -15792,6 +17034,11 @@
   "hits": [],
   "label": "Grupo Santander/Otros Negocios"
  },
+ "grupo sbf": {
+  "cap": "high",
+  "hits": [],
+  "label": "Grupo SBF S.A."
+ },
  "grupo sbf s a": {
   "cap": "high",
   "hits": [],
@@ -15821,6 +17068,11 @@
   "cap": "high",
   "hits": [],
   "label": "Gruppo Societ√† Gas Rimini S.p.A."
+ },
+ "gruppo societa gas rimini": {
+  "cap": "high",
+  "hits": [],
+  "label": "Gruppo Società Gas Rimini S.p.A."
  },
  "gruppo societa gas rimini s p a": {
   "cap": "high",
@@ -16092,6 +17344,11 @@
   "hits": [],
   "label": "Haglöfs AB"
  },
+ "haglofs ab against their 2022 carbon footprint": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Haglöfs AB against their 2022 carbon footprint"
+ },
  "hainan atlantis commerce and tourism development co ltd atlantis sanya": {
   "cap": "high",
   "hits": [],
@@ -16186,6 +17443,11 @@
   "hits": [],
   "label": "Hana Financial Football Club"
  },
+ "hannover ruck se greenhouse gas emissions 2022": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retirement for Hannover Rück SE - Greenhouse gas emissions 2022"
+ },
  "hans wilsdorf foundation": {
   "cap": "high",
   "hits": [],
@@ -16263,6 +17525,11 @@
   "cap": "high",
   "hits": [],
   "label": "Harbour Energy Marketing Limited"
+ },
+ "harbourvest partners": {
+  "cap": "high",
+  "hits": [],
+  "label": "HarbourVest Partners L.P."
  },
  "harbourvest partners l p": {
   "cap": "high",
@@ -16529,6 +17796,20 @@
   "hits": [],
   "label": "HES"
  },
+ "hes international": {
+  "cap": "high",
+  "hits": [
+   {
+    "cc": "",
+    "has_hq": true,
+    "hq": "Rotterdam",
+    "lat": 51.92,
+    "lon": 4.48,
+    "qid": "Q1616070"
+   }
+  ],
+  "label": "HES International B.V."
+ },
  "hes international b v": {
   "cap": "high",
   "hits": [
@@ -16562,6 +17843,11 @@
   "cap": "high",
   "hits": [],
   "label": "Heulens CVBA"
+ },
+ "hg capital": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Hg Capital LLP"
  },
  "hhla container terminal altenwerder": {
   "cap": "high",
@@ -16621,6 +17907,11 @@
   "cap": "high",
   "hits": [],
   "label": "Himadri Speciality Chemical Ltd."
+ },
+ "hiroshima gas co ltd for the lng cargo delivered from malaysia lng sdn bhd": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Hiroshima Gas Co., Ltd for the LNG cargo delivered from Malaysia LNG Sdn. Bhd."
  },
  "hisco": {
   "cap": "high",
@@ -16911,6 +18202,11 @@
   "hits": [],
   "label": "Howden Group Services"
  },
+ "howden group services|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Howden Group Services"
+ },
  "howden insurance brokers": {
   "cap": "high",
   "hits": [],
@@ -17005,10 +18301,20 @@
   ],
   "label": "HubSpot"
  },
+ "hudson pacific properties": {
+  "cap": "high",
+  "hits": [],
+  "label": "Hudson Pacific Properties, L.P."
+ },
  "hudson pacific properties l p": {
   "cap": "high",
   "hits": [],
   "label": "Hudson Pacific Properties, L.P."
+ },
+ "hudson pacific properties|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Hudson Pacific Properties"
  },
  "hudson technologies": {
   "cap": "high",
@@ -17030,10 +18336,20 @@
   "hits": [],
   "label": "Huismerk Energie N.V"
  },
+ "human playground tv production": {
+  "cap": "high",
+  "hits": [],
+  "label": "Human Playground TV Production B.V."
+ },
  "human playground tv production b v": {
   "cap": "high",
   "hits": [],
   "label": "Human Playground TV Production B.V."
+ },
+ "human playground tv production|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Human Playground TV Production"
  },
  "humanity": {
   "cap": "high",
@@ -17049,6 +18365,11 @@
   "cap": "high",
   "hits": [],
   "label": "Hunkem√∂ller International B.V."
+ },
+ "hunkemoller international": {
+  "cap": "high",
+  "hits": [],
+  "label": "Hunkemöller International B.V."
  },
  "hunkemoller international b v": {
   "cap": "high",
@@ -17248,6 +18569,11 @@
   "hits": [],
   "label": "IFOOD.COM AG√äNCIA DE RESTAURANTES ONLINE S.A - CNPJ: 14.380.200/0001-21"
  },
+ "ifood com agencia de restaurantes online": {
+  "cap": "high",
+  "hits": [],
+  "label": "IFOOD.COM AGENCIA DE RESTAURANTES ONLINE S.A"
+ },
  "ifood com agencia de restaurantes online s a": {
   "cap": "high",
   "hits": [],
@@ -17268,10 +18594,25 @@
   "hits": [],
   "label": "Ifood.Com Agencia De Restaurantes Online S.A"
  },
+ "ifood com agencia de restaurantes online|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Ifood.Com Agencia De Restaurantes Online S.A"
+ },
+ "ifood com agencia de restaurantes online|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "IFOOD.COM AGENCIA DE RESTAURANTES ONLINE"
+ },
  "ifs coatings": {
   "cap": "high",
   "hits": [],
   "label": "IFS Coatings"
+ },
+ "iga havaliman isletmesi": {
+  "cap": "high",
+  "hits": [],
+  "label": "IGA Havalimanı İşletmesi A.Ş."
  },
  "iga havaliman isletmesi a s": {
   "cap": "high",
@@ -17283,6 +18624,11 @@
   "hits": [],
   "label": "IGA Havalimanƒ± ƒ∞≈ületmesi A.≈û."
  },
+ "iga havalimani isletmesi": {
+  "cap": "high",
+  "hits": [],
+  "label": "IGA HAVALIMANI ISLETMESI A.S."
+ },
  "iga havalimani isletmesi a s": {
   "cap": "high",
   "hits": [],
@@ -17293,10 +18639,25 @@
   "hits": [],
   "label": "Iga Havalimani Isletmesi A.S."
  },
+ "iga havalimani isletmesi|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Iga Havalimani Isletmesi A.S."
+ },
+ "iga havalimani isletmesi|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "IGA HAVALIMANI ISLETMESI"
+ },
  "igor s r l compensazioni emissioni anno 2022": {
   "cap": "high",
   "hits": [],
   "label": "Igor S.r.l. - Compensazioni Emissioni anno 2022"
+ },
+ "igs": {
+  "cap": "high",
+  "hits": [],
+  "label": "IGS S.p.A."
  },
  "igs s p a": {
   "cap": "high",
@@ -17331,6 +18692,11 @@
    }
   ],
   "label": "Illumina"
+ },
+ "imc": {
+  "cap": "high",
+  "hits": [],
+  "label": "IMC B.V"
  },
  "imc b v": {
   "cap": "high",
@@ -17449,6 +18815,11 @@
   "cap": "high",
   "hits": [],
   "label": "Individual Customer of Patch"
+ },
+ "individual customers of anthesis": {
+  "cap": "high",
+  "hits": [],
+  "label": "Individual Customers of Anthesis B.V."
  },
  "individual customers of anthesis b v": {
   "cap": "high",
@@ -17830,6 +19201,21 @@
   ],
   "label": "Interface, Inc."
  },
+ "interface inc 2008 cool carpet program": {
+  "cap": "high",
+  "hits": [],
+  "label": "For Interface, Inc. 2008 Cool Carpet Program"
+ },
+ "interface inc 2012 cool carpet program": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retirement on behalf of Interface, Inc. 2012 Cool Carpet Program"
+ },
+ "interface inc 2013 cool carpet program": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired for Interface, Inc. 2013 Cool Carpet Program"
+ },
  "interglobe aviation": {
   "cap": "high",
   "hits": [],
@@ -17848,6 +19234,11 @@
    }
   ],
   "label": "International Finance Corporation"
+ },
+ "international monetary fund cy23": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of International Monetary Fund CY23."
  },
  "international monetary fund imf": {
   "cap": "high",
@@ -17996,6 +19387,11 @@
   "hits": [],
   "label": "Investec Group for FY2026 corporate GHG footprint"
  },
+ "ipac": {
+  "cap": "high",
+  "hits": [],
+  "label": "IPAC S.A."
+ },
  "ipac s a": {
   "cap": "high",
   "hits": [],
@@ -18016,10 +19412,20 @@
   "hits": [],
   "label": "IPIRANGA PRODUTOS DE PETR√≥LEO S/A"
  },
+ "ipiranga produtos de petra3leo": {
+  "cap": "high",
+  "hits": [],
+  "label": "Ipiranga Produtos de PetrÃ³leo S/A"
+ },
  "ipiranga produtos de petra3leo s a": {
   "cap": "high",
   "hits": [],
   "label": "Ipiranga Produtos de PetrÃ³leo S/A"
+ },
+ "ipiranga produtos de petroleo": {
+  "cap": "high",
+  "hits": [],
+  "label": "IPIRANGA PRODUTOS DE PETRóLEO S/A"
  },
  "ipiranga produtos de petroleo s a": {
   "cap": "high",
@@ -18160,6 +19566,16 @@
   "hits": [],
   "label": "iSwitch Pte Ltd"
  },
+ "iswitch2green program": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of the iSwitch2Green program."
+ },
+ "ita corpbanca colombia": {
+  "cap": "high",
+  "hits": [],
+  "label": "Ita̼ CorpBanca Colombia S.A."
+ },
  "ita e corpbanca colombia s a": {
   "cap": "high",
   "hits": [],
@@ -18195,6 +19611,11 @@
   "hits": [],
   "label": "Ita̼ Unibanco S.A."
  },
+ "itaas corpbanca colombia": {
+  "cap": "high",
+  "hits": [],
+  "label": "ITAÃš CORPBANCA COLOMBIA S.A"
+ },
  "itaas corpbanca colombia s a": {
   "cap": "high",
   "hits": [],
@@ -18209,6 +19630,16 @@
   "cap": "high",
   "hits": [],
   "label": "ITAÚ UNIBANCO S.A"
+ },
+ "itau unibanco|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Itaú Unibanco S.A"
+ },
+ "itau unibanco|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "ITAÚ UNIBANCO"
  },
  "itc grand chola": {
   "cap": "high",
@@ -18239,6 +19670,21 @@
   "cap": "high",
   "hits": [],
   "label": "ITRS Group Limited"
+ },
+ "its customers": {
+  "cap": "high",
+  "hits": [],
+  "label": "Compensate Operations on behalf of its customers."
+ },
+ "its subsidiaries in asia and australia": {
+  "cap": "high",
+  "hits": [],
+  "label": "Health and Happiness (H&H) Hong Kong Limited for itself and on behalf of its subsidiaries in Asia and Australia"
+ },
+ "iu group": {
+  "cap": "high",
+  "hits": [],
+  "label": "IU Group N.V."
  },
  "iu group n v": {
   "cap": "high",
@@ -18352,6 +19798,11 @@
   ],
   "label": "JAMF"
  },
+ "jamf software": {
+  "cap": "high",
+  "hits": [],
+  "label": "Jamf Software LLC"
+ },
  "jamf|alt1": {
   "cap": "medium",
   "hits": [
@@ -18414,6 +19865,16 @@
   "cap": "medium",
   "hits": [],
   "label": "JAPAN PETROLEUM EXPLORATION"
+ },
+ "java coffee company for footprint 2023": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of The Java Coffee Company. For footprint 2023"
+ },
+ "jbgs employee": {
+  "cap": "high",
+  "hits": [],
+  "label": "JBGS Employee Company, L.L.C."
  },
  "jbgs employee company l l c": {
   "cap": "high",
@@ -18720,10 +20181,20 @@
   "hits": [],
   "label": "Joloda Hydraroll"
  },
+ "jorge": {
+  "cap": "high",
+  "hits": [],
+  "label": "Jorge S.L"
+ },
  "jorge s l": {
   "cap": "high",
   "hits": [],
   "label": "Jorge S.L"
+ },
+ "jorge|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Jorge"
  },
  "joro": {
   "cap": "high",
@@ -18843,6 +20314,16 @@
   "hits": [],
   "label": "JTI"
  },
+ "juli bertelinkulman kajaste oy to compensate emissions resulting from construction of the property": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Juli Bertelinkulman Kajaste Oy to compensate emissions resulting from construction of the property"
+ },
+ "juli olarin noste oy to compensate emissions resulting from construction of the property": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Juli Olarin Noste Oy to compensate emissions resulting from construction of the property"
+ },
  "juneshine": {
   "cap": "high",
   "hits": [],
@@ -18936,10 +20417,20 @@
   "hits": [],
   "label": "Juustoportti Food Oy"
  },
+ "juventus football club": {
+  "cap": "high",
+  "hits": [],
+  "label": "Juventus Football Club S.p.A"
+ },
  "juventus football club s p a": {
   "cap": "high",
   "hits": [],
   "label": "Juventus Football Club S.p.A"
+ },
+ "juventus football club|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Juventus Football Club"
  },
  "k hrs group": {
   "cap": "high",
@@ -19110,6 +20601,11 @@
   "hits": [],
   "label": "KELAR S.A."
  },
+ "kelar|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Kelar S.A."
+ },
  "kelar|alt2": {
   "cap": "medium",
   "hits": [],
@@ -19240,10 +20736,20 @@
   "hits": [],
   "label": "Kip&Co Pty Ltd"
  },
+ "kipster": {
+  "cap": "high",
+  "hits": [],
+  "label": "Kipster B.V."
+ },
  "kipster b v": {
   "cap": "high",
   "hits": [],
   "label": "Kipster B.V."
+ },
+ "kirkbi": {
+  "cap": "high",
+  "hits": [],
+  "label": "KIRKBI A/S"
  },
  "kirkbi a s": {
   "cap": "high",
@@ -19334,6 +20840,11 @@
   "hits": [],
   "label": "Klimaschutzstiftung Baden-Württemberg c/o Baden-Württemberg Stiftung gGmbH"
  },
+ "klm": {
+  "cap": "high",
+  "hits": [],
+  "label": "KLM N.V."
+ },
  "klm n v": {
   "cap": "high",
   "hits": [],
@@ -19373,6 +20884,11 @@
   "cap": "high",
   "hits": [],
   "label": "≈†KODA AUTO a.s."
+ },
+ "kohlberg kravis roberts and": {
+  "cap": "high",
+  "hits": [],
+  "label": "Kohlberg Kravis Roberts & Co. L.P."
  },
  "kohlberg kravis roberts and co l p": {
   "cap": "high",
@@ -19776,6 +21292,11 @@
   "hits": [],
   "label": "Lafim-Diakonie"
  },
+ "laird norton enterprises": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Laird Norton Enterprises"
+ },
  "lake moodemere estate": {
   "cap": "high",
   "hits": [],
@@ -19840,6 +21361,11 @@
   "cap": "high",
   "hits": [],
   "label": "Larnaka International Airport"
+ },
+ "latam airlines group": {
+  "cap": "high",
+  "hits": [],
+  "label": "LATAM Airlines Group S.A."
  },
  "latam airlines group chile": {
   "cap": "high",
@@ -19988,6 +21514,11 @@
   "hits": [],
   "label": "Leeds University Business School, University of Leeds."
  },
+ "lego system": {
+  "cap": "high",
+  "hits": [],
+  "label": "LEGO System A/S"
+ },
  "lego system a s": {
   "cap": "high",
   "hits": [],
@@ -20042,6 +21573,11 @@
   "hits": [],
   "label": "Lenovo Clients"
  },
+ "leo": {
+  "cap": "high",
+  "hits": [],
+  "label": "LEO S.A."
+ },
  "leo s a": {
   "cap": "high",
   "hits": [],
@@ -20065,6 +21601,25 @@
    }
   ],
   "label": "Leonard Green & Partners"
+ },
+ "leo|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Leo S.A."
+ },
+ "leo|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "DE",
+    "has_hq": true,
+    "hq": "Sauerlach",
+    "lat": 47.9667,
+    "lon": 11.65,
+    "qid": "Q895848"
+   }
+  ],
+  "label": "LEO"
  },
  "less emissions": {
   "cap": "high",
@@ -20159,10 +21714,29 @@
   "hits": [],
   "label": "Li Ning (China) Sports Goods Co., Ltd."
  },
+ "liander": {
+  "cap": "high",
+  "hits": [],
+  "label": "Liander N.V."
+ },
  "liander n v": {
   "cap": "high",
   "hits": [],
   "label": "Liander N.V."
+ },
+ "liander|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "",
+    "has_hq": true,
+    "hq": "Arnhem",
+    "lat": 51.9833,
+    "lon": 5.9167,
+    "qid": "Q2578819"
+   }
+  ],
+  "label": "Liander"
  },
  "liaocheng youran animal husbandry": {
   "cap": "high",
@@ -20302,6 +21876,11 @@
   "hits": [],
   "label": "Lilly Suzhou Pharmaceutical Co., Ltd."
  },
+ "limak kosovo international airport": {
+  "cap": "high",
+  "hits": [],
+  "label": "Limak Kosovo International Airport J.S.C."
+ },
  "limak kosovo international airport j s c": {
   "cap": "high",
   "hits": [],
@@ -20388,10 +21967,20 @@
   "hits": [],
   "label": "LivClean Corp"
  },
+ "livent corporation minera del altiplano": {
+  "cap": "high",
+  "hits": [],
+  "label": "Livent Corporation Minera del Altiplano S.A"
+ },
  "livent corporation minera del altiplano s a": {
   "cap": "high",
   "hits": [],
   "label": "Livent Corporation Minera del Altiplano S.A"
+ },
+ "livent corporation minera del antiplano": {
+  "cap": "high",
+  "hits": [],
+  "label": "Livent Corporation Minera Del Antiplano S.A"
  },
  "livent corporation minera del antiplano s a": {
   "cap": "high",
@@ -20463,6 +22052,20 @@
   "hits": [],
   "label": "Lm Wind Power"
  },
+ "lm wind power|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "DK",
+    "has_hq": true,
+    "hq": "Kolding Municipality",
+    "lat": 55.49,
+    "lon": 9.47,
+    "qid": "Q508150"
+   }
+  ],
+  "label": "LM Wind Power"
+ },
  "lob com": {
   "cap": "high",
   "hits": [],
@@ -20487,6 +22090,11 @@
   "cap": "high",
   "hits": [],
   "label": "Localiza Rent A Car S.A."
+ },
+ "localiza rent a car|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Localiza Rent A Car"
  },
  "lockton companies": {
   "cap": "high",
@@ -20570,15 +22178,39 @@
   ],
   "label": "Logstor"
  },
+ "lojas americanas": {
+  "cap": "high",
+  "hits": [],
+  "label": "Lojas Americanas S.A."
+ },
  "lojas americanas s a": {
   "cap": "high",
   "hits": [],
   "label": "Lojas Americanas S.A."
  },
+ "lojas renner": {
+  "cap": "high",
+  "hits": [],
+  "label": "Lojas Renner S.A."
+ },
  "lojas renner s a": {
   "cap": "high",
   "hits": [],
   "label": "Lojas Renner S.A."
+ },
+ "lojas renner|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "BR",
+    "has_hq": true,
+    "hq": "Porto Alegre",
+    "lat": -30.0328,
+    "lon": -51.23,
+    "qid": "Q3064071"
+   }
+  ],
+  "label": "Lojas Renner"
  },
  "lojel": {
   "cap": "high",
@@ -20639,6 +22271,11 @@
   "hits": [],
   "label": "Losee Consulting"
  },
+ "lotus": {
+  "cap": "high",
+  "hits": [],
+  "label": "Cancellation FY2020 on behalf of Lotus"
+ },
  "lotus bakeries": {
   "cap": "high",
   "hits": [
@@ -20652,6 +22289,11 @@
    }
   ],
   "label": "Lotus Bakeries"
+ },
+ "lotus fy2023 emissions scope 1 and 2 owned locations": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Lotus - FY2023 emissions - Scope 1&2 owned locations"
  },
  "louise lecl re mega power": {
   "cap": "high",
@@ -20835,6 +22477,11 @@
   "hits": [],
   "label": "LUXAIR, Soci√©t√© Luxembourgeoise de Navigation A√©rienne S.A."
  },
+ "luxair societe luxembourgeoise de navigation aerienne": {
+  "cap": "high",
+  "hits": [],
+  "label": "LUXAIR, Société Luxembourgeoise de Navigation Aérienne S.A."
+ },
  "luxair societe luxembourgeoise de navigation aerienne s a": {
   "cap": "high",
   "hits": [],
@@ -21006,6 +22653,11 @@
   "hits": [],
   "label": "Maculrob Services"
  },
+ "maersk air cargo": {
+  "cap": "high",
+  "hits": [],
+  "label": "Maersk Air Cargo A/S"
+ },
  "maersk air cargo a s": {
   "cap": "high",
   "hits": [],
@@ -21054,6 +22706,11 @@
   "cap": "high",
   "hits": [],
   "label": "Main Energie B.V."
+ },
+ "main energie|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Main Energie"
  },
  "main hesperia llc and main 395 industrial i": {
   "cap": "high",
@@ -21385,10 +23042,20 @@
   ],
   "label": "Massachusetts Mutual Life Insurance Company"
  },
+ "massalin particulares": {
+  "cap": "high",
+  "hits": [],
+  "label": "MASSALIN PARTICULARES S.R.L."
+ },
  "massalin particulares s r l": {
   "cap": "high",
   "hits": [],
   "label": "MASSALIN PARTICULARES S.R.L."
+ },
+ "massima energia": {
+  "cap": "high",
+  "hits": [],
+  "label": "Massima Energia S.p.A."
  },
  "massima energia s p a": {
   "cap": "high",
@@ -21524,6 +23191,16 @@
   ],
   "label": "McKinsey & Company"
  },
+ "mckinsey and co s 2022 ghg emissions": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of McKinsey & Co.'s 2022 GHG Emissions"
+ },
+ "mckinsey and co s 2023 ghg emissions": {
+  "cap": "high",
+  "hits": [],
+  "label": "On Behalf of McKinsey & Co.'s 2023 GHG Emissions"
+ },
  "mckinstry essention": {
   "cap": "high",
   "hits": [],
@@ -21625,6 +23302,11 @@
   "cap": "high",
   "hits": [],
   "label": "Medtronic"
+ },
+ "meelunie": {
+  "cap": "high",
+  "hits": [],
+  "label": "Meelunie B.V."
  },
  "meelunie b v": {
   "cap": "high",
@@ -21802,6 +23484,11 @@
   "hits": [],
   "label": "MET Energia"
  },
+ "met energia italia": {
+  "cap": "high",
+  "hits": [],
+  "label": "MET Energia Italia S.p.A."
+ },
  "met energia italia s p a": {
   "cap": "high",
   "hits": [],
@@ -21866,6 +23553,11 @@
   "label": "Metrans a.s."
  },
  "metrans a s on behalf of metrans group": {
+  "cap": "high",
+  "hits": [],
+  "label": "Metrans a/s on behalf of Metrans Group"
+ },
+ "metrans group": {
   "cap": "high",
   "hits": [],
   "label": "Metrans a/s on behalf of Metrans Group"
@@ -22030,6 +23722,11 @@
   "hits": [],
   "label": "Miir"
  },
+ "miko": {
+  "cap": "high",
+  "hits": [],
+  "label": "MIKO s.r.l."
+ },
  "miko s r l": {
   "cap": "high",
   "hits": [],
@@ -22064,6 +23761,11 @@
   ],
   "label": "Milliken & Company"
  },
+ "minerva": {
+  "cap": "high",
+  "hits": [],
+  "label": "Minerva S.A."
+ },
  "minerva s a": {
   "cap": "high",
   "hits": [],
@@ -22078,6 +23780,11 @@
   "cap": "high",
   "hits": [],
   "label": "Ministry of Finance – VITAL"
+ },
+ "minor hotels europe and americas": {
+  "cap": "high",
+  "hits": [],
+  "label": "MINOR HOTELS EUROPE & AMERICAS S.A"
  },
  "mirakl": {
   "cap": "high",
@@ -22173,6 +23880,11 @@
   "cap": "high",
   "hits": [],
   "label": "Mondelez Foods (Suzhou) Co., Ltd."
+ },
+ "mondiale freight inv 1134": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired for Mondiale Freight INV-1134"
  },
  "montagu private equity": {
   "cap": "high",
@@ -22332,6 +24044,11 @@
   "hits": [],
   "label": "Movida Participa√ß√µes S.A."
  },
+ "movida participacoes": {
+  "cap": "high",
+  "hits": [],
+  "label": "Movida Participações S.A."
+ },
  "movida participacoes s a": {
   "cap": "high",
   "hits": [],
@@ -22375,6 +24092,11 @@
   "cap": "high",
   "hits": [],
   "label": "Mt Elliot Springs"
+ },
+ "muenchener rueckversicherungs gesellschaft": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Muenchener Rueckversicherungs-Gesellschaft AG"
  },
  "muhlen sohn gmbh and": {
   "cap": "high",
@@ -22696,6 +24418,11 @@
   "hits": [],
   "label": "NativeEnergy clients"
  },
+ "nativeenergy inc clients": {
+  "cap": "high",
+  "hits": [],
+  "label": "On Behalf of NativeEnergy, Inc. Clients"
+ },
  "nativeenergy s client": {
   "cap": "high",
   "hits": [],
@@ -22755,10 +24482,25 @@
   "hits": [],
   "label": "Natura Cosmeticos"
  },
+ "natura cosmeticos|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Natura Cosméticos"
+ },
  "natura cosmetics": {
   "cap": "high",
   "hits": [],
   "label": "Natura Cosmetics"
+ },
+ "natura cosmticos": {
+  "cap": "high",
+  "hits": [],
+  "label": "Natura Cosm̩ticos S.A."
+ },
+ "natura cosmticos|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Natura Cosm̩ticos"
  },
  "natural capital partners client": {
   "cap": "high",
@@ -22841,6 +24583,11 @@
    }
   ],
   "label": "NatWest Group"
+ },
+ "natwest group operations": {
+  "cap": "high",
+  "hits": [],
+  "label": "“Retirement on behalf of NatWest Group Operations”"
  },
  "navitas": {
   "cap": "high",
@@ -23017,6 +24764,11 @@
   "hits": [],
   "label": "Nestrade S.A."
  },
+ "nestrade|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Nestrade"
+ },
  "netflix": {
   "cap": "high",
   "hits": [
@@ -23051,10 +24803,20 @@
   "hits": [],
   "label": "NetJets Transportes A√©reos, S.A."
  },
+ "netjets transportes aereos": {
+  "cap": "high",
+  "hits": [],
+  "label": "NetJets Transportes Aéreos, S.A."
+ },
  "netjets transportes aereos s a": {
   "cap": "high",
   "hits": [],
   "label": "NetJets Transportes Aéreos, S.A."
+ },
+ "netjets transportes aereos|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "NetJets Transportes Aéreos"
  },
  "netjets us": {
   "cap": "high",
@@ -23226,10 +24988,20 @@
   "hits": [],
   "label": "Nexant"
  },
+ "nexi": {
+  "cap": "high",
+  "hits": [],
+  "label": "Nexi S.p.A"
+ },
  "nexi s p a": {
   "cap": "high",
   "hits": [],
   "label": "Nexi S.p.A"
+ },
+ "next energy": {
+  "cap": "high",
+  "hits": [],
+  "label": "Next Energy B.V."
  },
  "next energy b v": {
   "cap": "high",
@@ -23275,6 +25047,16 @@
   "cap": "medium",
   "hits": [],
   "label": "NGW"
+ },
+ "nhl enterprises": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of NHL Enterprises, L.P."
+ },
+ "nhl enterprises|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Retired on behalf of NHL Enterprises"
  },
  "nib holdings": {
   "cap": "high",
@@ -23427,6 +25209,11 @@
   "hits": [],
   "label": "NM Rothschild and Sons Ltd"
  },
+ "nn group": {
+  "cap": "high",
+  "hits": [],
+  "label": "NN Group N.V."
+ },
  "nn group n v": {
   "cap": "high",
   "hits": [],
@@ -23446,6 +25233,11 @@
   "cap": "high",
   "hits": [],
   "label": "Noble Carbon Credits Limited"
+ },
+ "nobody": {
+  "cap": "high",
+  "hits": [],
+  "label": "On Behalf of Nobody"
  },
  "noem": {
   "cap": "high",
@@ -23706,6 +25498,11 @@
   "hits": [],
   "label": "Notre Dame Interm√©dica Sa√∫de S.A"
  },
+ "notre dame intermedica saude": {
+  "cap": "high",
+  "hits": [],
+  "label": "Notre Dame Intermédica Saúde S.A"
+ },
  "notre dame intermedica saude s a": {
   "cap": "high",
   "hits": [],
@@ -23721,10 +25518,29 @@
   "hits": [],
   "label": "NOVACOOP SOC. COOPERATIVA"
  },
+ "novamont": {
+  "cap": "high",
+  "hits": [],
+  "label": "Novamont S.p.A."
+ },
  "novamont s p a": {
   "cap": "high",
   "hits": [],
   "label": "Novamont S.p.A."
+ },
+ "novamont|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "IT",
+    "has_hq": true,
+    "hq": "Novara",
+    "lat": 45.45,
+    "lon": 8.62,
+    "qid": "Q3879003"
+   }
+  ],
+  "label": "Novamont"
  },
  "novatek green energy": {
   "cap": "high",
@@ -23831,6 +25647,16 @@
   "hits": [],
   "label": "Numidia B.V."
  },
+ "numidia|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Numidia"
+ },
+ "nurnberger lebensversicherung": {
+  "cap": "high",
+  "hits": [],
+  "label": "Nürnberger Lebensversicherung AG"
+ },
  "nurnberger wach und schliessgesellschaft mbh": {
   "cap": "high",
   "hits": [],
@@ -23856,10 +25682,20 @@
   "hits": [],
   "label": "Nutrimental"
  },
+ "nutsservices": {
+  "cap": "high",
+  "hits": [],
+  "label": "NutsServices B.V."
+ },
  "nutsservices b v": {
   "cap": "high",
   "hits": [],
   "label": "NutsServices B.V."
+ },
+ "nutsservices|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "NutsServices"
  },
  "nvent electric": {
   "cap": "high",
@@ -23885,6 +25721,11 @@
   ],
   "label": "NW Natural"
  },
+ "nw natural miller station s oregon co2 standard requirements": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired for NW Natural Miller Station's Oregon CO2 Standard requirements"
+ },
  "nwn s smart energy customers": {
   "cap": "high",
   "hits": [],
@@ -23909,6 +25750,11 @@
   "cap": "high",
   "hits": [],
   "label": "O'right Inc"
+ },
+ "o9 solutions": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of o9 Solutions Inc"
  },
  "oberlin college": {
   "cap": "high",
@@ -23963,6 +25809,16 @@
   "hits": [],
   "label": "Octavius Infrastructure Ltd"
  },
+ "octopus energy": {
+  "cap": "high",
+  "hits": [],
+  "label": "Renewable World on behalf of Octopus Energy"
+ },
+ "ocyan": {
+  "cap": "high",
+  "hits": [],
+  "label": "Ocyan S.A."
+ },
  "ocyan s a": {
   "cap": "high",
   "hits": [],
@@ -23978,10 +25834,20 @@
   "hits": [],
   "label": "OdA 4100064899 RDA 0020129230 SEA Malpensa"
  },
+ "odontoprev": {
+  "cap": "high",
+  "hits": [],
+  "label": "Odontoprev S.A."
+ },
  "odontoprev s a": {
   "cap": "high",
   "hits": [],
   "label": "Odontoprev S.A."
+ },
+ "oepoag": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retirement for OEPOAG"
  },
  "officemax australia": {
   "cap": "high",
@@ -24063,6 +25929,11 @@
   "hits": [],
   "label": "OHLA Group (Obrasc√≥n Huarte La√≠n S.A.)"
  },
+ "ohla group obrascon huarte lain": {
+  "cap": "high",
+  "hits": [],
+  "label": "OHLA Group (Obrascón Huarte Laín S.A.)"
+ },
  "ohla group obrascon huarte lain s a": {
   "cap": "high",
   "hits": [],
@@ -24092,6 +25963,11 @@
   "cap": "high",
   "hits": [],
   "label": "Oldendorff Carriers Uk Limited"
+ },
+ "oleoductos del valle": {
+  "cap": "high",
+  "hits": [],
+  "label": "OLEODUCTOS DEL VALLE S.A"
  },
  "oleoductos del valle s a": {
   "cap": "high",
@@ -24600,6 +26476,11 @@
   "hits": [],
   "label": "Only One"
  },
+ "ontex": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Ontex"
+ },
  "onv": {
   "cap": "high",
   "hits": [],
@@ -24650,6 +26531,11 @@
   "hits": [],
   "label": "Open Farm Inc."
  },
+ "open fiber": {
+  "cap": "high",
+  "hits": [],
+  "label": "Open Fiber S.p.A."
+ },
  "open fiber s p a": {
   "cap": "high",
   "hits": [],
@@ -24678,6 +26564,11 @@
   "cap": "high",
   "hits": [],
   "label": "OptiGroup"
+ },
+ "optiver services": {
+  "cap": "high",
+  "hits": [],
+  "label": "Optiver Services B.V."
  },
  "optiver services b v": {
   "cap": "high",
@@ -24762,6 +26653,11 @@
   "cap": "medium",
   "hits": [],
   "label": "Organización Terpel S.A Nit 830.095.213-0"
+ },
+ "organizacion terpel|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Organización Terpel"
  },
  "organizing committees for the 14th national winter games of the people s republic of china": {
   "cap": "high",
@@ -24974,6 +26870,81 @@
   "hits": [],
   "label": "Otrivin brand by GSK Consumer Healthcare SARL, a Haleon group company"
  },
+ "our customer 10109": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of our customer 10109"
+ },
+ "our customer 10128": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retirement on behalf of our customer 10128"
+ },
+ "our customer 10196": {
+  "cap": "high",
+  "hits": [],
+  "label": "on behalf of our customer 10196"
+ },
+ "our customer 10206": {
+  "cap": "high",
+  "hits": [],
+  "label": "on behalf of our customer 10206"
+ },
+ "our customer 10351": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of our customer 10351"
+ },
+ "our customer 10390": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of our customer 10390"
+ },
+ "our customer 10468": {
+  "cap": "high",
+  "hits": [],
+  "label": "on behalf of our customer 10468"
+ },
+ "our customer 10529": {
+  "cap": "high",
+  "hits": [],
+  "label": "on behalf of our customer 10529"
+ },
+ "our customer 10986": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of our customer 10986"
+ },
+ "our customer 11145": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of our customer 11145"
+ },
+ "our customer 11593": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of our customer 11593"
+ },
+ "our customer 11649": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of our customer 11649"
+ },
+ "our customer hunziker kalksandstein": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retirement on behalf of our customer Hunziker Kalksandstein AG"
+ },
+ "our customer ineos manufacturing": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retirement on behalf of our customer Ineos Manufacturing"
+ },
+ "our customer thyssenkrupp steel europe": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retirement on behalf of our customer thyssenkrupp Steel Europe AG"
+ },
  "our trace": {
   "cap": "high",
   "hits": [],
@@ -25009,6 +26980,11 @@
   "hits": [],
   "label": "Ovako Group"
  },
+ "ovako group and its subsidiaries for the co2 neutral production of engineering steel": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Ovako Group and its subsidiaries for the CO2-neutral production of engineering steel"
+ },
  "ovako|alt2": {
   "cap": "medium",
   "hits": [
@@ -25027,6 +27003,11 @@
   "cap": "high",
   "hits": [],
   "label": "Ove Arup & Partners International Limited (on behalf of Arup Group Limited)"
+ },
+ "overdie metals": {
+  "cap": "high",
+  "hits": [],
+  "label": "Overdie Metals B.V."
  },
  "overdie metals b v": {
   "cap": "high",
@@ -25123,6 +27104,11 @@
   "hits": [],
   "label": "PACIFICO COMPA√ëIA DE SEGUROS Y REASEGUROS S.A"
  },
+ "pacifico compania de seguros y reaseguros": {
+  "cap": "high",
+  "hits": [],
+  "label": "PACIFICO COMPAÑIA DE SEGUROS Y REASEGUROS S.A"
+ },
  "pacifico compania de seguros y reaseguros s a": {
   "cap": "high",
   "hits": [],
@@ -25137,6 +27123,11 @@
   "cap": "high",
   "hits": [],
   "label": "Pagseguro Internet Institui√ß√£o de Pagamento S.A."
+ },
+ "pagseguro internet instituicao de pagamento": {
+  "cap": "high",
+  "hits": [],
+  "label": "PAGSEGURO INTERNET INSTITUIÇÃO DE PAGAMENTO S.A."
  },
  "pagseguro internet instituicao de pagamento s a": {
   "cap": "high",
@@ -25256,6 +27247,11 @@
   "hits": [],
   "label": "Panhandle 180 Villages 1-5"
  },
+ "papastratos cigarette manufacturing": {
+  "cap": "high",
+  "hits": [],
+  "label": "Papastratos Cigarette Manufacturing Company, S.A."
+ },
  "papastratos cigarette manufacturing company s a": {
   "cap": "high",
   "hits": [],
@@ -25286,6 +27282,11 @@
   "hits": [],
   "label": "Paris 2024 Olympic and Paralympic Organising committee"
  },
+ "parlevliet and van der plas": {
+  "cap": "high",
+  "hits": [],
+  "label": "Parlevliet & Van der Plas B.V."
+ },
  "parlevliet and van der plas b v": {
   "cap": "high",
   "hits": [],
@@ -25315,6 +27316,16 @@
   "cap": "high",
   "hits": [],
   "label": "Patch retiring on behalf of Client"
+ },
+ "patch s customers and or their end users": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Patch's customers and/ or their End Users"
+ },
+ "patch s customers and their end users": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Patch’s customers and their end users"
  },
  "patch technologies": {
   "cap": "high",
@@ -25398,6 +27409,11 @@
   "cap": "high",
   "hits": [],
   "label": "Pegasus Hava Ta≈üƒ±macƒ±lƒ±ƒüƒ± A.≈û."
+ },
+ "pegasus hava tas mac l g": {
+  "cap": "high",
+  "hits": [],
+  "label": "Pegasus Hava Taşımacılığı A.Ş."
  },
  "pegasus hava tas mac l g a s": {
   "cap": "high",
@@ -25488,6 +27504,11 @@
   "hits": [],
   "label": "Persistent System Limited"
  },
+ "person or organization": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retirement for Person or Organization"
+ },
  "pet family": {
   "cap": "high",
   "hits": [],
@@ -25543,6 +27564,11 @@
   "hits": [],
   "label": "PETROBRAS"
  },
+ "petrobras colombia combustibles": {
+  "cap": "high",
+  "hits": [],
+  "label": "Petrobras Colombia Combustibles S.A."
+ },
  "petrobras colombia combustibles s a": {
   "cap": "high",
   "hits": [],
@@ -25587,6 +27613,11 @@
   "hits": [],
   "label": "Petrofer AG; Switzerland"
  },
+ "petroleos del milenio petromil": {
+  "cap": "high",
+  "hits": [],
+  "label": "Petróleos del Milenio Petromil S.A.S."
+ },
  "petroleos del milenio petromil nit 819 001 667 8": {
   "cap": "high",
   "hits": [],
@@ -25601,6 +27632,11 @@
   "cap": "high",
   "hits": [],
   "label": "Petroleos del Milenio Petromil S.A.S. NIT 819 001 667-8"
+ },
+ "petroleos del milenio petromil|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Petróleos del Milenio Petromil"
  },
  "petroleos del milenio s a s identificada con nit 819 001 667 8": {
   "cap": "high",
@@ -25631,6 +27667,11 @@
   "cap": "high",
   "hits": [],
   "label": "PETROLEOS DEL MILENIO SAS - PETROMIL SAS - NIT819001667-8"
+ },
+ "petromil": {
+  "cap": "high",
+  "hits": [],
+  "label": "Petromil S.A.S"
  },
  "petromil s a s": {
   "cap": "high",
@@ -25715,6 +27756,11 @@
   "cap": "high",
   "hits": [],
   "label": "PHILIP MORRIS ROMANIA S.R.L."
+ },
+ "philip morris tutun mamulleri sanayi ve ticaret": {
+  "cap": "high",
+  "hits": [],
+  "label": "PHILIP MORRIS TUTUN MAMULLERI SANAYI VE TICARET A.S."
  },
  "philip morris tutun mamulleri sanayi ve ticaret a s": {
   "cap": "high",
@@ -25897,6 +27943,11 @@
   "cap": "high",
   "hits": [],
   "label": "Point B, Inc"
+ },
+ "point72": {
+  "cap": "high",
+  "hits": [],
+  "label": "Point72, L.P."
  },
  "point72 l p": {
   "cap": "high",
@@ -26083,6 +28134,11 @@
   "hits": [],
   "label": "Powerday PLC"
  },
+ "powerpeers": {
+  "cap": "high",
+  "hits": [],
+  "label": "Powerpeers B.V."
+ },
  "powerpeers b v": {
   "cap": "high",
   "hits": [],
@@ -26118,6 +28174,11 @@
   "hits": [],
   "label": "PPURA GmbH"
  },
+ "prada": {
+  "cap": "high",
+  "hits": [],
+  "label": "Prada Spa"
+ },
  "prada s p a": {
   "cap": "high",
   "hits": [],
@@ -26138,10 +28199,20 @@
   "hits": [],
   "label": "Pricewaterhouse Coopers (PwC) Australia"
  },
+ "pricewaterhouse coopers services": {
+  "cap": "high",
+  "hits": [],
+  "label": "Pricewaterhouse Coopers Services B.V."
+ },
  "pricewaterhouse coopers services b v": {
   "cap": "high",
   "hits": [],
   "label": "Pricewaterhouse Coopers Services B.V."
+ },
+ "pricewaterhouse coopers services|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Pricewaterhouse Coopers Services"
  },
  "pricewaterhousecoopers": {
   "cap": "high",
@@ -26331,6 +28402,11 @@
   "hits": [],
   "label": "Prologis' 2021 carbon footprint"
  },
+ "prologis for 2021 carbon footprint": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Prologis for 2021 carbon footprint"
+ },
  "prologis logistics services": {
   "cap": "high",
   "hits": [],
@@ -26341,10 +28417,42 @@
   "hits": [],
   "label": "Prologis Logistics Services"
  },
+ "prologis moissy ii project in france": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Prologis Moissy II Project in France"
+ },
+ "prometeo": {
+  "cap": "high",
+  "hits": [],
+  "label": "Prometeo S.p.A."
+ },
  "prometeo s p a": {
   "cap": "high",
   "hits": [],
   "label": "Prometeo S.p.A."
+ },
+ "prometeo|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "ES",
+    "has_hq": true,
+    "hq": "Madrid",
+    "lat": 40.4169,
+    "lon": -3.7033,
+    "qid": "Q28833544"
+   },
+   {
+    "cc": "",
+    "has_hq": true,
+    "hq": "Segrate",
+    "lat": 45.49,
+    "lon": 9.2953,
+    "qid": "Q56488772"
+   }
+  ],
+  "label": "Prometeo"
  },
  "promontoria logistics uk 7": {
   "cap": "high",
@@ -26395,10 +28503,20 @@
   "hits": [],
   "label": "PROSEGUR COMPA√ë√çA DE SEGURIDAD S.A."
  },
+ "prosegur compania de seguridad": {
+  "cap": "high",
+  "hits": [],
+  "label": "PROSEGUR COMPAÑÍA DE SEGURIDAD S.A."
+ },
  "prosegur compania de seguridad s a": {
   "cap": "high",
   "hits": [],
   "label": "PROSEGUR COMPAÑÍA DE SEGURIDAD S.A."
+ },
+ "protinus it": {
+  "cap": "high",
+  "hits": [],
+  "label": "Protinus IT B.V."
  },
  "protinus it b v": {
   "cap": "high",
@@ -26540,6 +28658,11 @@
    }
   ],
   "label": "Pukka Herbs"
+ },
+ "puma energy colombia combustibles": {
+  "cap": "high",
+  "hits": [],
+  "label": "Puma Energy Colombia Combustibles S.A.S"
  },
  "puma energy colombia combustibles s a s": {
   "cap": "high",
@@ -26685,6 +28808,20 @@
   "hits": [],
   "label": "Qantas Fly Carbon Neutral Programme"
  },
+ "qantas|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "AU",
+    "has_hq": true,
+    "hq": "Mascot",
+    "lat": -33.9317,
+    "lon": 151.1928,
+    "qid": "Q32491"
+   }
+  ],
+  "label": "Qantas Airways"
+ },
  "qatar airways voluntary carbon offsetting programme": {
   "cap": "high",
   "hits": [],
@@ -26780,6 +28917,11 @@
   "hits": [],
   "label": "Quota di compensazione emissioni 2025 – Carnj Società Cooperativa Agricola"
  },
+ "quota di compensazione emissioni 2025 fileni alimentare": {
+  "cap": "high",
+  "hits": [],
+  "label": "Quota di compensazione emissioni 2025 – Fileni Alimentare S.p.A"
+ },
  "quota di compensazione emissioni 2025 fileni alimentare s p a": {
   "cap": "high",
   "hits": [],
@@ -26842,6 +28984,11 @@
    }
   ],
   "label": "Radisson Hotel Group"
+ },
+ "raia drogasil": {
+  "cap": "high",
+  "hits": [],
+  "label": "RAIA DROGASIL S.A."
  },
  "raia drogasil s a": {
   "cap": "high",
@@ -27138,6 +29285,11 @@
   "hits": [],
   "label": "ReGreen GmbH"
  },
+ "regreener": {
+  "cap": "high",
+  "hits": [],
+  "label": "Regreener B.V."
+ },
  "regreener b v": {
   "cap": "high",
   "hits": [],
@@ -27246,6 +29398,11 @@
   "hits": [],
   "label": "RenSti IVS"
  },
+ "repsol": {
+  "cap": "high",
+  "hits": [],
+  "label": "Repsol S.A."
+ },
  "repsol s a": {
   "cap": "high",
   "hits": [],
@@ -27279,6 +29436,11 @@
   "cap": "high",
   "hits": [],
   "label": "ResourceCo Pty. Ltd."
+ },
+ "respira s customers": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Respira's customers"
  },
  "restitution brands llc dba terrapass": {
   "cap": "high",
@@ -28045,6 +30207,11 @@
   "hits": [],
   "label": "Retirement for Person or Organization"
  },
+ "retirement of 20 000 tonnes carbon credits in the name of nrgi elsalg": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retirement of 20,000 tonnes carbon credits in the name of NRGi Elsalg A/S"
+ },
  "retirement of 20 000 tonnes carbon credits in the name of nrgi elsalg a s": {
   "cap": "high",
   "hits": [],
@@ -28169,6 +30336,11 @@
   ],
   "label": "RheinEnergie Trading"
  },
+ "rhm": {
+  "cap": "high",
+  "hits": [],
+  "label": "R̦hm GmbH"
+ },
  "rhoback": {
   "cap": "high",
   "hits": [],
@@ -28238,10 +30410,20 @@
   "hits": [],
   "label": "Rif. EcoWay 1601/EF Ord.001"
  },
+ "rijngas": {
+  "cap": "high",
+  "hits": [],
+  "label": "Rijngas B.V."
+ },
  "rijngas b v": {
   "cap": "high",
   "hits": [],
   "label": "Rijngas B.V."
+ },
+ "riksja online": {
+  "cap": "high",
+  "hits": [],
+  "label": "Riksja Online b.V."
  },
  "riksja online b v": {
   "cap": "high",
@@ -28361,6 +30543,11 @@
   "hits": [],
   "label": "Robertson G"
  },
+ "robo gascentrale": {
+  "cap": "high",
+  "hits": [],
+  "label": "Robo Gascentrale B.V."
+ },
  "robo gascentrale b v": {
   "cap": "high",
   "hits": [],
@@ -28455,6 +30642,16 @@
   "hits": [],
   "label": "Ron Barceló S.R.L."
  },
+ "ron barcelo|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Ron Barceló S.R.L."
+ },
+ "ron barcelo|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "RON BARCELÓ"
+ },
  "rory mcilroy enterprises": {
   "cap": "high",
   "hits": [],
@@ -28478,6 +30675,16 @@
   "cap": "high",
   "hits": [],
   "label": "Route"
+ },
+ "route for carbon offset products": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Route for Carbon Offset Products"
+ },
+ "route for its carbon neutral shipping program": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Route for its Carbon Neutral Shipping Program"
  },
  "rovio": {
   "cap": "high",
@@ -28527,6 +30734,11 @@
   "cap": "high",
   "hits": [],
   "label": "Royal Melbourne Institute of Technology"
+ },
+ "royal mosa": {
+  "cap": "high",
+  "hits": [],
+  "label": "Royal Mosa B.V."
  },
  "royal mosa b v": {
   "cap": "high",
@@ -28690,6 +30902,11 @@
   "hits": [],
   "label": "S-Ryhmä/S-Group"
  },
+ "saam towage uruguay": {
+  "cap": "high",
+  "hits": [],
+  "label": "SAAM Towage Uruguay S.A."
+ },
  "saam towage uruguay s a": {
   "cap": "high",
   "hits": [],
@@ -28734,6 +30951,11 @@
   "cap": "medium",
   "hits": [],
   "label": "Sagle Constructions"
+ },
+ "sahibinden bilgi teknolojileri paz ve tic": {
+  "cap": "high",
+  "hits": [],
+  "label": "Sahibinden Bilgi Teknolojileri Paz. ve Tic. A.Ş."
  },
  "sahibinden bilgi teknolojileri paz ve tic a s": {
   "cap": "high",
@@ -28817,6 +31039,11 @@
    }
   ],
   "label": "Salesforce"
+ },
+ "salomon": {
+  "cap": "high",
+  "hits": [],
+  "label": "SALOMON S.A.S"
  },
  "salomon s a s": {
   "cap": "high",
@@ -28998,6 +31225,11 @@
   "hits": [],
   "label": "SAVE SpA"
  },
+ "save s p a a venice airport": {
+  "cap": "high",
+  "hits": [],
+  "label": "SAVE S.p.A. â€“ Venice Airport"
+ },
  "save s p a ai venice airport": {
   "cap": "high",
   "hits": [],
@@ -29007,6 +31239,11 @@
   "cap": "high",
   "hits": [],
   "label": "SAVE S.p.A. - Venice Airport"
+ },
+ "save the duck": {
+  "cap": "high",
+  "hits": [],
+  "label": "Save The Duck S.p.A."
  },
  "save the duck s p a": {
   "cap": "high",
@@ -29092,10 +31329,20 @@
   "hits": [],
   "label": "Schilling Cider"
  },
+ "schiphol nederland": {
+  "cap": "high",
+  "hits": [],
+  "label": "Schiphol Nederland B.V."
+ },
  "schiphol nederland b v": {
   "cap": "high",
   "hits": [],
   "label": "Schiphol Nederland B.V."
+ },
+ "schiphol nederland|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Schiphol Nederland"
  },
  "schlagmann poroton gmbh and": {
   "cap": "high",
@@ -29236,6 +31483,11 @@
   ],
   "label": "Scotiabank"
  },
+ "scuderia alphatauri": {
+  "cap": "high",
+  "hits": [],
+  "label": "Scuderia AlphaTauri S.p.A"
+ },
  "scuderia alphatauri s p a": {
   "cap": "high",
   "hits": [],
@@ -29264,6 +31516,32 @@
   "cap": "high",
   "hits": [],
   "label": "Seadrill Management AME Ltd (Bermuda)"
+ },
+ "search:acciona": {
+  "cap": "medium",
+  "hit": {
+   "cc": "ES",
+   "conf": "medium",
+   "has_hq": true,
+   "hq": "Alcobendas",
+   "lat": 40.5333,
+   "lon": -3.6333,
+   "method": "wikidata-search",
+   "qid": "Q339142"
+  },
+  "hits": [
+   {
+    "cc": "ES",
+    "conf": "medium",
+    "has_hq": true,
+    "hq": "Alcobendas",
+    "lat": 40.5333,
+    "lon": -3.6333,
+    "method": "wikidata-search",
+    "qid": "Q339142"
+   }
+  ],
+  "label": "ACCIONA"
  },
  "search:accolade wines limited": {
   "cap": "medium",
@@ -29302,6 +31580,12 @@
    }
   ],
   "label": "Air New Zealand Limited"
+ },
+ "search:alcantara s p a": {
+  "cap": "medium",
+  "hit": null,
+  "hits": [],
+  "label": "Alcantara S.p.A."
  },
  "search:alcantara spa": {
   "cap": "medium",
@@ -29393,6 +31677,32 @@
   ],
   "label": "Apax Partners LLP"
  },
+ "search:arcadis n v": {
+  "cap": "medium",
+  "hit": {
+   "cc": "",
+   "conf": "medium",
+   "has_hq": true,
+   "hq": "Amsterdam",
+   "lat": 52.3667,
+   "lon": 4.8833,
+   "method": "wikidata-search",
+   "qid": "Q631507"
+  },
+  "hits": [
+   {
+    "cc": "",
+    "conf": "medium",
+    "has_hq": true,
+    "hq": "Amsterdam",
+    "lat": 52.3667,
+    "lon": 4.8833,
+    "method": "wikidata-search",
+    "qid": "Q631507"
+   }
+  ],
+  "label": "Arcadis N.V."
+ },
  "search:assiniboine credit union limited": {
   "cap": "medium",
   "hit": null,
@@ -29462,6 +31772,32 @@
    }
   ],
   "label": "AXA INVESTMENT MANAGERS"
+ },
+ "search:banco santander brasil s a": {
+  "cap": "medium",
+  "hit": {
+   "cc": "BR",
+   "conf": "medium",
+   "has_hq": true,
+   "hq": "São Paulo",
+   "lat": -23.5504,
+   "lon": -46.6339,
+   "method": "wikidata-search",
+   "qid": "Q2882087"
+  },
+  "hits": [
+   {
+    "cc": "BR",
+    "conf": "medium",
+    "has_hq": true,
+    "hq": "São Paulo",
+    "lat": -23.5504,
+    "lon": -46.6339,
+    "method": "wikidata-search",
+    "qid": "Q2882087"
+   }
+  ],
+  "label": "Banco Santander (Brasil) S.A."
  },
  "search:bank of america corporation": {
   "cap": "medium",
@@ -29827,6 +32163,12 @@
   "hits": [],
   "label": "DNV AS"
  },
+ "search:dolomiti energia s p a": {
+  "cap": "medium",
+  "hit": null,
+  "hits": [],
+  "label": "Dolomiti Energia S.p.A."
+ },
  "search:doordash inc": {
   "cap": "medium",
   "hit": {
@@ -29961,6 +32303,32 @@
   "hits": [],
   "label": "Eni Plenitude France SAS"
  },
+ "search:enovos luxembourg s a": {
+  "cap": "medium",
+  "hit": {
+   "cc": "LU",
+   "conf": "medium",
+   "has_hq": true,
+   "hq": "Esch-sur-Alzette",
+   "lat": 49.4969,
+   "lon": 5.9806,
+   "method": "wikidata-search",
+   "qid": "Q16763485"
+  },
+  "hits": [
+   {
+    "cc": "LU",
+    "conf": "medium",
+    "has_hq": true,
+    "hq": "Esch-sur-Alzette",
+    "lat": 49.4969,
+    "lon": 5.9806,
+    "method": "wikidata-search",
+    "qid": "Q16763485"
+   }
+  ],
+  "label": "Enovos Luxembourg S.A."
+ },
  "search:enterprise holdings inc": {
   "cap": "medium",
   "hit": null,
@@ -30025,6 +32393,12 @@
   ],
   "label": "ExtraEnergie GmbH"
  },
+ "search:fastweb s p a": {
+  "cap": "medium",
+  "hit": null,
+  "hits": [],
+  "label": "Fastweb S.p.A."
+ },
  "search:finn": {
   "cap": "medium",
   "hit": null,
@@ -30062,6 +32436,12 @@
   "hit": null,
   "hits": [],
   "label": "GHD Group Limited"
+ },
+ "search:global fashion group s a": {
+  "cap": "medium",
+  "hit": null,
+  "hits": [],
+  "label": "Global Fashion Group S.A."
  },
  "search:google llc": {
   "cap": "medium",
@@ -30383,6 +32763,18 @@
   ],
   "label": "Latham & Watkins LLP"
  },
+ "search:leo s a": {
+  "cap": "medium",
+  "hit": null,
+  "hits": [],
+  "label": "LEO S.A."
+ },
+ "search:liander n v": {
+  "cap": "medium",
+  "hit": null,
+  "hits": [],
+  "label": "Liander N.V."
+ },
  "search:linklaters llp": {
   "cap": "medium",
   "hit": {
@@ -30409,11 +32801,23 @@
   ],
   "label": "Linklaters LLP"
  },
+ "search:lm wind power a s": {
+  "cap": "medium",
+  "hit": null,
+  "hits": [],
+  "label": "LM Wind Power A/S"
+ },
  "search:loganair limited": {
   "cap": "medium",
   "hit": null,
   "hits": [],
   "label": "Loganair Limited"
+ },
+ "search:lojas renner s a": {
+  "cap": "medium",
+  "hit": null,
+  "hits": [],
+  "label": "Lojas Renner S.A."
  },
  "search:marathon oil company": {
   "cap": "medium",
@@ -30605,6 +33009,12 @@
   "hits": [],
   "label": "Nomad Goods, Inc."
  },
+ "search:novamont s p a": {
+  "cap": "medium",
+  "hit": null,
+  "hits": [],
+  "label": "Novamont S.p.A."
+ },
  "search:omv downstream gmbh": {
   "cap": "medium",
   "hit": {
@@ -30732,6 +33142,32 @@
   "hit": null,
   "hits": [],
   "label": "Pipedrive Inc"
+ },
+ "search:qantas": {
+  "cap": "medium",
+  "hit": {
+   "cc": "AU",
+   "conf": "medium",
+   "has_hq": true,
+   "hq": "Mascot",
+   "lat": -33.9317,
+   "lon": 151.1928,
+   "method": "wikidata-search",
+   "qid": "Q32491"
+  },
+  "hits": [
+   {
+    "cc": "AU",
+    "conf": "medium",
+    "has_hq": true,
+    "hq": "Mascot",
+    "lat": -33.9317,
+    "lon": 151.1928,
+    "method": "wikidata-search",
+    "qid": "Q32491"
+   }
+  ],
+  "label": "Qantas"
  },
  "search:qantas airways limited": {
   "cap": "medium",
@@ -30868,6 +33304,32 @@
    }
   ],
   "label": "Samsara Inc."
+ },
+ "search:seat s a": {
+  "cap": "medium",
+  "hit": {
+   "cc": "ES",
+   "conf": "medium",
+   "has_hq": false,
+   "hq": "",
+   "lat": 41.4744,
+   "lon": 1.9305,
+   "method": "wikidata-search",
+   "qid": "Q188217"
+  },
+  "hits": [
+   {
+    "cc": "ES",
+    "conf": "medium",
+    "has_hq": false,
+    "hq": "",
+    "lat": 41.4744,
+    "lon": 1.9305,
+    "method": "wikidata-search",
+    "qid": "Q188217"
+   }
+  ],
+  "label": "SEAT S.A."
  },
  "search:sendle pty ltd": {
   "cap": "medium",
@@ -31139,6 +33601,12 @@
   ],
   "label": "Technische Werke Ludwigshafen AG"
  },
+ "search:telefonica brasil s a": {
+  "cap": "medium",
+  "hit": null,
+  "hits": [],
+  "label": "Telefônica Brasil S.A."
+ },
  "search:telstra corporation limited": {
   "cap": "medium",
   "hit": {
@@ -31345,6 +33813,11 @@
   "hits": [],
   "label": "Zscaler, Inc."
  },
+ "seat": {
+  "cap": "high",
+  "hits": [],
+  "label": "SEAT S.A."
+ },
  "seat s a": {
   "cap": "high",
   "hits": [],
@@ -31373,6 +33846,25 @@
    }
   ],
   "label": "Seattle City Light"
+ },
+ "seat|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Seat S.A."
+ },
+ "seat|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "ES",
+    "has_hq": false,
+    "hq": "",
+    "lat": 41.4744,
+    "lon": 1.9305,
+    "qid": "Q188217"
+   }
+  ],
+  "label": "SEAT"
  },
  "sedgwick new zealand": {
   "cap": "high",
@@ -31554,6 +34046,11 @@
   "cap": "high",
   "hits": [],
   "label": "SG Fleet Australia Pty Limited"
+ },
+ "sgr servizi": {
+  "cap": "high",
+  "hits": [],
+  "label": "SGR Servizi S.p.A."
  },
  "sgr servizi s p a": {
   "cap": "high",
@@ -31771,10 +34268,20 @@
   "hits": [],
   "label": "Shell Energy North America (Canada)"
  },
+ "shell energy north america us": {
+  "cap": "high",
+  "hits": [],
+  "label": "Shell Energy North America (US), L.P."
+ },
  "shell energy north america us l p": {
   "cap": "high",
   "hits": [],
   "label": "Shell Energy North America (US), L.P."
+ },
+ "shell energy north america us|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Shell Energy North America (US)"
  },
  "shell trading international": {
   "cap": "high",
@@ -31903,6 +34410,11 @@
   "cap": "medium",
   "hits": [],
   "label": "SHIZUOKA GAS"
+ },
+ "shop apotheke service": {
+  "cap": "high",
+  "hits": [],
+  "label": "Shop-Apotheke Service B.V."
  },
  "shop apotheke service b v": {
   "cap": "high",
@@ -32051,10 +34563,20 @@
   "hits": [],
   "label": "Sigma Minera√ß√£o S.A."
  },
+ "sigma mineracao": {
+  "cap": "high",
+  "hits": [],
+  "label": "Sigma Mineração S.A."
+ },
  "sigma mineracao s a": {
   "cap": "high",
   "hits": [],
   "label": "Sigma Mineração S.A."
+ },
+ "sigma mineracao|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Sigma Mineração"
  },
  "signature aviation": {
   "cap": "high",
@@ -32214,10 +34736,20 @@
   "hits": [],
   "label": "SKion Water"
  },
+ "skoda auto": {
+  "cap": "high",
+  "hits": [],
+  "label": "Skoda Auto a.s."
+ },
  "skoda auto a s": {
   "cap": "high",
   "hits": [],
   "label": "Skoda Auto a.s."
+ },
+ "skoda auto|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Skoda Auto"
  },
  "sky group": {
   "cap": "high",
@@ -32400,6 +34932,11 @@
   "cap": "medium",
   "hits": [],
   "label": "Software Combined Group"
+ },
+ "sogeti nederland": {
+  "cap": "high",
+  "hits": [],
+  "label": "Sogeti Nederland B.V."
  },
  "sogeti nederland b v": {
   "cap": "high",
@@ -32611,6 +35148,11 @@
   "cap": "medium",
   "hits": [],
   "label": "Spaceful"
+ },
+ "spadel": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Spadel"
  },
  "sparda bank hamburg eg": {
   "cap": "high",
@@ -33506,10 +36048,20 @@
   "hits": [],
   "label": "STULZ Air Technology Systems"
  },
+ "stx commodities": {
+  "cap": "high",
+  "hits": [],
+  "label": "STX Commodities B.V"
+ },
  "stx commodities b v": {
   "cap": "high",
   "hits": [],
   "label": "STX Commodities B.V"
+ },
+ "stx commodities|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "STX Commodities"
  },
  "suarcrem holding sa de cv": {
   "cap": "high",
@@ -33716,6 +36268,11 @@
   "cap": "high",
   "hits": [],
   "label": "Sustainable Travel International"
+ },
+ "sustainable travel international s global partners": {
+  "cap": "high",
+  "hits": [],
+  "label": "on behalf of Sustainable Travel International's global partners"
  },
  "suunto": {
   "cap": "high",
@@ -34015,10 +36572,20 @@
   "hits": [],
   "label": "TA Associates Management L.P."
  },
+ "tabaqueira empresa industrial de tabacos": {
+  "cap": "high",
+  "hits": [],
+  "label": "Tabaqueira Empresa Industrial de Tabacos S.A."
+ },
  "tabaqueira empresa industrial de tabacos s a": {
   "cap": "high",
   "hits": [],
   "label": "Tabaqueira Empresa Industrial de Tabacos S.A."
+ },
+ "tabu": {
+  "cap": "high",
+  "hits": [],
+  "label": "Tabu S.p.A."
  },
  "tabu s p a": {
   "cap": "high",
@@ -34078,6 +36645,11 @@
   ],
   "label": "Takeda Pharmaceutical Company"
  },
+ "takeda pharmaceutical company limited s scope 1 emissions for fy2022 i e 4 1 2022 3 31 2023": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Takeda Pharmaceutical Company Limited's Scope 1 Emissions for FY2022 (i.e., 4/1/2022-3/31/2023)"
+ },
  "takeda pharmaceuticals": {
   "cap": "high",
   "hits": [],
@@ -34108,6 +36680,11 @@
   "hits": [],
   "label": "TAM LINHAS A√âREAS S.A."
  },
+ "tam linhas aereas": {
+  "cap": "high",
+  "hits": [],
+  "label": "TAM LINHAS AÉREAS S.A."
+ },
  "tam linhas aereas s a": {
   "cap": "high",
   "hits": [],
@@ -34131,6 +36708,11 @@
    }
   ],
   "label": "Tamoil"
+ },
+ "tamoil nederland": {
+  "cap": "high",
+  "hits": [],
+  "label": "Tamoil Nederland B.V."
  },
  "tamoil nederland b v": {
   "cap": "high",
@@ -34277,6 +36859,11 @@
   "hits": [],
   "label": "TAV Ege Terminal Yatƒ±rƒ±m, Yapƒ±m ve ƒ∞≈ületme A.≈û - Reporting Period: 01.01.2024-31.12.2024"
  },
+ "tav ege terminal yatirim yapim ve isletme": {
+  "cap": "high",
+  "hits": [],
+  "label": "TAV Ege Terminal Yatirim Yapim ve Isletme A.S."
+ },
  "tav ege terminal yatirim yapim ve isletme a s": {
   "cap": "high",
   "hits": [],
@@ -34286,6 +36873,11 @@
   "cap": "high",
   "hits": [],
   "label": "TAV ESENBOGA AIRPORT"
+ },
+ "tav esenboga yatirim yapim ve isletme": {
+  "cap": "high",
+  "hits": [],
+  "label": "TAV Esenboga Yatirim Yapim ve Isletme A.S."
  },
  "tav esenboga yatirim yapim ve isletme a s": {
   "cap": "high",
@@ -34435,10 +37027,39 @@
   "hits": [],
   "label": "Telef̫nica Brasil S.A."
  },
+ "telefnica brasil": {
+  "cap": "high",
+  "hits": [],
+  "label": "Telef̫nica Brasil S.A."
+ },
+ "telefonica": {
+  "cap": "high",
+  "hits": [],
+  "label": "Telefónica S.A."
+ },
+ "telefonica brasil": {
+  "cap": "high",
+  "hits": [],
+  "label": "Telefônica Brasil S.A."
+ },
  "telefonica brasil s a": {
   "cap": "high",
   "hits": [],
   "label": "Telefonica Brasil S.A."
+ },
+ "telefonica brasil|alt2": {
+  "cap": "medium",
+  "hits": [
+   {
+    "cc": "BR",
+    "has_hq": true,
+    "hq": "São Paulo",
+    "lat": -23.5504,
+    "lon": -46.6339,
+    "qid": "Q20059505"
+   }
+  ],
+  "label": "Telefônica Brasil"
  },
  "telefonica espana": {
   "cap": "high",
@@ -34753,6 +37374,11 @@
   "hits": [],
   "label": "TIC Reverse Logistics Pty Ltd"
  },
+ "tide navigation": {
+  "cap": "high",
+  "hits": [],
+  "label": "Tide Navigation S.A."
+ },
  "tide navigation s a": {
   "cap": "high",
   "hits": [],
@@ -34771,6 +37397,11 @@
    }
   ],
   "label": "Tiffany & Co."
+ },
+ "tim": {
+  "cap": "high",
+  "hits": [],
+  "label": "TIM S/A"
  },
  "tim s a": {
   "cap": "high",
@@ -35046,6 +37677,11 @@
   "hits": [],
   "label": "TOTAL GAS & POWER"
  },
+ "total gas power nederland": {
+  "cap": "high",
+  "hits": [],
+  "label": "Total Gas Power Nederland B.V."
+ },
  "total gas power nederland b v": {
   "cap": "high",
   "hits": [],
@@ -35181,6 +37817,11 @@
   "cap": "high",
   "hits": [],
   "label": "Toyota Motor Corporation Australia"
+ },
+ "toyota otomotiv sanayi turkiye": {
+  "cap": "high",
+  "hits": [],
+  "label": "Toyota Otomotiv Sanayi Turkiye A.S."
  },
  "toyota otomotiv sanayi turkiye a s": {
   "cap": "high",
@@ -35459,6 +38100,11 @@
   "hits": [],
   "label": "Treasury Wine Estates EMEA Ltd"
  },
+ "treasury wine estates for the lindemans wine brands": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Treasury Wine Estates for the Lindemans wine brands"
+ },
  "treepoints": {
   "cap": "high",
   "hits": [],
@@ -35736,6 +38382,11 @@
   "hits": [],
   "label": "TULUM EVEN EMPREENDIMENTOS IMOBILIARIOS LTDA"
  },
+ "turkcell iletisim hizmetleri": {
+  "cap": "high",
+  "hits": [],
+  "label": "Turkcell İletişim Hizmetleri A.Ş."
+ },
  "turkcell iletisim hizmetleri a s": {
   "cap": "high",
   "hits": [],
@@ -35769,6 +38420,11 @@
    }
   ],
   "label": "Turkish Airlines"
+ },
+ "turkiye garanti bankas": {
+  "cap": "high",
+  "hits": [],
+  "label": "Türkiye Garanti Bankası A.Ş."
  },
  "turkiye garanti bankas a s": {
   "cap": "high",
@@ -35972,10 +38628,20 @@
   "hits": [],
   "label": "UKF"
  },
+ "ultracargo logistica": {
+  "cap": "high",
+  "hits": [],
+  "label": "ULTRACARGO LOGISTICA S.A."
+ },
  "ultracargo logistica s a": {
   "cap": "high",
   "hits": [],
   "label": "ULTRACARGO LOGISTICA S.A."
+ },
+ "ultragaz": {
+  "cap": "high",
+  "hits": [],
+  "label": "Ultragaz S.A."
  },
  "ultragaz s a": {
   "cap": "high",
@@ -35996,6 +38662,11 @@
   "cap": "high",
   "hits": [],
   "label": "Unilever Company Car (Sales team including distributor sales cars + WL2C+ cars)"
+ },
+ "unimaq": {
+  "cap": "high",
+  "hits": [],
+  "label": "UNIMAQ S.A."
  },
  "unimaq s a": {
   "cap": "high",
@@ -36285,6 +38956,11 @@
   "hits": [],
   "label": "University of Maryland, College Park"
  },
+ "university of maryland to offset its scope 1 and 3 ghg emissions for 2024": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of the University of Maryland to offset its Scope 1 & 3 GHG emissions for 2024."
+ },
  "university of melbourne": {
   "cap": "high",
   "hits": [],
@@ -36363,6 +39039,11 @@
   "hits": [],
   "label": "The University of Western Australia"
  },
+ "unlsh mobility": {
+  "cap": "high",
+  "hits": [],
+  "label": "UNLSH Mobility B.V."
+ },
  "unlsh mobility b v": {
   "cap": "high",
   "hits": [],
@@ -36397,6 +39078,11 @@
   "cap": "high",
   "hits": [],
   "label": "UPL DO BRASIL IND√öSTRIA E COM√âRCIO DE INSUMOS AGROPECU√ÅRIOS S.A"
+ },
+ "upl do brasil industria e comercio de insumos agropecuarios": {
+  "cap": "high",
+  "hits": [],
+  "label": "UPL DO BRASIL INDÚSTRIA E COMÉRCIO DE INSUMOS AGROPECUÁRIOS S.A"
  },
  "upl do brasil industria e comercio de insumos agropecuarios s a": {
   "cap": "high",
@@ -36526,6 +39212,11 @@
   "hits": [],
   "label": "Valmet Automotive Oy"
  },
+ "van weelde shipping group": {
+  "cap": "high",
+  "hits": [],
+  "label": "Van Weelde Shipping Group B.V."
+ },
  "van weelde shipping group b v": {
   "cap": "high",
   "hits": [],
@@ -36554,6 +39245,11 @@
    }
   ],
   "label": "The Vanguard Group"
+ },
+ "various customers": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of various customers"
  },
  "varldens resor": {
   "cap": "high",
@@ -36615,6 +39311,20 @@
   "hits": [],
   "label": "Vattenfall energy trading"
  },
+ "vattenfall energy trading netherlands": {
+  "cap": "high",
+  "hits": [
+   {
+    "cc": "",
+    "has_hq": true,
+    "hq": "Amsterdam",
+    "lat": 52.3667,
+    "lon": 4.8833,
+    "qid": "Q113465527"
+   }
+  ],
+  "label": "Vattenfall Energy Trading Netherlands N.V."
+ },
  "vattenfall energy trading netherlands n v": {
   "cap": "high",
   "hits": [
@@ -36654,10 +39364,20 @@
   "hits": [],
   "label": "Vattenfall retail"
  },
+ "vattenfall sales nederland": {
+  "cap": "high",
+  "hits": [],
+  "label": "Vattenfall Sales Nederland N.V."
+ },
  "vattenfall sales nederland n v": {
   "cap": "high",
   "hits": [],
   "label": "Vattenfall Sales Nederland N.V."
+ },
+ "vattenfall sales nederland|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Vattenfall Sales Nederland"
  },
  "vattenfall v rme sweden": {
   "cap": "high",
@@ -36991,6 +39711,11 @@
   "hits": [],
   "label": "Vitamin Well AB"
  },
+ "vitec": {
+  "cap": "high",
+  "hits": [],
+  "label": "VITEC S.A."
+ },
  "vitec s a": {
   "cap": "high",
   "hits": [],
@@ -37000,6 +39725,16 @@
   "cap": "medium",
   "hits": [],
   "label": "Vitec S.A."
+ },
+ "vitec|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Vitec S.A."
+ },
+ "vitec|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "VITEC"
  },
  "viterma": {
   "cap": "high",
@@ -37034,6 +39769,11 @@
   "cap": "high",
   "hits": [],
   "label": "Viva Energy Australia"
+ },
+ "vivera": {
+  "cap": "high",
+  "hits": [],
+  "label": "Vivera B.V."
  },
  "vivera b v": {
   "cap": "high",
@@ -37184,6 +39924,11 @@
   "hits": [],
   "label": "VP Capital"
  },
+ "vp capital group": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of VP Capital Group"
+ },
  "vr yhtym": {
   "cap": "high",
   "hits": [],
@@ -37243,6 +39988,11 @@
   "cap": "high",
   "hits": [],
   "label": "Walls Gator Farm II"
+ },
+ "walmart foundation": {
+  "cap": "high",
+  "hits": [],
+  "label": "Emergent retiring on behalf of Walmart Foundation"
  },
  "walt disney": {
   "cap": "high",
@@ -37355,6 +40105,11 @@
   "cap": "medium",
   "hits": [],
   "label": "Watson Fuels"
+ },
+ "wattanders": {
+  "cap": "high",
+  "hits": [],
+  "label": "Wattanders B.V."
  },
  "wattanders ai gemwf": {
   "cap": "high",
@@ -37809,6 +40564,11 @@
   "hits": [],
   "label": "Wilson Parking NZ"
  },
+ "wind tre luce e gas": {
+  "cap": "high",
+  "hits": [],
+  "label": "Wind Tre Luce e Gas S.r.l."
+ },
  "wind tre luce e gas s r l": {
   "cap": "high",
   "hits": [],
@@ -37907,6 +40667,11 @@
   "cap": "medium",
   "hits": [],
   "label": "Wolt Enterprises"
+ },
+ "wolt for offsetting operational emissions in 2023": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Wolt for offsetting operational emissions in 2023."
  },
  "wolverhampton wanderers football club 1986": {
   "cap": "high",
@@ -38137,6 +40902,11 @@
   "hits": [],
   "label": "Wren's community of individuals"
  },
+ "wsp ambiental": {
+  "cap": "high",
+  "hits": [],
+  "label": "WSP Ambiental S.A."
+ },
  "wsp ambiental s a": {
   "cap": "high",
   "hits": [],
@@ -38329,6 +41099,11 @@
   "hits": [],
   "label": "YAPI VE KREDƒ∞ BANKASI A.≈û.,"
  },
+ "yapi ve kredi bankasi": {
+  "cap": "high",
+  "hits": [],
+  "label": "YAPI VE KREDİ BANKASI A.S"
+ },
  "yapi ve kredi bankasi a s": {
   "cap": "high",
   "hits": [],
@@ -38339,6 +41114,16 @@
   "hits": [],
   "label": "Yapi Ve Kredi̇ Bankasi A.S"
  },
+ "yapi ve kredi bankasi|alt1": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Yapi Ve Kredi̇ Bankasi A.S"
+ },
+ "yapi ve kredi bankasi|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "YAPI VE KREDİ BANKASI"
+ },
  "yarra capital management": {
   "cap": "high",
   "hits": [],
@@ -38348,6 +41133,11 @@
   "cap": "high",
   "hits": [],
   "label": "Yarra City Council"
+ },
+ "yda havaliman yat r m ve isletme": {
+  "cap": "high",
+  "hits": [],
+  "label": "YDA Havalimanı Yatırım ve İşletme A.Ş."
  },
  "yda havaliman yat r m ve isletme a s": {
   "cap": "high",
@@ -38433,6 +41223,11 @@
   "cap": "high",
   "hits": [],
   "label": "Yingda Taihe Property Insurance Co., Ltd."
+ },
+ "yonderland bidco": {
+  "cap": "high",
+  "hits": [],
+  "label": "Yonderland BidCo B.V."
  },
  "yonderland bidco b v": {
   "cap": "high",
@@ -38588,6 +41383,26 @@
    }
   ],
   "label": "Zerofootprint Software Inc."
+ },
+ "zeta global": {
+  "cap": "high",
+  "hits": [],
+  "label": "Retired on behalf of Zeta Global Corp."
+ },
+ "zeta global holdings": {
+  "cap": "high",
+  "hits": [],
+  "label": "On behalf of Zeta Global Holdings Corp."
+ },
+ "zeta global|alt2": {
+  "cap": "medium",
+  "hits": [],
+  "label": "Retired on behalf of Zeta Global"
+ },
+ "zeuss petroleum": {
+  "cap": "high",
+  "hits": [],
+  "label": "ZEUSS PETROLEUM S.A"
  },
  "zeuss petroleum s a": {
   "cap": "high",

@@ -12,7 +12,9 @@ import {
   groupLabel,
   projectDetail,
   registryLabel,
+  resolveCarbonQuery,
   searchBuyers,
+  searchProjects,
   summarize,
   topBuyers,
 } from './carbonFlowsModel.js';
@@ -285,11 +287,20 @@ export function createCarbonFlowsLayer() {
     search.append(el('span', 'carbon-label', 'Buyer'));
     const input = el('input');
     input.type = 'search';
-    input.placeholder = 'Search a company';
+    input.placeholder = 'Shell, or “show me all Shell credits”';
     input.dataset.carbonInput = 'buyer';
     input.value = filters.buyerIndex == null ? '' : (_dataset.buyers[filters.buyerIndex]?.name || '');
     search.append(input);
     panel.append(search);
+    const projectSearch = el('label', 'carbon-search');
+    projectSearch.append(el('span', 'carbon-label', 'Project'));
+    const projectInput = el('input');
+    projectInput.type = 'search';
+    projectInput.placeholder = 'April Salumei, VCS1122, or “who bought from…”';
+    projectInput.dataset.carbonInput = 'project';
+    projectInput.value = filters.projectIndex == null ? '' : (_dataset.projects[filters.projectIndex]?.name || '');
+    projectSearch.append(projectInput);
+    panel.append(projectSearch);
     const results = el('div', 'carbon-search-results');
     results.dataset.carbonResults = '1';
     panel.append(results);
@@ -383,6 +394,9 @@ export function createCarbonFlowsLayer() {
       if (detail.years.length) {
         container.append(el('p', 'carbon-detail-meta', `Retired ${detail.years[0]}–${detail.years[detail.years.length - 1]}`));
       }
+      if (detail.variants?.length) {
+        container.append(el('p', 'carbon-detail-meta', `Also recorded as ${detail.variants.join('; ')}`));
+      }
       container.append(projectTable(detail.projects));
       return;
     }
@@ -397,11 +411,26 @@ export function createCarbonFlowsLayer() {
       const detail = projectDetail(_dataset, _selection.projectIndex, filters);
       if (!detail) return;
       container.append(el('h3', 'carbon-detail-title', detail.name));
-      container.append(el('p', 'carbon-detail-meta', `${detail.id} · ${registryLabel(detail.registry)} · ${detail.type} · ${detail.country}`));
+      container.append(el('p', 'carbon-detail-meta', `${detail.id} · ${registryLabel(detail.registry)} · ${detail.type} · ${detail.country || 'country unknown'}`));
       if (detail.site) container.append(el('p', 'carbon-detail-meta', detail.site));
-      container.append(el('p', 'carbon-detail-meta', `${formatTonnes(detail.tonnes)} retired by ${detail.buyers.length.toLocaleString('en-US')} named buyers in this view.`));
+      const seller = detail.developer || detail.operator || detail.owner;
+      if (seller) {
+        const role = detail.developer ? 'Developer / seller' : (detail.operator ? 'Operator / seller' : 'Owner / seller');
+        container.append(el('p', 'carbon-detail-meta', `${role}: ${seller}`));
+      } else {
+        container.append(el('p', 'carbon-detail-meta', 'No project developer or proponent in VROD for this project.'));
+      }
+      if (detail.issued || detail.retiredRegistry) {
+        container.append(el('p', 'carbon-detail-meta', `Registry totals: ${formatTonnes(detail.issued)} issued · ${formatTonnes(detail.retiredRegistry)} retired`));
+      }
+      container.append(el('p', 'carbon-detail-meta', `Retirement records: ${formatTonnes(detail.tonnes)} named + ${formatTonnes(detail.undisclosed)} undisclosed = ${formatTonnes(detail.accountedTonnes)}`));
+      if (detail.vintages?.length) {
+        const shown = detail.vintages.slice(0, 6).map(([year, issued, retired]) => `${year} ${formatTonnes(issued)} issued / ${formatTonnes(retired)} retired`);
+        const extra = detail.vintages.length > 6 ? ` · +${detail.vintages.length - 6} years` : '';
+        container.append(el('p', 'carbon-detail-meta', `Vintages: ${shown.join('; ')}${extra}`));
+      }
       const list = el('div', 'carbon-list');
-      for (const buyer of detail.buyers.slice(0, 40)) {
+      for (const buyer of detail.buyers.slice(0, 80)) {
         const button = el('button', 'carbon-row', '');
         button.type = 'button';
         button.dataset.carbonBuyer = String(buyer.buyerIndex);
@@ -410,6 +439,17 @@ export function createCarbonFlowsLayer() {
           el('span', 'carbon-row-meta', `${buyer.country || confidenceLabel(buyer.conf)} · ${buyer.years[0] || '—'}${buyer.years.length > 1 ? `–${buyer.years[buyer.years.length - 1]}` : ''} · ${formatTonnes(buyer.tonnes)}`),
         );
         list.append(button);
+      }
+      if (detail.buyers.length > 80) {
+        list.append(el('p', 'carbon-hint', `${(detail.buyers.length - 80).toLocaleString('en-US')} more named buyers are in the data.`));
+      }
+      if (detail.undisclosed > 0) {
+        const row = el('div', 'carbon-row');
+        row.append(
+          el('span', 'carbon-row-name', 'Undisclosed buyer'),
+          el('span', 'carbon-row-meta', `Beneficiary left blank on the registry · ${formatTonnes(detail.undisclosed)}`),
+        );
+        list.append(row);
       }
       container.append(list);
     }
@@ -421,7 +461,7 @@ export function createCarbonFlowsLayer() {
       list.append(el('p', 'carbon-hint', 'No projects match these filters.'));
       return list;
     }
-    for (const project of projects.slice(0, 40)) {
+    for (const project of projects.slice(0, 200)) {
       const button = el('button', 'carbon-row', '');
       button.type = 'button';
       button.dataset.carbonProject = String(project.projectIndex);
@@ -432,8 +472,8 @@ export function createCarbonFlowsLayer() {
       );
       list.append(button);
     }
-    if (projects.length > 40) {
-      list.append(el('p', 'carbon-hint', `${(projects.length - 40).toLocaleString('en-US')} more projects are in the data and not listed here.`));
+    if (projects.length > 200) {
+      list.append(el('p', 'carbon-hint', `${(projects.length - 200).toLocaleString('en-US')} more projects are in the data and not listed here.`));
     }
     return list;
   }
@@ -441,26 +481,22 @@ export function createCarbonFlowsLayer() {
   function onPanelClick(event) {
     const project = event.target.closest?.('[data-carbon-project]');
     if (project) {
-      _selection = { kind: 'project', projectIndex: Number(project.dataset.carbonProject) };
-      renderScene();
+      focusProject(Number(project.dataset.carbonProject));
+      return;
+    }
+    const projectHit = event.target.closest?.('[data-carbon-project-result]');
+    if (projectHit) {
+      focusProject(Number(projectHit.dataset.carbonProjectResult));
       return;
     }
     const buyer = event.target.closest?.('[data-carbon-buyer]');
     if (buyer) {
-      stopCycle();
-      _filters = { ..._filters, buyerIndex: Number(buyer.dataset.carbonBuyer), buyerCountry: '' };
-      _selection = { kind: 'buyer', buyerIndex: _filters.buyerIndex };
-      renderScene();
-      flyToBuyer(_filters.buyerIndex);
+      focusBuyer(Number(buyer.dataset.carbonBuyer));
       return;
     }
     const result = event.target.closest?.('[data-carbon-result]');
     if (result) {
-      stopCycle();
-      _filters = { ..._filters, buyerIndex: Number(result.dataset.carbonResult), buyerCountry: '' };
-      _selection = { kind: 'buyer', buyerIndex: _filters.buyerIndex };
-      renderScene();
-      flyToBuyer(_filters.buyerIndex);
+      focusBuyer(Number(result.dataset.carbonResult));
       return;
     }
     const toggle = event.target.closest?.('[data-carbon-toggle]');
@@ -477,7 +513,7 @@ export function createCarbonFlowsLayer() {
     if (name === 'cycle') {
       if (_cycle) stopCycle();
       else {
-        _filters = { ..._filters, buyerCountry: '', buyerIndex: null, pacific: false };
+        _filters = { ...defaultFilters() };
         _selection = null;
         refreshRanking();
         startCycle();
@@ -501,6 +537,7 @@ export function createCarbonFlowsLayer() {
     if (name === 'buyerCountry') {
       next.buyerCountry = select.value;
       next.buyerIndex = null;
+      next.projectIndex = null;
       next.pacific = false;
     } else if (name === 'group') next.group = select.value;
     else if (name === 'registry') next.registry = select.value;
@@ -511,13 +548,46 @@ export function createCarbonFlowsLayer() {
     if (name === 'buyerCountry' && select.value) flyToCountry(select.value);
   }
 
+  function focusProject(projectIndex) {
+    stopCycle();
+    _filters = { ...defaultFilters(), projectIndex };
+    _selection = { kind: 'project', projectIndex };
+    renderScene();
+    const project = _dataset?.projects?.[projectIndex];
+    const country = project?.cc ? _dataset.countries?.[project.cc] : null;
+    if (country) flyTo(country.lon, country.lat, 5500000);
+  }
+
+  function focusBuyer(buyerIndex) {
+    stopCycle();
+    _filters = { ...defaultFilters(), buyerIndex };
+    _selection = { kind: 'buyer', buyerIndex };
+    renderScene();
+    flyToBuyer(buyerIndex);
+  }
+
   function onPanelInput(event) {
-    const input = event.target.closest?.('[data-carbon-input="buyer"]');
+    const input = event.target.closest?.('[data-carbon-input]');
     if (!input || !_panel) return;
     const results = _panel.querySelector('[data-carbon-results]');
     if (!results) return;
     results.replaceChildren();
-    for (const hit of searchBuyers(_dataset, input.value, 8)) {
+    const resolved = resolveCarbonQuery(_dataset, input.value);
+    const wantProject = input.dataset.carbonInput === 'project'
+      ? resolved.kind !== 'buyer'
+      : resolved.kind === 'project';
+    if (wantProject) {
+      const hits = resolved.kind === 'project' ? resolved.hits : searchProjects(_dataset, input.value, 8);
+      for (const hit of hits) {
+        const button = el('button', 'carbon-result', `${hit.id} · ${hit.name}`);
+        button.type = 'button';
+        button.dataset.carbonProjectResult = String(hit.index);
+        results.append(button);
+      }
+      return;
+    }
+    const hits = resolved.kind === 'buyer' ? resolved.hits : searchBuyers(_dataset, input.value, 8);
+    for (const hit of hits) {
       const button = el('button', 'carbon-result', `${hit.name}${hit.cc ? ` · ${hit.cc}` : ''}`);
       button.type = 'button';
       button.dataset.carbonResult = String(hit.index);
@@ -591,11 +661,7 @@ export function createCarbonFlowsLayer() {
       const id = typeof entity?.id === 'string' ? entity.id : '';
       if (!id.startsWith('carbon:')) return;
       if (id.startsWith('carbon:buyer:')) {
-        const buyerIndex = Number(id.slice('carbon:buyer:'.length));
-        stopCycle();
-        _filters = { ..._filters, buyerIndex, buyerCountry: '', pacific: false };
-        _selection = { kind: 'buyer', buyerIndex };
-        renderScene();
+        focusBuyer(Number(id.slice('carbon:buyer:'.length)));
         return;
       }
       if (id.startsWith('carbon:country:')) {
@@ -730,9 +796,59 @@ export function createCarbonFlowsLayer() {
 
     flyToView() {
       const filters = activeFilters();
+      if (filters.projectIndex != null) {
+        const project = _dataset?.projects?.[filters.projectIndex];
+        const country = project?.cc ? _dataset.countries?.[project.cc] : null;
+        if (country) flyTo(country.lon, country.lat, 5500000);
+        return;
+      }
       if (filters.pacific) flyToPacific();
       else if (filters.buyerIndex != null) flyToBuyer(filters.buyerIndex);
       else if (filters.buyerCountry) flyToCountry(filters.buyerCountry);
+    },
+
+    /**
+     * Spoken or typed lookup. Enables nothing by itself; the caller enables
+     * the layer first. Returns a plain summary the voice tool can speak.
+     */
+    lookup(text) {
+      if (!_dataset) return { ok: false, error: 'Carbon dataset is not loaded yet.' };
+      const resolved = resolveCarbonQuery(_dataset, text);
+      const hit = resolved.hits?.[0];
+      if (!hit) return { ok: false, error: `Nothing matched “${resolved.query || text}”.`, query: resolved.query };
+      if (resolved.kind === 'project') {
+        focusProject(hit.index);
+        const detail = projectDetail(_dataset, hit.index, _filters);
+        return {
+          ok: true,
+          kind: 'project',
+          id: detail?.id,
+          name: detail?.name,
+          seller: detail?.developer || detail?.operator || detail?.owner || null,
+          country: detail?.country || null,
+          namedTonnes: detail?.tonnes || 0,
+          undisclosedTonnes: detail?.undisclosed || 0,
+          buyers: (detail?.buyers || []).slice(0, 8).map((buyer) => ({ name: buyer.name, tonnes: buyer.tonnes })),
+          buyerCount: detail?.buyers?.length || 0,
+        };
+      }
+      focusBuyer(hit.index);
+      const detail = buyerDetail(_dataset, hit.index, _filters);
+      return {
+        ok: true,
+        kind: 'buyer',
+        name: detail?.name,
+        variants: detail?.variants || [],
+        tonnes: detail?.tonnes || 0,
+        projectCount: detail?.projects?.length || 0,
+        projects: (detail?.projects || []).slice(0, 8).map((project) => ({
+          id: project.id,
+          name: project.name,
+          country: project.country,
+          tonnes: project.tonnes,
+          years: project.years,
+        })),
+      };
     },
 
     /** Buyer-country codes in the cycle, largest retirements first. */

@@ -51,6 +51,28 @@ test('every coordinate is a flagged geocode, and flows point at real rows', () =
   }
 });
 
+test('Qantas, Shell, and April Salumei resolve after the name merge', () => {
+  const qantas = dataset.buyers.filter((buyer) => buyer.name === 'Qantas');
+  assert.equal(qantas.length, 1);
+  assert.ok(qantas[0].variants.includes('Qantas Airways Limited'));
+  assert.equal(dataset.buyers.filter((buyer) => buyer.name === 'Qantas Airways Limited').length, 0);
+  const shell = dataset.buyers.find((buyer) => buyer.name === 'Shell');
+  assert.ok(shell);
+  assert.equal(shell.cc, 'GB');
+  assert.ok((shell.variants || []).some((name) => name.toLowerCase() === 'shell international ltd'));
+  const shellIndex = dataset.buyers.indexOf(shell);
+  const shellFlows = dataset.flows.filter((flow) => flow[0] === shellIndex);
+  assert.ok(shellFlows.length > 50);
+  const salumei = dataset.projects.find((project) => project.id === 'VCS1122');
+  assert.match(salumei.name, /April Salumei/);
+  assert.equal(salumei.cc, 'PG');
+  assert.ok(salumei.developer);
+  assert.ok(salumei.issued > salumei.retiredRegistry);
+  assert.ok(salumei.undisclosed > 0);
+  const nespresso = dataset.buyers.find((buyer) => buyer.name === 'Nespresso');
+  assert.ok(nespresso.variants.some((name) => /on behalf of nespresso/i.test(name)));
+});
+
 test('Papua New Guinea REDD+ projects are in the file and the Pacific caption counts buyers', () => {
   const png = dataset.projects.filter((project) => project.cc === 'PG' && project.group === 'redd');
   assert.ok(png.some((project) => project.id === 'VCS1122'));

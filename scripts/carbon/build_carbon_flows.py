@@ -275,23 +275,82 @@ def norm(value) -> str:
     return re.sub(r'\s+', ' ', text).strip()
 
 
+def token_key(token: str) -> str:
+    """Fold a single token so 'S.A.' and 'Ltd.' match the suffix list."""
+    return norm(token).replace(' ', '')
+
+
 def strip_suffix_display(name: str) -> str:
     parts = str(name or '').replace(',', ' ').split()
-    while parts and norm(parts[-1]) in LEGAL_SUFFIXES:
+    while parts and token_key(parts[-1]) in LEGAL_SUFFIXES:
         parts.pop()
-    while parts and norm(parts[-1]) in {'the'}:
+    while parts and token_key(parts[-1]) in {'the'}:
         parts.pop()
-    return ' '.join(parts).strip()
+    return ' '.join(parts).strip(' .,-')
+
+
+# Leading phrases that are not the buyer. Longer phrases are tried first.
+# A mid-string "on behalf of" is handled separately: the beneficiary is the
+# party after the last one ("Retired by X on behalf of Y" → Y).
+BUYER_PREFIXES = (
+    'retired on behalf of ',
+    'retirement on behalf of ',
+    'retired for ',
+    'retirement for ',
+    'retired by ',
+    'retirement by ',
+    'on behalf of ',
+    'behalf of ',
+    'for ',
+)
+
+
+def peel_buyer_name(raw: str) -> str:
+    text = clean_name(raw)
+    if not text:
+        return ''
+    lowered = text.casefold()
+    for marker in (' on behalf of ', ' behalf of '):
+        index = lowered.rfind(marker)
+        if index != -1:
+            text = text[index + len(marker):].strip(' .,-')
+            break
+    changed = True
+    while changed and text:
+        changed = False
+        low = text.casefold()
+        for prefix in BUYER_PREFIXES:
+            if low.startswith(prefix):
+                text = text[len(prefix):].strip(' .,-')
+                changed = True
+                break
+    return text
 
 
 def buyer_key(name: str) -> str:
-    stripped = strip_suffix_display(name)
+    stripped = strip_suffix_display(peel_buyer_name(name) or name)
     key = norm(stripped)
     if len(key) < 3:
         key = norm(name)
     if key.startswith('the ') and len(key) > 8:
         key = key[4:]
     return key
+
+
+def load_buyer_aliases() -> dict[str, str]:
+    """Map a normalised beneficiary key to the canonical display name."""
+    path = ROOT / 'src' / 'data' / 'local_data' / 'carbon' / 'buyer-aliases.json'
+    payload = json.loads(path.read_text(encoding='utf-8'))
+    aliases = {}
+    for source, canonical in payload.items():
+        if str(source).startswith('_'):
+            continue
+        canonical_name = clean_name(canonical)
+        if not canonical_name:
+            continue
+        aliases[buyer_key(source)] = canonical_name
+        aliases[buyer_key(canonical_name)] = canonical_name
+    return aliases
 
 
 def blank(value) -> bool:
@@ -751,12 +810,30 @@ def main() -> int:
     log('indexing countries and cities')
     countries, country_names = load_countries(ne_path)
     cities = load_cities(cities_zip)
-    log(f'  {len(countries)} countries, {len(cities)} city keys')
+    aliases = load_buyer_aliases()
+    log(f'  {len(countries)} countries, {len(cities)} city keys, {len(aliases)} buyer aliases')
 
     log('reading projects')
     project_rows = load_sheet(vrod_path, 'PROJECTS')
     header_row = next(i for i, row in enumerate(project_rows) if row and row[0] == 'Project ID')
     headers = header_index(project_rows[header_row])
+    issued_cols, retired_cols = {}, {}
+    section = ''
+    section_row = project_rows[header_row - 1] if header_row else []
+    for index, header in enumerate(project_rows[header_row]):
+        above = section_row[index] if index < len(section_row) else None
+        if above:
+            section = str(above)
+        try:
+            year = int(float(header))
+        except (TypeError, ValueError):
+            continue
+        if not YEAR0 <= year <= YEAR1:
+            continue
+        if section.startswith('Credits issued by vintage'):
+            issued_cols[year] = index
+        elif section.startswith('Credits retired'):
+            retired_cols[year] = index
     projects = {}
     unmatched_countries = Counter()
     for row in project_rows[header_row + 1:]:
@@ -779,22 +856,45 @@ def main() -> int:
             'group': TYPE_GROUP.get(project_type, 'other'),
             'state': clean_name(cell(row, headers, 'State')),
             'site': clean_name(cell(row, headers, 'Project Site Location')),
+            'developer': clean_name(cell(row, headers, 'Project Developer')),
+            'owner': clean_name(cell(row, headers, 'Project Owner')),
+            'operator': clean_name(cell(row, headers, 'Offset Project Operator')),
+            'issued': tonnes_of(cell(row, headers, 'Total Credits Issued')),
+            'retiredRegistry': tonnes_of(cell(row, headers, 'Total Credits Retired')),
+            'vintages': [],
+            'undisclosed': 0,
+            'undisclosed_years': set(),
         }
+        vintages = []
+        for year in range(YEAR0, YEAR1 + 1):
+            issued = tonnes_of(row[issued_cols[year]]) if year in issued_cols and issued_cols[year] < len(row) else 0
+            retired = tonnes_of(row[retired_cols[year]]) if year in retired_cols and retired_cols[year] < len(row) else 0
+            if issued or retired:
+                vintages.append([year, issued, retired])
+        projects[project_id]['vintages'] = vintages
     log(f'  {len(projects)} projects; unmatched countries: {unmatched_countries.most_common(20)}')
 
     buyers = {}
 
     def ensure_buyer(name: str):
-        key = buyer_key(name)
-        letters = sum(ch.isalpha() for ch in key)
+        raw = clean_name(name)
+        peeled = peel_buyer_name(raw)
+        pre_alias = buyer_key(peeled or raw)
+        letters = sum(ch.isalpha() for ch in pre_alias)
         # Account numbers and one-letter leftovers are not buyer names.
-        if letters < 3 or key in SKIP_BUYER_KEYS:
+        if letters < 3 or pre_alias in SKIP_BUYER_KEYS:
+            return None
+        canonical = aliases.get(pre_alias)
+        key = buyer_key(canonical) if canonical else pre_alias
+        if key in SKIP_BUYER_KEYS:
             return None
         entry = buyers.get(key)
         if entry is None:
             entry = {
                 'key': key,
+                'canonical': canonical or '',
                 'names': Counter(),
+                'lookup_keys': set(),
                 'tonnes': 0,
                 'years': set(),
                 'cities': Counter(),
@@ -804,7 +904,11 @@ def main() -> int:
                 'flows': {},
             }
             buyers[key] = entry
-        entry['names'][clean_name(name)] += 1
+        if canonical:
+            entry['canonical'] = canonical
+        entry['names'][raw] += 1
+        entry['lookup_keys'].add(pre_alias)
+        entry['lookup_keys'].add(key)
         return entry
 
     stats = Counter()
@@ -851,6 +955,17 @@ def main() -> int:
             parsed = loader(row, index)
             if parsed is None:
                 stats['skipped_rows'] += 1
+                continue
+            if parsed.get('undisclosed'):
+                project = projects.get(parsed['project_id'])
+                if project is None:
+                    stats['unjoined_project_rows'] += 1
+                    continue
+                project['undisclosed'] += parsed['tonnes']
+                if parsed.get('year'):
+                    project['undisclosed_years'].add(parsed['year'])
+                stats['undisclosed_rows'] += 1
+                stats['undisclosed_tonnes'] += parsed['tonnes']
                 continue
             entry = ensure_buyer(parsed['name'])
             if entry is None:
@@ -902,7 +1017,12 @@ def main() -> int:
                 name = holder
                 located = True
             if not name:
-                return None
+                return {
+                    'undisclosed': True,
+                    'project_id': registry_project_id(cell(row, index, 'Project Id'), prefix),
+                    'tonnes': tonnes,
+                    'year': year_of(cell(row, index, 'Status Effective (GMT)')),
+                }
             cc = clean_name(cell(row, index, 'Credit Holder Country')).upper()
             if not re.fullmatch(r'[A-Z]{2}', cc):
                 cc = ''
@@ -922,11 +1042,14 @@ def main() -> int:
     def car_loader(row, index):
         tonnes = tonnes_of(cell(row, index, 'Quantity of Offset Credits'))
         name = clean_name(cell(row, index, 'Account Holder'))
-        if tonnes <= 0 or not name:
+        project_id = registry_project_id(cell(row, index, 'Project ID'), 'CAR')
+        if tonnes <= 0:
             return None
+        if not name:
+            return {'undisclosed': True, 'project_id': project_id, 'tonnes': tonnes, 'year': year_of(cell(row, index, 'Status Effective'))}
         return {
             'name': name,
-            'project_id': registry_project_id(cell(row, index, 'Project ID'), 'CAR'),
+            'project_id': project_id,
             'tonnes': tonnes,
             'year': year_of(cell(row, index, 'Status Effective')),
             'located_as_holder': False,
@@ -935,13 +1058,16 @@ def main() -> int:
     def gold_loader(row, index):
         tonnes = tonnes_of(cell(row, index, 'Quantity'))
         name = clean_name(cell(row, index, 'Using Entity'))
-        if tonnes <= 0 or not name:
+        project_id = registry_project_id(cell(row, index, 'GSID'), 'GS')
+        if tonnes <= 0:
             return None
+        if not name:
+            return {'undisclosed': True, 'project_id': project_id, 'tonnes': tonnes, 'year': year_of(cell(row, index, 'Retirement Date'))}
         # Notes sometimes name another party. They are free text and are not
         # parsed, so a vague "Using Entity" stays as published.
         return {
             'name': name,
-            'project_id': registry_project_id(cell(row, index, 'GSID'), 'GS'),
+            'project_id': project_id,
             'tonnes': tonnes,
             'year': year_of(cell(row, index, 'Retirement Date')),
             'located_as_holder': False,
@@ -950,12 +1076,14 @@ def main() -> int:
     def iso_loader(row, index):
         tonnes = tonnes_of(cell(row, index, 'Size Credits'))
         name = clean_name(cell(row, index, 'Beneficiary Name'))
-        if tonnes <= 0 or not name:
-            return None
-        domain = clean_name(cell(row, index, 'Beneficiary Domain')).lower()
         project = clean_name(cell(row, index, 'Project ID'))
         if project and not project.startswith('ISO'):
             project = 'ISO' + project
+        if tonnes <= 0:
+            return None
+        if not name:
+            return {'undisclosed': True, 'project_id': project, 'tonnes': tonnes, 'year': year_of(cell(row, index, 'Retired At'))}
+        domain = clean_name(cell(row, index, 'Beneficiary Domain')).lower()
         return {
             'name': name,
             'project_id': project,
@@ -968,16 +1096,22 @@ def main() -> int:
     def verra_loader(row, index):
         tonnes = tonnes_of(cell(row, index, 'Retirement QTY'))
         name = clean_name(cell(row, index, 'Beneficial Owner'))
-        if tonnes <= 0 or not name:
+        project_id = registry_project_id(cell(row, index, 'Project ID'), 'VCS')
+        year = year_of(cell(row, index, 'Retirement Date'))
+        if tonnes <= 0:
+            return None
+        if not name:
+            # Counted here and also stored on the project as undisclosed tonnes
+            # so a project view can reconcile named + blank beneficiaries.
             stats['verra_blank_beneficiary_rows'] += 1
             stats['verra_blank_beneficiary_tonnes'] += tonnes
-            return None
+            return {'undisclosed': True, 'project_id': project_id, 'tonnes': tonnes, 'year': year}
         # Country on this sheet is the project host country, not the buyer.
         return {
             'name': name,
-            'project_id': registry_project_id(cell(row, index, 'Project ID'), 'VCS'),
+            'project_id': project_id,
             'tonnes': tonnes,
-            'year': year_of(cell(row, index, 'Retirement Date')),
+            'year': year,
             'located_as_holder': False,
         }
 
@@ -1058,7 +1192,7 @@ def main() -> int:
     placed = []
     unplaced = []
     for entry in buyers.values():
-        display = entry['names'].most_common(1)[0][0]
+        display = entry.get('canonical') or entry['names'].most_common(1)[0][0]
         location = None
         if entry['cities']:
             (city, cc, state), _votes = entry['cities'].most_common(1)[0]
@@ -1078,13 +1212,21 @@ def main() -> int:
                 registry_cc = entry['countries'].most_common(1)[0][0]
                 if registry_cc not in countries:
                     registry_cc = ''
-            for suffix in ('', '|alt1', '|alt2'):
-                hit = resolve_cached(cache, entry['key'] + suffix, registry_cc)
-                if not hit:
-                    continue
+            found = []
+            for base in [entry['key'], *sorted(entry.get('lookup_keys') or [])]:
+                for suffix in ('', '|alt1', '|alt2'):
+                    hit = resolve_cached(cache, base + suffix, registry_cc)
+                    if hit:
+                        found.append((suffix, hit))
+            if found:
+                rank = {'high': 3, 'medium': 2, 'low': 1}
+                suffix, hit = max(
+                    found,
+                    key=lambda item: (rank.get(item[1].get('conf'), 0), 1 if item[1].get('has_hq') else 0),
+                )
                 if suffix:
-                    # The full published name outranks a shortened label when
-                    # search finds a different organization.
+                    # A shortened label can hit the wrong organisation. The
+                    # full canonical name is the tie-break, and only then.
                     searched = search_headquarters(display, cache)
                     if searched and searched.get('qid') and searched['qid'] != hit.get('qid'):
                         hit = searched
@@ -1097,7 +1239,6 @@ def main() -> int:
                     'method': hit['method'],
                     'qid': hit.get('qid') or '',
                 }
-                break
         if location is None and entry['countries']:
             cc = entry['countries'].most_common(1)[0][0]
             country = countries.get(cc)
@@ -1110,9 +1251,11 @@ def main() -> int:
                     'conf': 'low',
                     'method': 'registry-country-centroid',
                 }
+        variants = [name for name, _count in entry['names'].most_common(8) if name != display]
         record = {
             'key': entry['key'],
             'name': display,
+            'variants': variants,
             'tonnes': entry['tonnes'],
             'pacific': entry['pacific'],
             'domain': entry['domains'].most_common(1)[0][0] if entry['domains'] else '',
@@ -1125,23 +1268,11 @@ def main() -> int:
     placed.sort(key=lambda item: (-item['tonnes'], item['name']))
     unplaced.sort(key=lambda item: (-item['tonnes'], item['name']))
 
-    # Projects that actually appear, plus unplaced Pacific buyers' projects so
-    # the Pacific panel can still name them.
-    used_project_ids = []
-    seen_projects = set()
-    for bucket in (placed, unplaced):
-        for entry in bucket:
-            if bucket is unplaced and not entry['pacific']:
-                continue
-            for project_id in entry['flows']:
-                if project_id not in seen_projects:
-                    seen_projects.add(project_id)
-                    used_project_ids.append(project_id)
-
+    # Every registry project stays searchable, including ones whose retirements
+    # name nobody. Buyer search covers every merged name, placed or not.
     project_records = []
-    for project_id in used_project_ids:
+    for project_id in sorted(projects):
         project = projects[project_id]
-        country = countries.get(project['cc'])
         project_records.append({
             'id': project['id'],
             'name': project['name'],
@@ -1150,11 +1281,17 @@ def main() -> int:
             'group': project['group'],
             'registry': project['registry'],
             'site': project['site'],
+            'developer': project.get('developer') or '',
+            'owner': project.get('owner') or '',
+            'operator': project.get('operator') or '',
+            'issued': project.get('issued') or 0,
+            'retiredRegistry': project.get('retiredRegistry') or 0,
+            'vintages': project.get('vintages') or [],
+            'undisclosed': project.get('undisclosed') or 0,
+            'undisclosedMask': year_mask(project.get('undisclosed_years') or set()),
         })
 
-    # Buyers in the file: every placed buyer, plus unplaced Pacific buyers so
-    # the preset can list who buys even when the HQ could not be located.
-    buyer_records_src = placed + [entry for entry in unplaced if entry['pacific']]
+    buyer_records_src = placed + unplaced
     buyer_index = {entry['key']: i for i, entry in enumerate(buyer_records_src)}
     project_index = {record['id']: i for i, record in enumerate(project_records)}
 
@@ -1163,6 +1300,7 @@ def main() -> int:
         loc = entry['location'] or {}
         buyer_out.append({
             'name': entry['name'],
+            'variants': entry.get('variants') or [],
             'cc': loc.get('cc') or '',
             'lon': loc.get('lon'),
             'lat': loc.get('lat'),
@@ -1241,11 +1379,15 @@ def main() -> int:
             'unjoinedProjectRows': stats['unjoined_project_rows'],
             'verraBlankBeneficiaryRows': stats['verra_blank_beneficiary_rows'],
             'verraBlankBeneficiaryTonnes': stats['verra_blank_beneficiary_tonnes'],
+            'undisclosedRows': stats['undisclosed_rows'],
+            'undisclosedTonnes': stats['undisclosed_tonnes'],
+            'buyersWithAliases': sum(1 for entry in buyer_records_src if entry.get('variants')),
             'unmatchedProjectCountries': unmatched_countries.most_common(30),
         },
         'unplacedPacificBuyers': unplaced_pacific[:40],
         'excluded': [
-            'Retirement rows with no beneficiary / account holder / using-entity name are omitted, not guessed. Verra leaves Beneficial Owner blank on a large share of rows.',
+            'Retirement rows with no beneficiary name are kept on the project as undisclosed-buyer tonnes. They are not assigned to a guessed company. Verra leaves Beneficial Owner blank on a large share of rows.',
+            'Buyer names are merged by stripping on-behalf-of prefixes and legal suffixes, then applying buyer-aliases.json. Raw published strings stay on the buyer as variants.',
             'Gold Standard free-text retirement notes are not parsed. Only the Using Entity column is treated as the buyer.',
             'Cancellations, buffer-pool movements, and California / Quebec / Washington compliance retirement totals are not included. Those tables do not name a voluntary beneficiary in a way this build can attribute.',
             'Buyer names were grouped by a normalized form with legal suffixes removed. A shared name can still merge two different organizations; Wikidata matches with more than one equally good hit are left unplaced instead of picking one.',
@@ -1261,9 +1403,29 @@ def main() -> int:
             buyer.pop('domain')
         if not buyer['hq']:
             buyer.pop('hq')
+        if not buyer['variants']:
+            buyer.pop('variants')
         if buyer['lon'] is None:
             buyer.pop('lon')
             buyer.pop('lat')
+    for project in project_records:
+        if not project['developer']:
+            project.pop('developer')
+        if not project['owner']:
+            project.pop('owner')
+        if not project['operator']:
+            project.pop('operator')
+        if not project['site']:
+            project.pop('site')
+        if not project['vintages']:
+            project.pop('vintages')
+        if not project['undisclosed']:
+            project.pop('undisclosed')
+            project.pop('undisclosedMask')
+        if not project['issued']:
+            project.pop('issued')
+        if not project['retiredRegistry']:
+            project.pop('retiredRegistry')
 
     payload = {
         'meta': meta,

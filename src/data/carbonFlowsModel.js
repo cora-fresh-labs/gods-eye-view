@@ -28,6 +28,7 @@ export function defaultFilters() {
     year: null,
     pacific: false,
     hideLowConfidence: false,
+    projectIndex: null,
   };
 }
 
@@ -93,6 +94,7 @@ export function flowMatches(dataset, flow, filters) {
   const project = projectOf(dataset, flow[1]);
   if (!buyer || !project) return false;
   if (filters?.buyerIndex != null && flow[0] !== filters.buyerIndex) return false;
+  if (filters?.projectIndex != null && flow[1] !== filters.projectIndex) return false;
   if (filters?.buyerCountry && buyer.cc !== filters.buyerCountry) return false;
   if (filters?.hideLowConfidence && (buyer.conf === 'low' || buyer.conf === 'unplaced')) return false;
   if (filters?.pacific && !isPacificCountry(dataset, project.cc)) return false;
@@ -272,6 +274,7 @@ export function buyerDetail(dataset, buyerIndex, filters) {
     domain: buyer.domain || '',
     tonnes,
     years,
+    variants: Array.isArray(buyer.variants) ? buyer.variants : [],
     projects,
   };
 }
@@ -303,6 +306,8 @@ export function projectDetail(dataset, projectIndex, filters) {
       };
     })
     .sort((a, b) => b.tonnes - a.tonnes || a.name.localeCompare(b.name));
+  const namedTonnes = buyers.reduce((sum, buyer) => sum + buyer.tonnes, 0);
+  const undisclosed = Number(project.undisclosed) || 0;
   return {
     projectIndex,
     id: project.id,
@@ -313,7 +318,16 @@ export function projectDetail(dataset, projectIndex, filters) {
     group: project.group,
     registry: project.registry,
     site: project.site || '',
-    tonnes: buyers.reduce((sum, buyer) => sum + buyer.tonnes, 0),
+    developer: project.developer || '',
+    owner: project.owner || '',
+    operator: project.operator || '',
+    issued: Number(project.issued) || 0,
+    retiredRegistry: Number(project.retiredRegistry) || 0,
+    vintages: Array.isArray(project.vintages) ? project.vintages : [],
+    undisclosed,
+    undisclosedYears: yearsFromMask(project.undisclosedMask),
+    tonnes: namedTonnes,
+    accountedTonnes: namedTonnes + undisclosed,
     buyers,
   };
 }
@@ -406,10 +420,36 @@ export function filterChoices(dataset) {
     buyers: buyers.map((buyer, index) => ({
       index,
       name: buyer.name,
+      variants: Array.isArray(buyer.variants) ? buyer.variants : [],
       cc: buyer.cc || '',
       conf: buyer.conf || '',
     })),
   };
+}
+
+function foldQuery(value) {
+  return String(value || '').toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+/**
+ * Turn a typed or spoken phrase into a buyer or project search.
+ * "show me all Shell credits" and "who bought from April Salumei" are the
+ * phrasings the voice tool and the search boxes both accept.
+ * @returns {{kind:'buyer'|'project'|'auto', query:string}}
+ */
+export function interpretCarbonQuery(text) {
+  const raw = String(text || '').trim().replace(/[?.!]+$/g, '').replace(/\s+/g, ' ');
+  const who = raw.match(/^(?:who|which buyers?)\s+(?:bought|retired|purchased)\s+from\s+(.+)$/i);
+  if (who) return { kind: 'project', query: who[1].trim() };
+  const buyersOf = raw.match(/^(?:buyers?|retirers?|sellers?)\s+of\s+(.+)$/i);
+  if (buyersOf) return { kind: 'project', query: buyersOf[1].trim() };
+  const show = raw.match(/^(?:show me|list|find)\s+(?:all\s+)?(.+?)\s+credits?$/i);
+  if (show) return { kind: 'buyer', query: show[1].trim() };
+  const credits = raw.match(/^(?:all\s+)?(.+?)\s+credits?$/i);
+  if (credits && !/^(who|what|which)\b/i.test(credits[1])) {
+    return { kind: 'buyer', query: credits[1].replace(/^all\s+/i, '').trim() };
+  }
+  return { kind: 'auto', query: raw };
 }
 
 /**
@@ -418,16 +458,80 @@ export function filterChoices(dataset) {
  * @returns {{index:number,name:string,cc:string,conf:string}[]}
  */
 export function searchBuyers(dataset, query, limit = 12) {
-  const text = String(query || '').trim().toLowerCase();
+  const text = foldQuery(query);
   if (text.length < 2) return [];
   const choices = filterChoices(dataset).buyers;
-  const starts = [];
-  const contains = [];
+  const hits = [];
   for (const buyer of choices) {
-    const name = buyer.name.toLowerCase();
-    if (name.startsWith(text)) starts.push(buyer);
-    else if (name.includes(text)) contains.push(buyer);
-    if (starts.length >= limit) break;
+    const names = [buyer.name, ...(buyer.variants || [])].map(foldQuery).filter(Boolean);
+    let score = 0;
+    for (const name of names) {
+      if (name === text) score = Math.max(score, 100);
+      else if (name.startsWith(text)) score = Math.max(score, 80);
+      else if (name.includes(text)) score = Math.max(score, 50);
+    }
+    if (score) hits.push({ ...buyer, score });
   }
-  return [...starts, ...contains].slice(0, limit);
+  hits.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
+  const cap = Number.isFinite(limit) ? Math.max(0, Math.floor(limit)) : hits.length;
+  return hits.slice(0, cap);
+}
+
+/**
+ * Find a project by registry id (VCS1122, GS566) or by name.
+ * @returns {{index:number,id:string,name:string,cc:string,registry:string,score:number}[]}
+ */
+export function searchProjects(dataset, query, limit = 8) {
+  const text = foldQuery(query);
+  const compact = text.replace(/ /g, '');
+  if (compact.length < 2) return [];
+  const projects = Array.isArray(dataset?.projects) ? dataset.projects : [];
+  const hits = [];
+  projects.forEach((project, index) => {
+    const id = foldQuery(project?.id).replace(/ /g, '');
+    const name = foldQuery(project?.name);
+    let score = 0;
+    if (id && id === compact) score = 100;
+    else if (id && compact.length >= 3 && (id.endsWith(compact) || id.includes(compact))) score = 85;
+    else if (name && name === text) score = 95;
+    else if (name && name.startsWith(text)) score = 75;
+    else if (name && text.length >= 3 && name.includes(text)) score = 55;
+    if (!score) return;
+    hits.push({
+      index,
+      id: project.id,
+      name: project.name,
+      cc: project.cc || '',
+      registry: project.registry || '',
+      score,
+    });
+  });
+  hits.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
+  const cap = Number.isFinite(limit) ? Math.max(0, Math.floor(limit)) : hits.length;
+  return hits.slice(0, cap);
+}
+
+/**
+ * Resolve a typed or spoken carbon question to the best buyer or project.
+ * @returns {{kind:string,query:string,hits:object[]}}
+ */
+export function resolveCarbonQuery(dataset, text) {
+  const parsed = interpretCarbonQuery(text);
+  if (!parsed.query) return { kind: 'none', query: '', hits: [] };
+  if (parsed.kind === 'buyer') {
+    return { kind: 'buyer', query: parsed.query, hits: searchBuyers(dataset, parsed.query, 5) };
+  }
+  if (parsed.kind === 'project') {
+    return { kind: 'project', query: parsed.query, hits: searchProjects(dataset, parsed.query, 5) };
+  }
+  const projects = searchProjects(dataset, parsed.query, 5);
+  const buyers = searchBuyers(dataset, parsed.query, 5);
+  const projectScore = projects[0]?.score || 0;
+  const buyerScore = buyers[0]?.score || 0;
+  if (projectScore >= 90 && projectScore >= buyerScore) {
+    return { kind: 'project', query: parsed.query, hits: projects };
+  }
+  if (buyerScore) return { kind: 'buyer', query: parsed.query, hits: buyers };
+  if (projectScore) return { kind: 'project', query: parsed.query, hits: projects };
+  return { kind: 'none', query: parsed.query, hits: [] };
 }

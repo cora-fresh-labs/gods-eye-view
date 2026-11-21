@@ -5249,6 +5249,7 @@ export function openAiRealtimeProxy() {
             'When a single user request contains MULTIPLE changes (e.g. "switch to operator layout, use balanced detection at density 50, and switch to Bing aerial"), call ALL the corresponding tools — multiple tool calls in sequence — before speaking. Never confirm a partial subset. If a later tool fails, say which parts succeeded and which failed.',
             'After receiving tool output, speak exactly one short confirmation. Do not repeat the confirmation.',
             'For "show/open/turn on" layer requests, enable the matching layer. For "hide/close/turn off", disable it.',
+            'Carbon credit lookups use lookup_carbon and no other tool. "show me all Shell credits", "what did Shell retire", and "Shell credits" mean query "Shell" (a buyer). "who bought from April Salumei", "buyers of VCS1122", and a project name or registry id mean that project. The tool enables Carbon Flows, draws the arcs, and returns the seller, tonnes, years, and matched name. Speak only from that result. Never invent a buyer, seller, or tonne figure.',
             // INSTRUCTION-ONLY mapping for the two globe-scale named views.
             //
             // Both are BROADER than the first-run tiles on purpose. A person
@@ -6224,6 +6225,22 @@ const GEV_REALTIME_TOOLS = [
         label: { type: 'string', description: 'Match an existing route mark by (partial) label.' },
         speed: { type: 'string', enum: ['slow', 'normal', 'fast'] },
       },
+    },
+  },
+  {
+    type: 'function',
+    name: 'lookup_carbon',
+    description: 'Look up voluntary carbon-credit retirements on the Carbon Flows layer. Use for a buyer ("show me all Shell credits", "what projects did Qantas retire") or a project ("who bought from April Salumei", "buyers of VCS1122"). Pass the user\'s phrase or the bare name. The tool enables the layer, draws arcs, and returns the matched record. Do not invent buyers, sellers, or tonnes.',
+    parameters: {
+      type: 'object',
+      additionalProperties: false,
+      properties: {
+        query: {
+          type: 'string',
+          description: 'Buyer or project phrase. Examples: "Shell", "show me all Shell credits", "who bought from April Salumei", "VCS1122".',
+        },
+      },
+      required: ['query'],
     },
   },
   {
